@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tips | Yet Another Boring Blog]]></title>
+  <link href="http://anand-iyer.github.com/blog/categories/tips/atom.xml" rel="self"/>
+  <link href="http://anand-iyer.github.com/"/>
+  <updated>2013-01-20T18:46:57-08:00</updated>
+  <id>http://anand-iyer.github.com/</id>
+  <author>
+    <name><![CDATA[Anand]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Latex Tips Collection]]></title>
+    <link href="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/"/>
+    <updated>2013-01-13T18:18:00-08:00</updated>
+    <id>http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection</id>
+    <content type="html"><![CDATA[<p>Over time, I’ve come across many useful Latex tips and tricks scattered across the internet. Here’s an attempt to collect some of those:</p>
+
+<ul>
+<li><p><a href="http://gurmeet.net/computer-science/latex-tips-n-tricks-for-conference-papers/"><strong>Tips for Conference Papers</strong></a> by Gurmeet Singh <br/>
+A nice set of tricks that saves your life at the last minute during deadlines.</p></li>
+<li><p><a href="http://www.read.seas.harvard.edu/~kohler/latex.html"><strong>Latex Usage Notes</strong></a> by Eddie Kohler <br/>
+Solutions for common Latex problems, tips on proper formatting, etc.</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

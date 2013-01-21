@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: any folder | Yet Another Boring Blog]]></title>
+  <link href="http://anand-iyer.github.com/blog/categories/any-folder/atom.xml" rel="self"/>
+  <link href="http://anand-iyer.github.com/"/>
+  <updated>2013-01-20T18:46:57-08:00</updated>
+  <id>http://anand-iyer.github.com/</id>
+  <author>
+    <name><![CDATA[Anand]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Syncing folders outside Dropbox folder]]></title>
+    <link href="http://anand-iyer.github.com/blog/2012/10/16/syncing-folders-outside-dropbox-folder/"/>
+    <updated>2012-10-16T18:27:00-07:00</updated>
+    <id>http://anand-iyer.github.com/blog/2012/10/16/syncing-folders-outside-dropbox-folder</id>
+    <content type="html"><![CDATA[<p>A big complaint I have about Dropbox is that unlike SugarSync, it does allow me to sync any folder in my computer (essentially, I need to place the folders I want to be synced inside the “Dropbox” folder).</p>
+
+<p>Recently, I found a workaround for this problem. Here’s the trick to syncing any folder in your computer: softlink the folder to your Dropbox folder!</p>
+
+<p>If you’re using a Mac (or Linux), just use the following command:</p>
+
+<pre><code>ln -s /full-path-to-folder/file-to-sync ~/Dropbox/desired-folder-name
+</code></pre>
+
+<p>That’s it, from now on, all file(s) in the actual path would now sync with Dropbox.</p>
+]]></content>
+  </entry>
+  
+</feed>

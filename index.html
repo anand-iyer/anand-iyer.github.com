@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title>Yet Another Boring Blog</title>
+  <meta name="author" content="Anand">
 
   
-  <meta name="description" content=" Blog Archives Recent Posts ">
+  <meta name="description" content="Over time, I’ve come across many useful Latex tips and tricks scattered across the internet. Here’s an attempt to collect some of those: Tips for &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,7 +24,7 @@
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="Yet Another Boring Blog" type="application/atom+xml">
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -42,9 +42,7 @@
   	<div id="logoRight">}</div>
   	<div class="clear"></div>
   </div>
-  <h1><a href="/">My Octopress Blog</a></h1>
-  
-    <h2>A blogging framework for hackers.</h2>
+  <h1><a href="/">Yet Another Boring Blog</a></h1>
   
   <div class="clear"></div>
 </hgroup>
@@ -73,6 +71,143 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2013/01/13/latex-tips-collection/">Latex Tips Collection</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-13T18:18:00-08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Over time, I’ve come across many useful Latex tips and tricks scattered across the internet. Here’s an attempt to collect some of those:</p>
+
+<ul>
+<li><p><a href="http://gurmeet.net/computer-science/latex-tips-n-tricks-for-conference-papers/"><strong>Tips for Conference Papers</strong></a> by Gurmeet Singh <br/>
+A nice set of tricks that saves your life at the last minute during deadlines.</p></li>
+<li><p><a href="http://www.read.seas.harvard.edu/~kohler/latex.html"><strong>Latex Usage Notes</strong></a> by Eddie Kohler <br/>
+Solutions for common Latex problems, tips on proper formatting, etc.</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2012/10/16/syncing-folders-outside-dropbox-folder/">Syncing Folders Outside Dropbox Folder</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-16T18:27:00-07:00" pubdate data-updated="true">Oct 16<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A big complaint I have about Dropbox is that unlike SugarSync, it does allow me to sync any folder in my computer (essentially, I need to place the folders I want to be synced inside the “Dropbox” folder).</p>
+
+<p>Recently, I found a workaround for this problem. Here’s the trick to syncing any folder in your computer: softlink the folder to your Dropbox folder!</p>
+
+<p>If you’re using a Mac (or Linux), just use the following command:</p>
+
+<pre><code>ln -s /full-path-to-folder/file-to-sync ~/Dropbox/desired-folder-name
+</code></pre>
+
+<p>That’s it, from now on, all file(s) in the actual path would now sync with Dropbox.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2011/10/09/doxygen-and-osx-graphviz-and-other-errors/">Doxygen and OSX: Graphviz and Other Errors</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-09T18:32:00-07:00" pubdate data-updated="true">Oct 9<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I’m a big fan of <a href="http://www.doxygen.org/">Doxygen</a>. I use it all the time to generate and analyze call trees. Recently, I wanted to use it in my MacbookPro for analyzing an open source project. There is a binary for SnowLeopard <a href="http://www.stack.nl/~dimitri/doxygen/download.html">here</a> that works in Lion too, but it was throwing lots of errors regarding Graphviz. Here are two things that I had to do to make it finally work:</p>
+
+<ul>
+<li><p>For some reason, long file names do not work in OSX. By default, Doxygen uses long names. So you need to set the <code>SHORT_NAMES</code> to <code>YES</code> in your doxygen file. If you are using the Wizard (GUI), then save your settings file (<code>File-&gt;Save</code>), and then manually edit the file in a text editor.</p></li>
+<li><p>GraphViz is included in the dmg file. You need to set appropriate path to the dot file for graphviz to work. Try setting it to <code>‘/Applications/Doxygen.app/Contents/Resources’</code>. If that fails, then use macports to install graphviz, and use that path.</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
@@ -84,6 +219,18 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/13/latex-tips-collection/">Latex Tips Collection</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/16/syncing-folders-outside-dropbox-folder/">Syncing folders outside Dropbox folder</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/10/09/doxygen-and-osx-graphviz-and-other-errors/">Doxygen and OSX: Graphviz and other errors</a>
+      </li>
     
   </ul>
 </section>
@@ -99,7 +246,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Your Name -
+  Copyright &copy; 2013 - Anand -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
@@ -107,6 +254,15 @@
   
 
 
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 

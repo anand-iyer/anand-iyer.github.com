@@ -1,12 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>
+            http://anand-iyer.github.com/blog/2011/10/09/doxygen-and-osx-graphviz-and-other-errors/
+        </loc>
+        <lastmod>2013-01-20T18:44:26-08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://anand-iyer.github.com/blog/2012/10/16/syncing-folders-outside-dropbox-folder/
+        </loc>
+        <lastmod>2013-01-20T18:44:26-08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/</loc>
+        <lastmod>2013-01-20T18:44:26-08:00</lastmod>
+    </url>
+    <url>
         <loc>http://anand-iyer.github.com/blog/archives/</loc>
-        <lastmod>2013-01-20T17:41:35-08:00</lastmod>
+        <lastmod>2013-01-20T18:44:26-08:00</lastmod>
     </url>
     <url>
         <loc>http://anand-iyer.github.com/</loc>
-        <lastmod>2013-01-20T17:41:35-08:00</lastmod>
+        <lastmod>2013-01-20T18:44:26-08:00</lastmod>
     </url>
     <url>
         <loc>http://anand-iyer.github.com/robots.txt</loc>
