@@ -4,7 +4,7 @@
   <title><![CDATA[Yet Another Boring Blog]]></title>
   <link href="http://anand-iyer.github.com/atom.xml" rel="self"/>
   <link href="http://anand-iyer.github.com/"/>
-  <updated>2013-01-20T18:46:57-08:00</updated>
+  <updated>2013-01-29T23:51:59-08:00</updated>
   <id>http://anand-iyer.github.com/</id>
   <author>
     <name><![CDATA[Anand]]></name>
@@ -16,15 +16,15 @@
   <entry>
     <title type="html"><![CDATA[Latex Tips Collection]]></title>
     <link href="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/"/>
-    <updated>2013-01-13T18:18:00-08:00</updated>
+    <updated>2013-01-13T07:56:30-08:00</updated>
     <id>http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection</id>
-    <content type="html"><![CDATA[<p>Over time, I’ve come across many useful Latex tips and tricks scattered across the internet. Here’s an attempt to collect some of those:</p>
+    <content type="html"><![CDATA[<p>Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those:</p>
 
 <ul>
-<li><p><a href="http://gurmeet.net/computer-science/latex-tips-n-tricks-for-conference-papers/"><strong>Tips for Conference Papers</strong></a> by Gurmeet Singh <br/>
-A nice set of tricks that saves your life at the last minute during deadlines.</p></li>
-<li><p><a href="http://www.read.seas.harvard.edu/~kohler/latex.html"><strong>Latex Usage Notes</strong></a> by Eddie Kohler <br/>
-Solutions for common Latex problems, tips on proper formatting, etc.</p></li>
+<li><p><strong><a href="http://gurmeet.net/computer-science/latex-tips-n-tricks-for-conference-papers/">Tips for Conference Papers</a> by Gurmeet Singh
+</strong>A nice set of tricks that saves your life at the last minute during deadlines.</p></li>
+<li><p><strong><a href="http://www.read.seas.harvard.edu/~kohler/latex.html">Latex Usage Notes</a> by Eddie Kohler
+</strong>Solutions for common Latex problems, tips on proper formatting, etc.</p></li>
 </ul>
 
 ]]></content>
@@ -32,32 +32,303 @@ Solutions for common Latex problems, tips on proper formatting, etc.</p></li>
   
   <entry>
     <title type="html"><![CDATA[Syncing folders outside Dropbox folder]]></title>
-    <link href="http://anand-iyer.github.com/blog/2012/10/16/syncing-folders-outside-dropbox-folder/"/>
-    <updated>2012-10-16T18:27:00-07:00</updated>
-    <id>http://anand-iyer.github.com/blog/2012/10/16/syncing-folders-outside-dropbox-folder</id>
-    <content type="html"><![CDATA[<p>A big complaint I have about Dropbox is that unlike SugarSync, it does allow me to sync any folder in my computer (essentially, I need to place the folders I want to be synced inside the “Dropbox” folder).</p>
+    <link href="http://anand-iyer.github.com/blog/2012/10/15/syncing-folders-outside-dropbox-folder/"/>
+    <updated>2012-10-15T23:25:03-07:00</updated>
+    <id>http://anand-iyer.github.com/blog/2012/10/15/syncing-folders-outside-dropbox-folder</id>
+    <content type="html"><![CDATA[<p>A big complaint I have about <a href="http://db.tt/VZd1Zsgp">Dropbox</a> is that unlike <a href="https://www.sugarsync.com/referral?rf=fevam6f0oyxab&amp;utm_source=website&amp;utm_medium=web&amp;utm_campaign=referral&amp;shareEvent=2630716">SugarSync</a>, it does allow me to sync any folder in my computer (essentially, I need to place the folders I want to be synced inside the &#8220;Dropbox&#8221; folder).</p>
 
-<p>Recently, I found a workaround for this problem. Here’s the trick to syncing any folder in your computer: softlink the folder to your Dropbox folder!</p>
+<p>Recently, I found a workaround for this problem. Here&#8217;s the trick to syncing any folder in your computer: softlink the folder to your Dropbox folder!</p>
 
-<p>If you’re using a Mac (or Linux), just use the following command:</p>
+<p>If you&#8217;re using a Mac (or Linux), just use the following command:</p>
 
-<pre><code>ln -s /full-path-to-folder/file-to-sync ~/Dropbox/desired-folder-name
+<pre><code>ln -s /full-path-to-folder/file-to-sync ~/Dropbox/desired-folder-name
 </code></pre>
 
-<p>That’s it, from now on, all file(s) in the actual path would now sync with Dropbox.</p>
+<p>That&#8217;s it, from now on, all file(s) in the actual path would now sync with Dropbox.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Doxygen and OSX: Graphviz and other errors]]></title>
-    <link href="http://anand-iyer.github.com/blog/2011/10/09/doxygen-and-osx-graphviz-and-other-errors/"/>
-    <updated>2011-10-09T18:32:00-07:00</updated>
-    <id>http://anand-iyer.github.com/blog/2011/10/09/doxygen-and-osx-graphviz-and-other-errors</id>
-    <content type="html"><![CDATA[<p>I’m a big fan of <a href="http://www.doxygen.org/">Doxygen</a>. I use it all the time to generate and analyze call trees. Recently, I wanted to use it in my MacbookPro for analyzing an open source project. There is a binary for SnowLeopard <a href="http://www.stack.nl/~dimitri/doxygen/download.html">here</a> that works in Lion too, but it was throwing lots of errors regarding Graphviz. Here are two things that I had to do to make it finally work:</p>
+    <link href="http://anand-iyer.github.com/blog/2011/10/09/doxygen-and-osx/"/>
+    <updated>2011-10-09T16:16:05-07:00</updated>
+    <id>http://anand-iyer.github.com/blog/2011/10/09/doxygen-and-osx</id>
+    <content type="html"><![CDATA[<p>I&#8217;m a big fan of <a href="http://www.doxygen.org/">Doxygen</a>. I use it all the time to generate and analyze call trees. Recently, I wanted to use it in my MacbookPro for analyzing an open source project. There is a binary for SnowLeopard <a href="http://www.stack.nl/~dimitri/doxygen/download.html">here</a> that works in Lion too, but it was throwing lots of errors regarding Graphviz. Here are two things that I had to do to make it finally work:</p>
 
 <ul>
-<li><p>For some reason, long file names do not work in OSX. By default, Doxygen uses long names. So you need to set the <code>SHORT_NAMES</code> to <code>YES</code> in your doxygen file. If you are using the Wizard (GUI), then save your settings file (<code>File-&gt;Save</code>), and then manually edit the file in a text editor.</p></li>
-<li><p>GraphViz is included in the dmg file. You need to set appropriate path to the dot file for graphviz to work. Try setting it to <code>‘/Applications/Doxygen.app/Contents/Resources’</code>. If that fails, then use macports to install graphviz, and use that path.</p></li>
+<li><p>For some reason, long file names do not work in OSX. By default, Doxygen uses long names. So you need to set the SHORT_NAMES to YES in your doxygen file. If you are using the Wizard (GUI), then save your settings file (File->Save), and then manually edit the file in a text editor. </p></li>
+<li><p>GraphViz is included in the dmg file. You need to set appropriate path to the dot file for graphviz to work. Try setting it to &#8216;/Applications/Doxygen.app/Contents/Resources&#8217;. If that fails, then use macports to install graphviz, and use that path.</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Making QXDM COM object work with Python]]></title>
+    <link href="http://anand-iyer.github.com/blog/2011/02/19/making-qxdm-com-object-work-with-python/"/>
+    <updated>2011-02-19T08:21:17-08:00</updated>
+    <id>http://anand-iyer.github.com/blog/2011/02/19/making-qxdm-com-object-work-with-python</id>
+    <content type="html"><![CDATA[<p>Qualcomm&#8217;s <a href="http://www.qualcomm.com/products_services/testing_diagnostics/qxdm_pro.html">QXDM</a> is an amazing tool for getting diagnostic information from mobile phones. It supports automation where you can write scripts to interface with the COM object exposed by QXDM.</p>
+
+<p>The default installation of QXDM comes with a number of examples on how to use this object. Unfortunately, all the examples are in Perl. Although I like Perl, recently I have been using Python for all my scripting needs. It&#8217;s actually very easy to convert all these scripts to Python. Here&#8217;s how:</p>
+
+<pre><code>* First, you need Python to be able to access COM objects. For this purpose, I used the Python comtypes package. Download and install it from [SourceForge](http://sourceforge.net/projects/comtypes/files/).
+
+
+* Now, you can do the following in your script:
+
+
+
+
+
+from comtypes.client import CreateObject
+IISF = CreateObject("DMCoreAutomation.ItemStoreFiles") # For ISF file post-processing
+QXDM = CreateObject("QXDM.Application") # For accessing data directly from QXDM. Note that the script needs to be run as admin.
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[It's raining job offers at CET!]]></title>
+    <link href="http://anand-iyer.github.com/blog/2010/12/24/its-raining-job-offers-at-cet/"/>
+    <updated>2010-12-24T03:38:31-08:00</updated>
+    <id>http://anand-iyer.github.com/blog/2010/12/24/its-raining-job-offers-at-cet</id>
+    <content type="html"><![CDATA[<p>Seems like it has been a fantastic placement season for the 2011 batch at my alma mater, <a href="http://en.wikipedia.org/wiki/College_of_Engineering,_Trivandrum">College of Engineering, Trivandrum</a> (CET). According to <a href="http://www.hinduonnet.com/2010/12/21/stories/2010122165900300.htm">this</a> article from <strong>The Hindu</strong>, 1019 job offers were made to a total of 540 students. Here&#8217;s the breakdown (courtesy: The Hindu):</p>
+
+<p><img src="http://www.anand-iyer.com/blog/wp-content/uploads/2010/12/2010122165900301.jpg" alt="" /></p>
+
+<p>Way to go CETians!!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Qualnet 4.0.1 woes!]]></title>
+    <link href="http://anand-iyer.github.com/blog/2010/12/23/qualnet-4-0-1-woes/"/>
+    <updated>2010-12-23T01:06:15-08:00</updated>
+    <id>http://anand-iyer.github.com/blog/2010/12/23/qualnet-4-0-1-woes</id>
+    <content type="html"><![CDATA[<p>For my latest work, I am using the Qualnet simulator tool. Unfortunately, the version that I have access to is pretty old (version 4.0.1). Consequently, I had a lot of trouble getting it to compile in Windows 7. For those who are having the same trouble, see if what I did works for you:</p>
+
+<ul>
+<li><p>This version of Qualnet is only compatible with Visual Studio 2005 (I have tried VS 2008 and VS 2010 - although I succeeded in compiling, the executable crashes all the time). Install VS 2005 if you can get hold of it, or install Visual C++ 2005 Express edition which is available for free.</p></li>
+<li><p>The second thing that is essential for building Qualnet is Windows 7 SDK. Download and install this from Microsoft.</p></li>
+<li><p>Once you have both these installed, run the vsvars32.bat file to set the right environment variables. vsvars32.bat is available in the following folder:</p>
+
+<p>C:\Program Files\Microsoft Visual Studio 8\Common7\Tools\</p></li>
+<li><p>Now try compiling qualnet. I used the following command inside c:\qualnet\4.0\main folder:</p>
+
+<p>nmake /f Makefile-windows-vc8</p></li>
+<li><p>For most, the compilation will fail giving errors in oslrv2_nigata.cpp. So go ahead and comment out this file in the makefile present in qualnet\libraries\wireless\src</p></li>
+<li><p>Try compiling again. Now the compiler would throw errors wherever routines from the file that we commented out. I had to comment out its usage wherever compilation broke.</p></li>
+<li><p>Once I did that, compilation went smooth, and I was able to get qualnet working.</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ImportError with IronPython in C#]]></title>
+    <link href="http://anand-iyer.github.com/blog/2010/09/30/importerror-with-ironpython-in-c/"/>
+    <updated>2010-09-30T15:48:44-07:00</updated>
+    <id>http://anand-iyer.github.com/blog/2010/09/30/importerror-with-ironpython-in-c</id>
+    <content type="html"><![CDATA[<p>I was using IronPython to execute python code inside my C# implementation lately, and I encountered this error when trying to use xmlrpclib:</p>
+
+<pre><code>ImportError: No module named xmlrpclib.
+</code></pre>
+
+<p>It was really frustrating because if I try the same in IronPython console, it works fine. It turned out that this was a problem with search paths. When called via C# code, IronPython does not search for missing libraries unless you provide it a path to search for. Here&#8217;s how I solved this issue:</p>
+
+<ol>
+<li><p>First, find out the search paths that IronPython is using in console mode:</p>
+
+<p> import sys
+ print sys.path</p></li>
+</ol>
+
+
+<p>This will print all the search paths. Save these paths somewhere.</p>
+
+<ol>
+<li><p>Now include all these search paths inside your C# code:</p>
+
+<p> ScriptEngine Engine = Python.CreateEngine();
+ ICollection<string> Paths = Engine.GetSearchPaths();
+ Paths.Add(&#8221;<Path>&#8221;);
+ Engine.SetSearchPaths(Paths);</p></li>
+</ol>
+
+
+<p>Replace <Path> with the path you saved earlier. Now IronPython will search all these pathsbefore failing with an ImportError.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Conky like system monitor for Windows]]></title>
+    <link href="http://anand-iyer.github.com/blog/2010/06/23/conky-like-system-monitor-for-windows/"/>
+    <updated>2010-06-23T06:15:57-07:00</updated>
+    <id>http://anand-iyer.github.com/blog/2010/06/23/conky-like-system-monitor-for-windows</id>
+    <content type="html"><![CDATA[<p>Ever since I came across <a href="http://conky.sourceforge.net/">Conky</a>, I have been using it on all my machines running Ubuntu (for those who are interested, I use <a href="http://gnome-look.org/content/show.php/CONKY-colors?content=92328">Conky-Colors</a> for easy configuration). I also use Windows extensively and had always wanted to have something similar to Conky. It seems like my quest has finally ended. My good friend suggested that I try <a href="http://rainmeter.net/">RainMeter</a>, and I was impressed with the results! It&#8217;s extremely customizable, has tons of skins to choose from, and is not heavy on the system.</p>
+
+<p>Here&#8217;s a screenshot (the theme I&#8217;m using is <a href="http://jsmorley.deviantart.com/art/JSMeterII-161282085">JSMeterII</a>):</p>
+
+<p><a href="http://www.anand-iyer.com/blog/wp-content/uploads/2010/06/Desktop.png"><img src="http://www.anand-iyer.com/blog/wp-content/uploads/2010/06/Desktop-300x187.png" alt="" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[NS3 in Eclipse]]></title>
+    <link href="http://anand-iyer.github.com/blog/2010/05/30/ns3-in-eclipse/"/>
+    <updated>2010-05-30T11:58:55-07:00</updated>
+    <id>http://anand-iyer.github.com/blog/2010/05/30/ns3-in-eclipse</id>
+    <content type="html"><![CDATA[<p>I found <a href="http://www.nsnam.org/wiki/index.php/HOWTO_configure_eclipse_with_ns-3">this</a> wiki page on configuring NS3 with Eclipse and decided to give it a try.I had trouble compiling, and Eclipse kept giving the following error:</p>
+
+<pre><code>Cannot run program "waf": Unknown reason)
+</code></pre>
+
+<p>After spending a little time with the configuration, the following additional tweaking seems to be working (in Ubuntu 10.04, Eclipse version 3.5.2 Galileo with ns-allinone-3.8):</p>
+
+<ol>
+<li><p>Create a new External tool configuration. The location should be the location to waf (${workspace_loc:/ns3/waf} in my case) and working directory should be the directory where waf is present (${workspace_loc:/ns3/} in my case). In arguments textbox, provide the following:</p>
+
+<p> &#8211;run &#8220;${string_prompt}&#8221;</p></li>
+</ol>
+
+
+<p>Now when you try to build the project (right click on the project -> Build Project), it should work.</p>
+
+<ol>
+<li>To run NS3 programs using waf, you need to create a new Run configuration. Make the new configuration to be a C/C++ application. Select the project you want this run configuration to be associated with, and give the complete path to waf as the C/C++ program. Click on the arguments tab, and provide the same argument as above. Now when you try to run a program, a dialog box should pop-up asking for the input arguments to waf and your program should run.</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[NS2 in Ubuntu 10.04]]></title>
+    <link href="http://anand-iyer.github.com/blog/2010/05/19/ns2-in-ubuntu-10-04/"/>
+    <updated>2010-05-19T04:13:49-07:00</updated>
+    <id>http://anand-iyer.github.com/blog/2010/05/19/ns2-in-ubuntu-10-04</id>
+    <content type="html"><![CDATA[<p>I spent a reasonably long time getting NS-2 (ns-allinone-2.34) to work in Ubuntu 10.04. Here&#8217;s how I finally did it:</p>
+
+<ol>
+<li><p>Install necessary tools for building:</p>
+
+<p> sudo apt-get install build-essential autoconf automake libxmu-dev gcc-4.3</p></li>
+<li><p>It turns out that otcl does not like the version of gcc installed by default in Lucid. So go ahead and change ns-allinone-2.34/otcl-1.13/Makefile.in. Find the line that says:</p>
+
+<p> CC=    @CC@</p></li>
+</ol>
+
+
+<p>and change it to:</p>
+
+<pre><code>CC=    gcc-4.3
+</code></pre>
+
+<ol>
+<li>Now try doing &#8216;./install&#8217; from the ns-allinone-2.34 directory. It should work.</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ath5k “Master” mode]]></title>
+    <link href="http://anand-iyer.github.com/blog/2010/05/06/ath5k-master-mode/"/>
+    <updated>2010-05-06T09:11:34-07:00</updated>
+    <id>http://anand-iyer.github.com/blog/2010/05/06/ath5k-master-mode</id>
+    <content type="html"><![CDATA[<p>To enable Master mode in ath5k, do the following:</p>
+
+<ul>
+<li><p>Make sure you are running kernel 2.6.29 or higher. If not, you need to get the latest patches for ath5k.</p></li>
+<li><p>Install hostapd. It is available in Ubuntu repositories.</p></li>
+<li><p>Create a config file for hostapd. A simple one is:</p>
+
+<p>interface=wlan0
+driver=nl80211
+ssid=test
+channel=1</p></li>
+<li><p>Now you can start hostapd to put the card in master mode:</p>
+
+<blockquote><blockquote><p>sudo hostapd <config_file></p></blockquote></blockquote></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Royaltek RBT-2300 and Karmic Koala]]></title>
+    <link href="http://anand-iyer.github.com/blog/2010/03/31/royaltek-rbt-2300-and-karmic-koala/"/>
+    <updated>2010-03-31T15:48:46-07:00</updated>
+    <id>http://anand-iyer.github.com/blog/2010/03/31/royaltek-rbt-2300-and-karmic-koala</id>
+    <content type="html"><![CDATA[<p>I recently had to make use of a GPS logger in Linux. Here&#8217;s how I made it work in Karmic, incase any one is interested:</p>
+
+<ul>
+<li><p>First, make sure you have necessary bluetooth packages. If not, install it using:</p>
+
+<p>sudo apt-get install bluetooth
+sudo apt-get install libbluetooth-dev</p></li>
+<li><p>Switch on the GPS, scan and check if you can find the device:</p>
+
+<p>sudo hcitool scan</p></li>
+</ul>
+
+
+<p>The output would be something like the following:</p>
+
+<pre><code>Scanning ...
+ 00:aa:bb:cc:dd:ee    BlueGPS CCDDEE
+</code></pre>
+
+<p>We are interested in the channel in which the device operates. Let&#8217;s find that out:</p>
+
+<pre><code>sudo sdptool records 00:aa:bb:cc:dd:ee
+</code></pre>
+
+<p>This will give you lots of information about the device. Pay attention to the channel. For instance, my device says:</p>
+
+<pre><code>Service Name: Dev B
+Service RecHandle: 0x10000
+Service Class ID List:
+ "Serial Port" (0x1101)
+Protocol Descriptor List:
+ "L2CAP" (0x0100)
+ "RFCOMM" (0x0003)
+ &lt;strong&gt;Channel: 1&lt;/strong&gt;
+Language Base Attr List:
+ code_ISO639: 0x656e
+ encoding:    0x6a
+ base_offset: 0x100
+</code></pre>
+
+<ul>
+<li><p>Use this channel to create an entry in the rfcomm.conf file:</p>
+
+<p>sudo gedit /etc/bluetooth/rfcomm.conf</p></li>
+</ul>
+
+
+<p>enter the following at the end of the file:</p>
+
+<pre><code># Bluetooth GPS
+rfcomm2 {
+    bind yes,
+    device 00:aa:bb:cc:dd:ee,
+    channel 1,
+    comment "Serial Port",
+}
+</code></pre>
+
+<p>Once you have done this, you can connect to the device:</p>
+
+<pre><code>$ sudo rfcomm connect 2
+Connected /dev/rfcomm2 to 00:aa:bb:cc:dd:ee on channel 1
+Press CTRL-C for hangup
+</code></pre>
+
+<ul>
+<li><p>I found rtkgps (<a href="http://wohlberg.net/public/software/misc/rtkgps/">http://wohlberg.net/public/software/misc/rtkgps/</a>) to be a good utility to access GPS logs.</p>
+
+<p>$ rtkgps -d /dev/rfcomm2 read</p></li>
 </ul>
 
 ]]></content>

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Doxygen and OSX: Graphviz and other errors - Yet Another Boring Blog</title>
+  <title>ath5k “Master” mode - Yet Another Boring Blog</title>
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="I’m a big fan of Doxygen. I use it all the time to generate and analyze call trees. Recently, I wanted to use it in my MacbookPro for analyzing an &hellip;">
+  <meta name="description" content="To enable Master mode in ath5k, do the following: Make sure you are running kernel 2.6.29 or higher. If not, you need to get the latest patches for &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anand-iyer.github.com/blog/2011/10/09/doxygen-and-osx-graphviz-and-other-errors/">
+  <link rel="canonical" href="http://anand-iyer.github.com/blog/2010/05/06/ath5k-master-mode/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -74,7 +74,7 @@
   <header>
     
       
-        <h1 class="entry-title">Doxygen and OSX: Graphviz and Other Errors</h1>
+        <h1 class="entry-title">Ath5k “Master” Mode</h1>
       
     
     
@@ -91,18 +91,27 @@
   
 
 
-<time datetime="2011-10-09T18:32:00-07:00" pubdate data-updated="true">Oct 9<span>th</span>, 2011</time>
+<time datetime="2010-05-06T09:11:34-07:00" pubdate data-updated="true">May 6<span>th</span>, 2010</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I’m a big fan of <a href="http://www.doxygen.org/">Doxygen</a>. I use it all the time to generate and analyze call trees. Recently, I wanted to use it in my MacbookPro for analyzing an open source project. There is a binary for SnowLeopard <a href="http://www.stack.nl/~dimitri/doxygen/download.html">here</a> that works in Lion too, but it was throwing lots of errors regarding Graphviz. Here are two things that I had to do to make it finally work:</p>
+<div class="entry-content"><p>To enable Master mode in ath5k, do the following:</p>
 
 <ul>
-<li><p>For some reason, long file names do not work in OSX. By default, Doxygen uses long names. So you need to set the <code>SHORT_NAMES</code> to <code>YES</code> in your doxygen file. If you are using the Wizard (GUI), then save your settings file (<code>File-&gt;Save</code>), and then manually edit the file in a text editor.</p></li>
-<li><p>GraphViz is included in the dmg file. You need to set appropriate path to the dot file for graphviz to work. Try setting it to <code>‘/Applications/Doxygen.app/Contents/Resources’</code>. If that fails, then use macports to install graphviz, and use that path.</p></li>
+<li><p>Make sure you are running kernel 2.6.29 or higher. If not, you need to get the latest patches for ath5k.</p></li>
+<li><p>Install hostapd. It is available in Ubuntu repositories.</p></li>
+<li><p>Create a config file for hostapd. A simple one is:</p>
+
+<p>interface=wlan0
+driver=nl80211
+ssid=test
+channel=1</p></li>
+<li><p>Now you can start hostapd to put the card in master mode:</p>
+
+<blockquote><blockquote><p>sudo hostapd <config_file></p></blockquote></blockquote></li>
 </ul>
 
 </div>
@@ -127,15 +136,21 @@
   
 
 
-<time datetime="2011-10-09T18:32:00-07:00" pubdate data-updated="true">Oct 9<span>th</span>, 2011</time>
+<time datetime="2010-05-06T09:11:34-07:00" pubdate data-updated="true">May 6<span>th</span>, 2010</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tips/'>Tips</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://anand-iyer.github.com/blog/2011/10/09/doxygen-and-osx-graphviz-and-other-errors/" data-via="" data-counturl="http://anand-iyer.github.com/blog/2011/10/09/doxygen-and-osx-graphviz-and-other-errors/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://anand-iyer.github.com/blog/2010/05/06/ath5k-master-mode/" data-via="" data-counturl="http://anand-iyer.github.com/blog/2010/05/06/ath5k-master-mode/" >Tweet</a>
   
   
   
@@ -146,8 +161,10 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left articlenav" href="/blog/2010/03/31/royaltek-rbt-2300-and-karmic-koala/" title="Previous Post: Royaltek RBT-2300 and Karmic Koala">&laquo; Royaltek RBT-2300 and Karmic Koala</a>
       
-        <a class="basic-alignment right articlenav" href="/blog/2012/10/16/syncing-folders-outside-dropbox-folder/" title="Next Post: Syncing folders outside Dropbox folder">Syncing folders outside Dropbox folder &raquo;</a>
+      
+        <a class="basic-alignment right articlenav" href="/blog/2010/05/19/ns2-in-ubuntu-10-04/" title="Next Post: NS2 in Ubuntu 10.04">NS2 in Ubuntu 10.04 &raquo;</a>
       
     </p>
   </footer>
@@ -166,11 +183,19 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2012/10/16/syncing-folders-outside-dropbox-folder/">Syncing folders outside Dropbox folder</a>
+        <a href="/blog/2012/10/15/syncing-folders-outside-dropbox-folder/">Syncing folders outside Dropbox folder</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/10/09/doxygen-and-osx-graphviz-and-other-errors/">Doxygen and OSX: Graphviz and other errors</a>
+        <a href="/blog/2011/10/09/doxygen-and-osx/">Doxygen and OSX: Graphviz and other errors</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/02/19/making-qxdm-com-object-work-with-python/">Making QXDM COM object work with Python</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/24/its-raining-job-offers-at-cet/">It's raining job offers at CET!</a>
       </li>
     
   </ul>

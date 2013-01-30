@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: tips | Yet Another Boring Blog]]></title>
+  <title><![CDATA[Category: Tips | Yet Another Boring Blog]]></title>
   <link href="http://anand-iyer.github.com/blog/categories/tips/atom.xml" rel="self"/>
   <link href="http://anand-iyer.github.com/"/>
-  <updated>2013-01-20T18:46:57-08:00</updated>
+  <updated>2013-01-29T23:51:59-08:00</updated>
   <id>http://anand-iyer.github.com/</id>
   <author>
     <name><![CDATA[Anand]]></name>
@@ -16,15 +16,97 @@
   <entry>
     <title type="html"><![CDATA[Latex Tips Collection]]></title>
     <link href="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/"/>
-    <updated>2013-01-13T18:18:00-08:00</updated>
+    <updated>2013-01-13T07:56:30-08:00</updated>
     <id>http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection</id>
-    <content type="html"><![CDATA[<p>Over time, I’ve come across many useful Latex tips and tricks scattered across the internet. Here’s an attempt to collect some of those:</p>
+    <content type="html"><![CDATA[<p>Over time, I've come across many useful Latex tips and tricks scattered across the internet. Here's an attempt to collect some of those:</p>
 
 <ul>
-<li><p><a href="http://gurmeet.net/computer-science/latex-tips-n-tricks-for-conference-papers/"><strong>Tips for Conference Papers</strong></a> by Gurmeet Singh <br/>
-A nice set of tricks that saves your life at the last minute during deadlines.</p></li>
-<li><p><a href="http://www.read.seas.harvard.edu/~kohler/latex.html"><strong>Latex Usage Notes</strong></a> by Eddie Kohler <br/>
-Solutions for common Latex problems, tips on proper formatting, etc.</p></li>
+<li><p><strong><a href="http://gurmeet.net/computer-science/latex-tips-n-tricks-for-conference-papers/">Tips for Conference Papers</a> by Gurmeet Singh
+</strong>A nice set of tricks that saves your life at the last minute during deadlines.</p></li>
+<li><p><strong><a href="http://www.read.seas.harvard.edu/~kohler/latex.html">Latex Usage Notes</a> by Eddie Kohler
+</strong>Solutions for common Latex problems, tips on proper formatting, etc.</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Syncing folders outside Dropbox folder]]></title>
+    <link href="http://anand-iyer.github.com/blog/2012/10/15/syncing-folders-outside-dropbox-folder/"/>
+    <updated>2012-10-15T23:25:03-07:00</updated>
+    <id>http://anand-iyer.github.com/blog/2012/10/15/syncing-folders-outside-dropbox-folder</id>
+    <content type="html"><![CDATA[<p>A big complaint I have about <a href="http://db.tt/VZd1Zsgp">Dropbox</a> is that unlike <a href="https://www.sugarsync.com/referral?rf=fevam6f0oyxab&amp;utm_source=website&amp;utm_medium=web&amp;utm_campaign=referral&amp;shareEvent=2630716">SugarSync</a>, it does allow me to sync any folder in my computer (essentially, I need to place the folders I want to be synced inside the "Dropbox" folder).</p>
+
+<p>Recently, I found a workaround for this problem. Here's the trick to syncing any folder in your computer: softlink the folder to your Dropbox folder!</p>
+
+<p>If you're using a Mac (or Linux), just use the following command:</p>
+
+<pre><code>ln -s /full-path-to-folder/file-to-sync ~/Dropbox/desired-folder-name
+</code></pre>
+
+<p>That's it, from now on, all file(s) in the actual path would now sync with Dropbox.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Doxygen and OSX: Graphviz and other errors]]></title>
+    <link href="http://anand-iyer.github.com/blog/2011/10/09/doxygen-and-osx/"/>
+    <updated>2011-10-09T16:16:05-07:00</updated>
+    <id>http://anand-iyer.github.com/blog/2011/10/09/doxygen-and-osx</id>
+    <content type="html"><![CDATA[<p>I'm a big fan of <a href="http://www.doxygen.org/">Doxygen</a>. I use it all the time to generate and analyze call trees. Recently, I wanted to use it in my MacbookPro for analyzing an open source project. There is a binary for SnowLeopard <a href="http://www.stack.nl/~dimitri/doxygen/download.html">here</a> that works in Lion too, but it was throwing lots of errors regarding Graphviz. Here are two things that I had to do to make it finally work:</p>
+
+<ul>
+<li><p>For some reason, long file names do not work in OSX. By default, Doxygen uses long names. So you need to set the SHORT_NAMES to YES in your doxygen file. If you are using the Wizard (GUI), then save your settings file (File->Save), and then manually edit the file in a text editor. </p></li>
+<li><p>GraphViz is included in the dmg file. You need to set appropriate path to the dot file for graphviz to work. Try setting it to '/Applications/Doxygen.app/Contents/Resources'. If that fails, then use macports to install graphviz, and use that path.</p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Making QXDM COM object work with Python]]></title>
+    <link href="http://anand-iyer.github.com/blog/2011/02/19/making-qxdm-com-object-work-with-python/"/>
+    <updated>2011-02-19T08:21:17-08:00</updated>
+    <id>http://anand-iyer.github.com/blog/2011/02/19/making-qxdm-com-object-work-with-python</id>
+    <content type="html"><![CDATA[<p>Qualcomm's <a href="http://www.qualcomm.com/products_services/testing_diagnostics/qxdm_pro.html">QXDM</a> is an amazing tool for getting diagnostic information from mobile phones. It supports automation where you can write scripts to interface with the COM object exposed by QXDM.</p>
+
+<p>The default installation of QXDM comes with a number of examples on how to use this object. Unfortunately, all the examples are in Perl. Although I like Perl, recently I have been using Python for all my scripting needs. It's actually very easy to convert all these scripts to Python. Here's how:</p>
+
+<pre><code>* First, you need Python to be able to access COM objects. For this purpose, I used the Python comtypes package. Download and install it from [SourceForge](http://sourceforge.net/projects/comtypes/files/).
+
+
+* Now, you can do the following in your script:
+
+
+
+
+
+from comtypes.client import CreateObject
+IISF = CreateObject("DMCoreAutomation.ItemStoreFiles") # For ISF file post-processing
+QXDM = CreateObject("QXDM.Application") # For accessing data directly from QXDM. Note that the script needs to be run as admin.
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Qualnet 4.0.1 woes!]]></title>
+    <link href="http://anand-iyer.github.com/blog/2010/12/23/qualnet-4-0-1-woes/"/>
+    <updated>2010-12-23T01:06:15-08:00</updated>
+    <id>http://anand-iyer.github.com/blog/2010/12/23/qualnet-4-0-1-woes</id>
+    <content type="html"><![CDATA[<p>For my latest work, I am using the Qualnet simulator tool. Unfortunately, the version that I have access to is pretty old (version 4.0.1). Consequently, I had a lot of trouble getting it to compile in Windows 7. For those who are having the same trouble, see if what I did works for you:</p>
+
+<ul>
+<li><p>This version of Qualnet is only compatible with Visual Studio 2005 (I have tried VS 2008 and VS 2010 - although I succeeded in compiling, the executable crashes all the time). Install VS 2005 if you can get hold of it, or install Visual C++ 2005 Express edition which is available for free.</p></li>
+<li><p>The second thing that is essential for building Qualnet is Windows 7 SDK. Download and install this from Microsoft.</p></li>
+<li><p>Once you have both these installed, run the vsvars32.bat file to set the right environment variables. vsvars32.bat is available in the following folder:</p>
+
+<p>C:\Program Files\Microsoft Visual Studio 8\Common7\Tools\</p></li>
+<li><p>Now try compiling qualnet. I used the following command inside c:\qualnet\4.0\main folder:</p>
+
+<p>nmake /f Makefile-windows-vc8</p></li>
+<li><p>For most, the compilation will fail giving errors in oslrv2_nigata.cpp. So go ahead and comment out this file in the makefile present in qualnet\libraries\wireless\src</p></li>
+<li><p>Try compiling again. Now the compiler would throw errors wherever routines from the file that we commented out. I had to comment out its usage wherever compilation broke.</p></li>
+<li><p>Once I did that, compilation went smooth, and I was able to get qualnet working.</p></li>
 </ul>
 
 ]]></content>

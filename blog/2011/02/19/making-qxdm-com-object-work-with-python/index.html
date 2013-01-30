@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Latex Tips Collection - Yet Another Boring Blog</title>
+  <title>Making QXDM COM object work with Python - Yet Another Boring Blog</title>
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those: &hellip;">
+  <meta name="description" content="Qualcomm&#8217;s QXDM is an amazing tool for getting diagnostic information from mobile phones. It supports automation where you can write scripts to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/">
+  <link rel="canonical" href="http://anand-iyer.github.com/blog/2011/02/19/making-qxdm-com-object-work-with-python/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -74,7 +74,7 @@
   <header>
     
       
-        <h1 class="entry-title">Latex Tips Collection</h1>
+        <h1 class="entry-title">Making QXDM COM Object Work With Python</h1>
       
     
     
@@ -91,22 +91,30 @@
   
 
 
-<time datetime="2013-01-13T07:56:30-08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
+<time datetime="2011-02-19T08:21:17-08:00" pubdate data-updated="true">Feb 19<span>th</span>, 2011</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those:</p>
+<div class="entry-content"><p>Qualcomm&#8217;s <a href="http://www.qualcomm.com/products_services/testing_diagnostics/qxdm_pro.html">QXDM</a> is an amazing tool for getting diagnostic information from mobile phones. It supports automation where you can write scripts to interface with the COM object exposed by QXDM.</p>
 
-<ul>
-<li><p><strong><a href="http://gurmeet.net/computer-science/latex-tips-n-tricks-for-conference-papers/">Tips for Conference Papers</a> by Gurmeet Singh
-</strong>A nice set of tricks that saves your life at the last minute during deadlines.</p></li>
-<li><p><strong><a href="http://www.read.seas.harvard.edu/~kohler/latex.html">Latex Usage Notes</a> by Eddie Kohler
-</strong>Solutions for common Latex problems, tips on proper formatting, etc.</p></li>
-</ul>
+<p>The default installation of QXDM comes with a number of examples on how to use this object. Unfortunately, all the examples are in Perl. Although I like Perl, recently I have been using Python for all my scripting needs. It&#8217;s actually very easy to convert all these scripts to Python. Here&#8217;s how:</p>
 
+<pre><code>* First, you need Python to be able to access COM objects. For this purpose, I used the Python comtypes package. Download and install it from [SourceForge](http://sourceforge.net/projects/comtypes/files/).
+
+
+* Now, you can do the following in your script:
+
+
+
+
+
+from comtypes.client import CreateObject
+IISF = CreateObject("DMCoreAutomation.ItemStoreFiles") # For ISF file post-processing
+QXDM = CreateObject("QXDM.Application") # For accessing data directly from QXDM. Note that the script needs to be run as admin.
+</code></pre>
 </div>
 
 
@@ -129,7 +137,7 @@
   
 
 
-<time datetime="2013-01-13T07:56:30-08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
+<time datetime="2011-02-19T08:21:17-08:00" pubdate data-updated="true">Feb 19<span>th</span>, 2011</time>
       
 
 <span class="categories">
@@ -143,7 +151,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/" data-via="" data-counturl="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://anand-iyer.github.com/blog/2011/02/19/making-qxdm-com-object-work-with-python/" data-via="" data-counturl="http://anand-iyer.github.com/blog/2011/02/19/making-qxdm-com-object-work-with-python/" >Tweet</a>
   
   
   
@@ -154,8 +162,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left articlenav" href="/blog/2012/10/15/syncing-folders-outside-dropbox-folder/" title="Previous Post: Syncing folders outside Dropbox folder">&laquo; Syncing folders outside Dropbox folder</a>
+        <a class="basic-alignment left articlenav" href="/blog/2010/12/24/its-raining-job-offers-at-cet/" title="Previous Post: It's raining job offers at CET!">&laquo; It's raining job offers at CET!</a>
       
+      
+        <a class="basic-alignment right articlenav" href="/blog/2011/10/09/doxygen-and-osx/" title="Next Post: Doxygen and OSX: Graphviz and other errors">Doxygen and OSX: Graphviz and other errors &raquo;</a>
       
     </p>
   </footer>

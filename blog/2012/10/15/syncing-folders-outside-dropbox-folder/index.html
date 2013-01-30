@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Latex Tips Collection - Yet Another Boring Blog</title>
+  <title>Syncing folders outside Dropbox folder - Yet Another Boring Blog</title>
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those: &hellip;">
+  <meta name="description" content="A big complaint I have about Dropbox is that unlike SugarSync, it does allow me to sync any folder in my computer (essentially, I need to place the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/">
+  <link rel="canonical" href="http://anand-iyer.github.com/blog/2012/10/15/syncing-folders-outside-dropbox-folder/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -74,7 +74,7 @@
   <header>
     
       
-        <h1 class="entry-title">Latex Tips Collection</h1>
+        <h1 class="entry-title">Syncing Folders Outside Dropbox Folder</h1>
       
     
     
@@ -91,22 +91,23 @@
   
 
 
-<time datetime="2013-01-13T07:56:30-08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
+<time datetime="2012-10-15T23:25:03-07:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those:</p>
+<div class="entry-content"><p>A big complaint I have about <a href="http://db.tt/VZd1Zsgp">Dropbox</a> is that unlike <a href="https://www.sugarsync.com/referral?rf=fevam6f0oyxab&amp;utm_source=website&amp;utm_medium=web&amp;utm_campaign=referral&amp;shareEvent=2630716">SugarSync</a>, it does allow me to sync any folder in my computer (essentially, I need to place the folders I want to be synced inside the &#8220;Dropbox&#8221; folder).</p>
 
-<ul>
-<li><p><strong><a href="http://gurmeet.net/computer-science/latex-tips-n-tricks-for-conference-papers/">Tips for Conference Papers</a> by Gurmeet Singh
-</strong>A nice set of tricks that saves your life at the last minute during deadlines.</p></li>
-<li><p><strong><a href="http://www.read.seas.harvard.edu/~kohler/latex.html">Latex Usage Notes</a> by Eddie Kohler
-</strong>Solutions for common Latex problems, tips on proper formatting, etc.</p></li>
-</ul>
+<p>Recently, I found a workaround for this problem. Here&#8217;s the trick to syncing any folder in your computer: softlink the folder to your Dropbox folder!</p>
 
+<p>If you&#8217;re using a Mac (or Linux), just use the following command:</p>
+
+<pre><code>ln -s /full-path-to-folder/file-to-sync ~/Dropbox/desired-folder-name
+</code></pre>
+
+<p>That&#8217;s it, from now on, all file(s) in the actual path would now sync with Dropbox.</p>
 </div>
 
 
@@ -129,7 +130,7 @@
   
 
 
-<time datetime="2013-01-13T07:56:30-08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
+<time datetime="2012-10-15T23:25:03-07:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
       
 
 <span class="categories">
@@ -143,7 +144,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/" data-via="" data-counturl="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://anand-iyer.github.com/blog/2012/10/15/syncing-folders-outside-dropbox-folder/" data-via="" data-counturl="http://anand-iyer.github.com/blog/2012/10/15/syncing-folders-outside-dropbox-folder/" >Tweet</a>
   
   
   
@@ -154,8 +155,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left articlenav" href="/blog/2012/10/15/syncing-folders-outside-dropbox-folder/" title="Previous Post: Syncing folders outside Dropbox folder">&laquo; Syncing folders outside Dropbox folder</a>
+        <a class="basic-alignment left articlenav" href="/blog/2011/10/09/doxygen-and-osx/" title="Previous Post: Doxygen and OSX: Graphviz and other errors">&laquo; Doxygen and OSX: Graphviz and other errors</a>
       
+      
+        <a class="basic-alignment right articlenav" href="/blog/2013/01/13/latex-tips-collection/" title="Next Post: Latex Tips Collection">Latex Tips Collection &raquo;</a>
       
     </p>
   </footer>

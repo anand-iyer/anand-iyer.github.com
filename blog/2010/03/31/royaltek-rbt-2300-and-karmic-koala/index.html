@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Latex Tips Collection - Yet Another Boring Blog</title>
+  <title>Royaltek RBT-2300 and Karmic Koala - Yet Another Boring Blog</title>
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those: &hellip;">
+  <meta name="description" content="I recently had to make use of a GPS logger in Linux. Here&#8217;s how I made it work in Karmic, incase any one is interested: First, make sure you &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/">
+  <link rel="canonical" href="http://anand-iyer.github.com/blog/2010/03/31/royaltek-rbt-2300-and-karmic-koala/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -74,7 +74,7 @@
   <header>
     
       
-        <h1 class="entry-title">Latex Tips Collection</h1>
+        <h1 class="entry-title">Royaltek RBT-2300 and Karmic Koala</h1>
       
     
     
@@ -91,20 +91,82 @@
   
 
 
-<time datetime="2013-01-13T07:56:30-08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
+<time datetime="2010-03-31T15:48:46-07:00" pubdate data-updated="true">Mar 31<span>st</span>, 2010</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those:</p>
+<div class="entry-content"><p>I recently had to make use of a GPS logger in Linux. Here&#8217;s how I made it work in Karmic, incase any one is interested:</p>
 
 <ul>
-<li><p><strong><a href="http://gurmeet.net/computer-science/latex-tips-n-tricks-for-conference-papers/">Tips for Conference Papers</a> by Gurmeet Singh
-</strong>A nice set of tricks that saves your life at the last minute during deadlines.</p></li>
-<li><p><strong><a href="http://www.read.seas.harvard.edu/~kohler/latex.html">Latex Usage Notes</a> by Eddie Kohler
-</strong>Solutions for common Latex problems, tips on proper formatting, etc.</p></li>
+<li><p>First, make sure you have necessary bluetooth packages. If not, install it using:</p>
+
+<p>sudo apt-get install bluetooth
+sudo apt-get install libbluetooth-dev</p></li>
+<li><p>Switch on the GPS, scan and check if you can find the device:</p>
+
+<p>sudo hcitool scan</p></li>
+</ul>
+
+
+<p>The output would be something like the following:</p>
+
+<pre><code>Scanning ...
+ 00:aa:bb:cc:dd:ee    BlueGPS CCDDEE
+</code></pre>
+
+<p>We are interested in the channel in which the device operates. Let&#8217;s find that out:</p>
+
+<pre><code>sudo sdptool records 00:aa:bb:cc:dd:ee
+</code></pre>
+
+<p>This will give you lots of information about the device. Pay attention to the channel. For instance, my device says:</p>
+
+<pre><code>Service Name: Dev B
+Service RecHandle: 0x10000
+Service Class ID List:
+ "Serial Port" (0x1101)
+Protocol Descriptor List:
+ "L2CAP" (0x0100)
+ "RFCOMM" (0x0003)
+ &lt;strong&gt;Channel: 1&lt;/strong&gt;
+Language Base Attr List:
+ code_ISO639: 0x656e
+ encoding:    0x6a
+ base_offset: 0x100
+</code></pre>
+
+<ul>
+<li><p>Use this channel to create an entry in the rfcomm.conf file:</p>
+
+<p>sudo gedit /etc/bluetooth/rfcomm.conf</p></li>
+</ul>
+
+
+<p>enter the following at the end of the file:</p>
+
+<pre><code># Bluetooth GPS
+rfcomm2 {
+    bind yes,
+    device 00:aa:bb:cc:dd:ee,
+    channel 1,
+    comment "Serial Port",
+}
+</code></pre>
+
+<p>Once you have done this, you can connect to the device:</p>
+
+<pre><code>$ sudo rfcomm connect 2
+Connected /dev/rfcomm2 to 00:aa:bb:cc:dd:ee on channel 1
+Press CTRL-C for hangup
+</code></pre>
+
+<ul>
+<li><p>I found rtkgps (<a href="http://wohlberg.net/public/software/misc/rtkgps/">http://wohlberg.net/public/software/misc/rtkgps/</a>) to be a good utility to access GPS logs.</p>
+
+<p>$ rtkgps -d /dev/rfcomm2 read</p></li>
 </ul>
 
 </div>
@@ -129,7 +191,7 @@
   
 
 
-<time datetime="2013-01-13T07:56:30-08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
+<time datetime="2010-03-31T15:48:46-07:00" pubdate data-updated="true">Mar 31<span>st</span>, 2010</time>
       
 
 <span class="categories">
@@ -143,7 +205,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/" data-via="" data-counturl="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://anand-iyer.github.com/blog/2010/03/31/royaltek-rbt-2300-and-karmic-koala/" data-via="" data-counturl="http://anand-iyer.github.com/blog/2010/03/31/royaltek-rbt-2300-and-karmic-koala/" >Tweet</a>
   
   
   
@@ -154,8 +216,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left articlenav" href="/blog/2012/10/15/syncing-folders-outside-dropbox-folder/" title="Previous Post: Syncing folders outside Dropbox folder">&laquo; Syncing folders outside Dropbox folder</a>
       
+        <a class="basic-alignment right articlenav" href="/blog/2010/05/06/ath5k-master-mode/" title="Next Post: ath5k “Master” mode">ath5k “Master” mode &raquo;</a>
       
     </p>
   </footer>

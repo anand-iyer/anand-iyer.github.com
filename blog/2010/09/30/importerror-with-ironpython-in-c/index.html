@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Latex Tips Collection - Yet Another Boring Blog</title>
+  <title>ImportError with IronPython in C# - Yet Another Boring Blog</title>
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those: &hellip;">
+  <meta name="description" content="I was using IronPython to execute python code inside my C# implementation lately, and I encountered this error when trying to use xmlrpclib: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/">
+  <link rel="canonical" href="http://anand-iyer.github.com/blog/2010/09/30/importerror-with-ironpython-in-c/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -74,7 +74,7 @@
   <header>
     
       
-        <h1 class="entry-title">Latex Tips Collection</h1>
+        <h1 class="entry-title">ImportError With IronPython in C#</h1>
       
     
     
@@ -91,22 +91,41 @@
   
 
 
-<time datetime="2013-01-13T07:56:30-08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
+<time datetime="2010-09-30T15:48:44-07:00" pubdate data-updated="true">Sep 30<span>th</span>, 2010</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those:</p>
+<div class="entry-content"><p>I was using IronPython to execute python code inside my C# implementation lately, and I encountered this error when trying to use xmlrpclib:</p>
 
-<ul>
-<li><p><strong><a href="http://gurmeet.net/computer-science/latex-tips-n-tricks-for-conference-papers/">Tips for Conference Papers</a> by Gurmeet Singh
-</strong>A nice set of tricks that saves your life at the last minute during deadlines.</p></li>
-<li><p><strong><a href="http://www.read.seas.harvard.edu/~kohler/latex.html">Latex Usage Notes</a> by Eddie Kohler
-</strong>Solutions for common Latex problems, tips on proper formatting, etc.</p></li>
-</ul>
+<pre><code>ImportError: No module named xmlrpclib.
+</code></pre>
 
+<p>It was really frustrating because if I try the same in IronPython console, it works fine. It turned out that this was a problem with search paths. When called via C# code, IronPython does not search for missing libraries unless you provide it a path to search for. Here&#8217;s how I solved this issue:</p>
+
+<ol>
+<li><p>First, find out the search paths that IronPython is using in console mode:</p>
+
+<p> import sys
+ print sys.path</p></li>
+</ol>
+
+
+<p>This will print all the search paths. Save these paths somewhere.</p>
+
+<ol>
+<li><p>Now include all these search paths inside your C# code:</p>
+
+<p> ScriptEngine Engine = Python.CreateEngine();
+ ICollection<string> Paths = Engine.GetSearchPaths();
+ Paths.Add(&#8221;<Path>&#8221;);
+ Engine.SetSearchPaths(Paths);</p></li>
+</ol>
+
+
+<p>Replace <Path> with the path you saved earlier. Now IronPython will search all these pathsbefore failing with an ImportError.</p>
 </div>
 
 
@@ -129,7 +148,7 @@
   
 
 
-<time datetime="2013-01-13T07:56:30-08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
+<time datetime="2010-09-30T15:48:44-07:00" pubdate data-updated="true">Sep 30<span>th</span>, 2010</time>
       
 
 <span class="categories">
@@ -143,7 +162,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/" data-via="" data-counturl="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://anand-iyer.github.com/blog/2010/09/30/importerror-with-ironpython-in-c/" data-via="" data-counturl="http://anand-iyer.github.com/blog/2010/09/30/importerror-with-ironpython-in-c/" >Tweet</a>
   
   
   
@@ -154,8 +173,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left articlenav" href="/blog/2012/10/15/syncing-folders-outside-dropbox-folder/" title="Previous Post: Syncing folders outside Dropbox folder">&laquo; Syncing folders outside Dropbox folder</a>
+        <a class="basic-alignment left articlenav" href="/blog/2010/06/23/conky-like-system-monitor-for-windows/" title="Previous Post: Conky like system monitor for Windows">&laquo; Conky like system monitor for Windows</a>
       
+      
+        <a class="basic-alignment right articlenav" href="/blog/2010/12/23/qualnet-4-0-1-woes/" title="Next Post: Qualnet 4.0.1 woes!">Qualnet 4.0.1 woes! &raquo;</a>
       
     </p>
   </footer>

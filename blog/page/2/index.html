@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Latex Tips Collection - Yet Another Boring Blog</title>
+  <title>Yet Another Boring Blog</title>
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those: &hellip;">
+  <meta name="description" content="To enable Master mode in ath5k, do the following: Make sure you are running kernel 2.6.29 or higher. If not, you need to get the latest patches for &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/">
+  <link rel="canonical" href="http://anand-iyer.github.com/blog/page/2/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -68,13 +68,16 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      
-        <h1 class="entry-title">Latex Tips Collection</h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/05/06/ath5k-master-mode/">Ath5k “Master” Mode</a></h1>
       
     
     
@@ -91,78 +94,152 @@
   
 
 
-<time datetime="2013-01-13T07:56:30-08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
+<time datetime="2010-05-06T09:11:34-07:00" pubdate data-updated="true">May 6<span>th</span>, 2010</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those:</p>
+  <div class="entry-content"><p>To enable Master mode in ath5k, do the following:</p>
 
 <ul>
-<li><p><strong><a href="http://gurmeet.net/computer-science/latex-tips-n-tricks-for-conference-papers/">Tips for Conference Papers</a> by Gurmeet Singh
-</strong>A nice set of tricks that saves your life at the last minute during deadlines.</p></li>
-<li><p><strong><a href="http://www.read.seas.harvard.edu/~kohler/latex.html">Latex Usage Notes</a> by Eddie Kohler
-</strong>Solutions for common Latex problems, tips on proper formatting, etc.</p></li>
+<li><p>Make sure you are running kernel 2.6.29 or higher. If not, you need to get the latest patches for ath5k.</p></li>
+<li><p>Install hostapd. It is available in Ubuntu repositories.</p></li>
+<li><p>Create a config file for hostapd. A simple one is:</p>
+
+<p>interface=wlan0
+driver=nl80211
+ssid=test
+channel=1</p></li>
+<li><p>Now you can start hostapd to put the card in master mode:</p>
+
+<blockquote><blockquote><p>sudo hostapd <config_file></p></blockquote></blockquote></li>
 </ul>
 
 </div>
+  
+  
 
 
-  <footer>
-    <p class="meta">
+    </article>
+  
+  
+    <article>
       
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Anand</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-13T07:56:30-08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/tips/'>Tips</a>
-  
-</span>
-
-
-    </p>
+  <header>
     
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/" data-via="" data-counturl="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/" >Tweet</a>
-  
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
-  
-</div>
-
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/03/31/royaltek-rbt-2300-and-karmic-koala/">Royaltek RBT-2300 and Karmic Koala</a></h1>
+      
     
-    <p class="meta">
-      
-        <a class="basic-alignment left articlenav" href="/blog/2012/10/15/syncing-folders-outside-dropbox-folder/" title="Previous Post: Syncing folders outside Dropbox folder">&laquo; Syncing folders outside Dropbox folder</a>
-      
-      
-    </p>
-  </footer>
-</article>
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-31T15:48:46-07:00" pubdate data-updated="true">Mar 31<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I recently had to make use of a GPS logger in Linux. Here&#8217;s how I made it work in Karmic, incase any one is interested:</p>
+
+<ul>
+<li><p>First, make sure you have necessary bluetooth packages. If not, install it using:</p>
+
+<p>sudo apt-get install bluetooth
+sudo apt-get install libbluetooth-dev</p></li>
+<li><p>Switch on the GPS, scan and check if you can find the device:</p>
+
+<p>sudo hcitool scan</p></li>
+</ul>
+
+
+<p>The output would be something like the following:</p>
+
+<pre><code>Scanning ...
+ 00:aa:bb:cc:dd:ee    BlueGPS CCDDEE
+</code></pre>
+
+<p>We are interested in the channel in which the device operates. Let&#8217;s find that out:</p>
+
+<pre><code>sudo sdptool records 00:aa:bb:cc:dd:ee
+</code></pre>
+
+<p>This will give you lots of information about the device. Pay attention to the channel. For instance, my device says:</p>
+
+<pre><code>Service Name: Dev B
+Service RecHandle: 0x10000
+Service Class ID List:
+ "Serial Port" (0x1101)
+Protocol Descriptor List:
+ "L2CAP" (0x0100)
+ "RFCOMM" (0x0003)
+ &lt;strong&gt;Channel: 1&lt;/strong&gt;
+Language Base Attr List:
+ code_ISO639: 0x656e
+ encoding:    0x6a
+ base_offset: 0x100
+</code></pre>
+
+<ul>
+<li><p>Use this channel to create an entry in the rfcomm.conf file:</p>
+
+<p>sudo gedit /etc/bluetooth/rfcomm.conf</p></li>
+</ul>
+
+
+<p>enter the following at the end of the file:</p>
+
+<pre><code># Bluetooth GPS
+rfcomm2 {
+    bind yes,
+    device 00:aa:bb:cc:dd:ee,
+    channel 1,
+    comment "Serial Port",
+}
+</code></pre>
+
+<p>Once you have done this, you can connect to the device:</p>
+
+<pre><code>$ sudo rfcomm connect 2
+Connected /dev/rfcomm2 to 00:aa:bb:cc:dd:ee on channel 1
+Press CTRL-C for hangup
+</code></pre>
+
+<ul>
+<li><p>I found rtkgps (<a href="http://wohlberg.net/public/software/misc/rtkgps/">http://wohlberg.net/public/software/misc/rtkgps/</a>) to be a good utility to access GPS logs.</p>
+
+<p>$ rtkgps -d /dev/rfcomm2 read</p></li>
+</ul>
 
 </div>
+  
+  
 
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/">Newer &rarr;</a>
+    
+  </div>
+</div>
 <aside class="sidebar">
   
     <section>
@@ -186,7 +263,7 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2010/12/24/its-raining-job-offers-at-cet/">It's raining job offers at CET!</a>
+        <a href="/blog/2010/12/24/its-raining-job-offers-at-cet/">It&#8217;s raining job offers at CET!</a>
       </li>
     
   </ul>
@@ -199,7 +276,6 @@
 
   
 </aside>
-
 
     </div>
   </div>

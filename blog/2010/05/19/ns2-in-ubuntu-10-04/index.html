@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: sugarsync - Yet Another Boring Blog</title>
+  <title>NS2 in Ubuntu 10.04 - Yet Another Boring Blog</title>
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="Category: sugarsync">
+  <meta name="description" content="I spent a reasonably long time getting NS-2 (ns-allinone-2.34) to work in Ubuntu 10.04. Here&#8217;s how I finally did it: Install necessary tools &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anand-iyer.github.comblog/categories/sugarsync/">
+  <link rel="canonical" href="http://anand-iyer.github.com/blog/2010/05/19/ns2-in-ubuntu-10-04/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -69,35 +69,110 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Sugarsync</h1>
+    
+      
+        <h1 class="entry-title">NS2 in Ubuntu 10.04</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-19T04:13:49-07:00" pubdate data-updated="true">May 19<span>th</span>, 2010</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>I spent a reasonably long time getting NS-2 (ns-allinone-2.34) to work in Ubuntu 10.04. Here&#8217;s how I finally did it:</p>
 
-  
-  <h2>2012</h2>
+<ol>
+<li><p>Install necessary tools for building:</p>
 
-<article>
-  
-<h1><a href="/blog/2012/10/16/syncing-folders-outside-dropbox-folder/">Syncing folders outside Dropbox folder</a></h1>
-<time datetime="2012-10-16T18:27:00-07:00" pubdate><span class='month'>Oct</span> <span class='day'>16</span> <span class='year'>2012</span></time>
+<p> sudo apt-get install build-essential autoconf automake libxmu-dev gcc-4.3</p></li>
+<li><p>It turns out that otcl does not like the version of gcc installed by default in Lucid. So go ahead and change ns-allinone-2.34/otcl-1.13/Makefile.in. Find the line that says:</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/any-folder/'>any folder</a>, <a class='category' href='/blog/categories/dropbox/'>dropbox</a>, <a class='category' href='/blog/categories/sugarsync/'>sugarsync</a></span>
-</footer>
+<p> CC=    @CC@</p></li>
+</ol>
 
 
-</article>
+<p>and change it to:</p>
+
+<pre><code>CC=    gcc-4.3
+</code></pre>
+
+<ol>
+<li>Now try doing &#8216;./install&#8217; from the ns-allinone-2.34 directory. It should work.</li>
+</ol>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Anand</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-19T04:13:49-07:00" pubdate data-updated="true">May 19<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tips/'>Tips</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://anand-iyer.github.com/blog/2010/05/19/ns2-in-ubuntu-10-04/" data-via="" data-counturl="http://anand-iyer.github.com/blog/2010/05/19/ns2-in-ubuntu-10-04/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2010/05/06/ath5k-master-mode/" title="Previous Post: ath5k “Master” mode">&laquo; ath5k “Master” mode</a>
+      
+      
+        <a class="basic-alignment right articlenav" href="/blog/2010/05/30/ns3-in-eclipse/" title="Next Post: NS3 in Eclipse">NS3 in Eclipse &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>
@@ -113,11 +188,19 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2012/10/16/syncing-folders-outside-dropbox-folder/">Syncing folders outside Dropbox folder</a>
+        <a href="/blog/2012/10/15/syncing-folders-outside-dropbox-folder/">Syncing folders outside Dropbox folder</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/10/09/doxygen-and-osx-graphviz-and-other-errors/">Doxygen and OSX: Graphviz and other errors</a>
+        <a href="/blog/2011/10/09/doxygen-and-osx/">Doxygen and OSX: Graphviz and other errors</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/02/19/making-qxdm-com-object-work-with-python/">Making QXDM COM object work with Python</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/24/its-raining-job-offers-at-cet/">It's raining job offers at CET!</a>
       </li>
     
   </ul>

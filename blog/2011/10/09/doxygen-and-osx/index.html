@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: dropbox - Yet Another Boring Blog</title>
+  <title>Doxygen and OSX: Graphviz and other errors - Yet Another Boring Blog</title>
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="Category: dropbox">
+  <meta name="description" content="I&#8217;m a big fan of Doxygen. I use it all the time to generate and analyze call trees. Recently, I wanted to use it in my MacbookPro for analyzing &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anand-iyer.github.comblog/categories/dropbox/">
+  <link rel="canonical" href="http://anand-iyer.github.com/blog/2011/10/09/doxygen-and-osx/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -69,35 +69,96 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Dropbox</h1>
+    
+      
+        <h1 class="entry-title">Doxygen and OSX: Graphviz and Other Errors</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-09T16:16:05-07:00" pubdate data-updated="true">Oct 9<span>th</span>, 2011</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>I&#8217;m a big fan of <a href="http://www.doxygen.org/">Doxygen</a>. I use it all the time to generate and analyze call trees. Recently, I wanted to use it in my MacbookPro for analyzing an open source project. There is a binary for SnowLeopard <a href="http://www.stack.nl/~dimitri/doxygen/download.html">here</a> that works in Lion too, but it was throwing lots of errors regarding Graphviz. Here are two things that I had to do to make it finally work:</p>
 
-  
-  <h2>2012</h2>
-
-<article>
-  
-<h1><a href="/blog/2012/10/16/syncing-folders-outside-dropbox-folder/">Syncing folders outside Dropbox folder</a></h1>
-<time datetime="2012-10-16T18:27:00-07:00" pubdate><span class='month'>Oct</span> <span class='day'>16</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/any-folder/'>any folder</a>, <a class='category' href='/blog/categories/dropbox/'>dropbox</a>, <a class='category' href='/blog/categories/sugarsync/'>sugarsync</a></span>
-</footer>
-
-
-</article>
+<ul>
+<li><p>For some reason, long file names do not work in OSX. By default, Doxygen uses long names. So you need to set the SHORT_NAMES to YES in your doxygen file. If you are using the Wizard (GUI), then save your settings file (File->Save), and then manually edit the file in a text editor. </p></li>
+<li><p>GraphViz is included in the dmg file. You need to set appropriate path to the dot file for graphviz to work. Try setting it to &#8216;/Applications/Doxygen.app/Contents/Resources&#8217;. If that fails, then use macports to install graphviz, and use that path.</p></li>
+</ul>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Anand</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-09T16:16:05-07:00" pubdate data-updated="true">Oct 9<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tips/'>Tips</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://anand-iyer.github.com/blog/2011/10/09/doxygen-and-osx/" data-via="" data-counturl="http://anand-iyer.github.com/blog/2011/10/09/doxygen-and-osx/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2011/02/19/making-qxdm-com-object-work-with-python/" title="Previous Post: Making QXDM COM object work with Python">&laquo; Making QXDM COM object work with Python</a>
+      
+      
+        <a class="basic-alignment right articlenav" href="/blog/2012/10/15/syncing-folders-outside-dropbox-folder/" title="Next Post: Syncing folders outside Dropbox folder">Syncing folders outside Dropbox folder &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>
@@ -113,11 +174,19 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2012/10/16/syncing-folders-outside-dropbox-folder/">Syncing folders outside Dropbox folder</a>
+        <a href="/blog/2012/10/15/syncing-folders-outside-dropbox-folder/">Syncing folders outside Dropbox folder</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2011/10/09/doxygen-and-osx-graphviz-and-other-errors/">Doxygen and OSX: Graphviz and other errors</a>
+        <a href="/blog/2011/10/09/doxygen-and-osx/">Doxygen and OSX: Graphviz and other errors</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/02/19/making-qxdm-com-object-work-with-python/">Making QXDM COM object work with Python</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/24/its-raining-job-offers-at-cet/">It's raining job offers at CET!</a>
       </li>
     
   </ul>
