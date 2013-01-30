@@ -103,11 +103,13 @@
 <ul>
 <li><p>First, make sure you have necessary bluetooth packages. If not, install it using:</p>
 
-<p>sudo apt-get install bluetooth
-sudo apt-get install libbluetooth-dev</p></li>
+<pre><code>  sudo apt-get install bluetooth
+  sudo apt-get install libbluetooth-dev
+</code></pre></li>
 <li><p>Switch on the GPS, scan and check if you can find the device:</p>
 
-<p>sudo hcitool scan</p></li>
+<pre><code>  sudo hcitool scan
+</code></pre></li>
 </ul>
 
 
@@ -139,9 +141,10 @@ Language Base Attr List:
 </code></pre>
 
 <ul>
-<li><p>Use this channel to create an entry in the rfcomm.conf file:</p>
+<li><p>Use this channel to create an entry in the <code>rfcomm.conf</code> file:</p>
 
-<p>sudo gedit /etc/bluetooth/rfcomm.conf</p></li>
+<pre><code>  sudo gedit /etc/bluetooth/rfcomm.conf
+</code></pre></li>
 </ul>
 
 
@@ -166,7 +169,8 @@ Press CTRL-C for hangup
 <ul>
 <li><p>I found rtkgps (<a href="http://wohlberg.net/public/software/misc/rtkgps/">http://wohlberg.net/public/software/misc/rtkgps/</a>) to be a good utility to access GPS logs.</p>
 
-<p>$ rtkgps -d /dev/rfcomm2 read</p></li>
+<pre><code>  rtkgps -d /dev/rfcomm2 read
+</code></pre></li>
 </ul>
 
 </div>

@@ -100,19 +100,21 @@
 
 <div class="entry-content"><p>To enable Master mode in ath5k, do the following:</p>
 
-<ul>
+<ol>
 <li><p>Make sure you are running kernel 2.6.29 or higher. If not, you need to get the latest patches for ath5k.</p></li>
 <li><p>Install hostapd. It is available in Ubuntu repositories.</p></li>
 <li><p>Create a config file for hostapd. A simple one is:</p>
 
-<p>interface=wlan0
-driver=nl80211
-ssid=test
-channel=1</p></li>
+<pre><code> interface=wlan0
+ driver=nl80211
+ ssid=test
+ channel=1
+</code></pre></li>
 <li><p>Now you can start hostapd to put the card in master mode:</p>
 
-<blockquote><blockquote><p>sudo hostapd <config_file></p></blockquote></blockquote></li>
-</ul>
+<pre><code> sudo hostapd &lt;config_file&gt;
+</code></pre></li>
+</ol>
 
 </div>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Yet Another Boring Blog]]></title>
   <link href="http://anand-iyer.github.com/atom.xml" rel="self"/>
   <link href="http://anand-iyer.github.com/"/>
-  <updated>2013-01-29T23:51:59-08:00</updated>
+  <updated>2013-01-30T00:15:13-08:00</updated>
   <id>http://anand-iyer.github.com/</id>
   <author>
     <name><![CDATA[Anand]]></name>
@@ -238,19 +238,21 @@ QXDM = CreateObject("QXDM.Application") # For accessing data directly from QXDM
     <id>http://anand-iyer.github.com/blog/2010/05/06/ath5k-master-mode</id>
     <content type="html"><![CDATA[<p>To enable Master mode in ath5k, do the following:</p>
 
-<ul>
+<ol>
 <li><p>Make sure you are running kernel 2.6.29 or higher. If not, you need to get the latest patches for ath5k.</p></li>
 <li><p>Install hostapd. It is available in Ubuntu repositories.</p></li>
 <li><p>Create a config file for hostapd. A simple one is:</p>
 
-<p>interface=wlan0
-driver=nl80211
-ssid=test
-channel=1</p></li>
+<pre><code> interface=wlan0
+ driver=nl80211
+ ssid=test
+ channel=1
+</code></pre></li>
 <li><p>Now you can start hostapd to put the card in master mode:</p>
 
-<blockquote><blockquote><p>sudo hostapd <config_file></p></blockquote></blockquote></li>
-</ul>
+<pre><code> sudo hostapd &lt;config_file&gt;
+</code></pre></li>
+</ol>
 
 ]]></content>
   </entry>
@@ -265,11 +267,13 @@ channel=1</p></li>
 <ul>
 <li><p>First, make sure you have necessary bluetooth packages. If not, install it using:</p>
 
-<p>sudo apt-get install bluetooth
-sudo apt-get install libbluetooth-dev</p></li>
+<pre><code>  sudo apt-get install bluetooth
+  sudo apt-get install libbluetooth-dev
+</code></pre></li>
 <li><p>Switch on the GPS, scan and check if you can find the device:</p>
 
-<p>sudo hcitool scan</p></li>
+<pre><code>  sudo hcitool scan
+</code></pre></li>
 </ul>
 
 
@@ -301,9 +305,10 @@ Language Base Attr List:
 </code></pre>
 
 <ul>
-<li><p>Use this channel to create an entry in the rfcomm.conf file:</p>
+<li><p>Use this channel to create an entry in the <code>rfcomm.conf</code> file:</p>
 
-<p>sudo gedit /etc/bluetooth/rfcomm.conf</p></li>
+<pre><code>  sudo gedit /etc/bluetooth/rfcomm.conf
+</code></pre></li>
 </ul>
 
 
@@ -328,7 +333,8 @@ Press CTRL-C for hangup
 <ul>
 <li><p>I found rtkgps (<a href="http://wohlberg.net/public/software/misc/rtkgps/">http://wohlberg.net/public/software/misc/rtkgps/</a>) to be a good utility to access GPS logs.</p>
 
-<p>$ rtkgps -d /dev/rfcomm2 read</p></li>
+<pre><code>  rtkgps -d /dev/rfcomm2 read
+</code></pre></li>
 </ul>
 
 ]]></content>
