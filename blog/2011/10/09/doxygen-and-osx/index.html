@@ -93,8 +93,8 @@
 <div class="entry-content"><p>I&#8217;m a big fan of <a href="http://www.doxygen.org/">Doxygen</a>. I use it all the time to generate and analyze call trees. Recently, I wanted to use it in my MacbookPro for analyzing an open source project. There is a binary for SnowLeopard <a href="http://www.stack.nl/~dimitri/doxygen/download.html">here</a> that works in Lion too, but it was throwing lots of errors regarding Graphviz. Here are two things that I had to do to make it finally work:</p>
 
 <ul>
-<li><p>For some reason, long file names do not work in OSX. By default, Doxygen uses long names. So you need to set the SHORT_NAMES to YES in your doxygen file. If you are using the Wizard (GUI), then save your settings file (File->Save), and then manually edit the file in a text editor. </p></li>
-<li><p>GraphViz is included in the dmg file. You need to set appropriate path to the dot file for graphviz to work. Try setting it to &#8216;/Applications/Doxygen.app/Contents/Resources&#8217;. If that fails, then use macports to install graphviz, and use that path.</p></li>
+<li><p>For some reason, long file names do not work in OSX. By default, Doxygen uses long names. So you need to set the <code>SHORT_NAMES</code> to <code>YES</code> in your doxygen file. If you are using the Wizard (GUI), then save your settings file (<code>File-&gt;Save</code>), and then manually edit the file in a text editor. </p></li>
+<li><p>GraphViz is included in the dmg file. You need to set appropriate path to the dot file for graphviz to work. Try setting it to <code>/Applications/Doxygen.app/Contents/Resources</code>. If that fails, then use macports to install graphviz, and use that path.</p></li>
 </ul>
 
 </div>

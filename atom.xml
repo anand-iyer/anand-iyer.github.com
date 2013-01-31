@@ -4,7 +4,7 @@
   <title><![CDATA[Anand Iyer]]></title>
   <link href="http://anand-iyer.github.com/atom.xml" rel="self"/>
   <link href="http://anand-iyer.github.com/"/>
-  <updated>2013-01-31T03:43:10-08:00</updated>
+  <updated>2013-01-31T03:59:12-08:00</updated>
   <id>http://anand-iyer.github.com/</id>
   <author>
     <name><![CDATA[Anand]]></name>
@@ -56,8 +56,8 @@
     <content type="html"><![CDATA[<p>I&#8217;m a big fan of <a href="http://www.doxygen.org/">Doxygen</a>. I use it all the time to generate and analyze call trees. Recently, I wanted to use it in my MacbookPro for analyzing an open source project. There is a binary for SnowLeopard <a href="http://www.stack.nl/~dimitri/doxygen/download.html">here</a> that works in Lion too, but it was throwing lots of errors regarding Graphviz. Here are two things that I had to do to make it finally work:</p>
 
 <ul>
-<li><p>For some reason, long file names do not work in OSX. By default, Doxygen uses long names. So you need to set the SHORT_NAMES to YES in your doxygen file. If you are using the Wizard (GUI), then save your settings file (File->Save), and then manually edit the file in a text editor. </p></li>
-<li><p>GraphViz is included in the dmg file. You need to set appropriate path to the dot file for graphviz to work. Try setting it to &#8216;/Applications/Doxygen.app/Contents/Resources&#8217;. If that fails, then use macports to install graphviz, and use that path.</p></li>
+<li><p>For some reason, long file names do not work in OSX. By default, Doxygen uses long names. So you need to set the <code>SHORT_NAMES</code> to <code>YES</code> in your doxygen file. If you are using the Wizard (GUI), then save your settings file (<code>File-&gt;Save</code>), and then manually edit the file in a text editor. </p></li>
+<li><p>GraphViz is included in the dmg file. You need to set appropriate path to the dot file for graphviz to work. Try setting it to <code>/Applications/Doxygen.app/Contents/Resources</code>. If that fails, then use macports to install graphviz, and use that path.</p></li>
 </ul>
 
 ]]></content>
@@ -72,19 +72,32 @@
 
 <p>The default installation of QXDM comes with a number of examples on how to use this object. Unfortunately, all the examples are in Perl. Although I like Perl, recently I have been using Python for all my scripting needs. It&#8217;s actually very easy to convert all these scripts to Python. Here&#8217;s how:</p>
 
-<pre><code>* First, you need Python to be able to access COM objects. For this purpose, I used the Python comtypes package. Download and install it from [SourceForge](http://sourceforge.net/projects/comtypes/files/).
+<ul>
+<li><p>First, you need Python to be able to access COM objects. For this purpose, I used the Python comtypes package. Download and install it from <a href="http://sourceforge.net/projects/comtypes/files/">SourceForge</a>.</p></li>
+<li><p>Now, you can do the following in your script:</p></li>
+</ul>
 
 
-* Now, you can do the following in your script:
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">comtypes.client</span> <span class="kn">import</span> <span class="n">CreateObject</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># For ISF file post-processing</span>
+</span><span class='line'><span class="n">IISF</span> <span class="o">=</span> <span class="n">CreateObject</span><span class="p">(</span><span class="s">&quot;DMCoreAutomation.ItemStoreFiles&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># For accessing data directly from QXDM. </span>
+</span><span class='line'><span class="c"># Note that the script needs to be run as admin.</span>
+</span><span class='line'><span class="n">QXDM</span> <span class="o">=</span> <span class="n">CreateObject</span><span class="p">(</span><span class="s">&quot;QXDM.Application&quot;</span><span class="p">)</span><span class="err"> </span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 
-
-
-from comtypes.client import CreateObject
-IISF = CreateObject("DMCoreAutomation.ItemStoreFiles") # For ISF file post-processing
-QXDM = CreateObject("QXDM.Application") # For accessing data directly from QXDM. Note that the script needs to be run as admin.
-</code></pre>
 ]]></content>
   </entry>
   
@@ -137,25 +150,33 @@ QXDM = CreateObject("QXDM.Application") # For accessing data directly from QXDM
 <p>It was really frustrating because if I try the same in IronPython console, it works fine. It turned out that this was a problem with search paths. When called via C# code, IronPython does not search for missing libraries unless you provide it a path to search for. Here&#8217;s how I solved this issue:</p>
 
 <ol>
-<li><p>First, find out the search paths that IronPython is using in console mode:</p>
-
-<pre><code> import sys
- print sys.path
-</code></pre></li>
+<li>First, find out the search paths that IronPython is using in console mode:</li>
 </ol>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">sys</span>
+</span><span class='line'><span class="k">print</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>This will print all the search paths. Save these paths somewhere.</p>
 
 <ol>
-<li><p>Now include all these search paths inside your C# code:</p>
-
-<pre><code> ScriptEngine Engine = Python.CreateEngine();
- ICollection&lt;string&gt; Paths = Engine.GetSearchPaths();
- Paths.Add("&lt;Path&gt;");
- Engine.SetSearchPaths(Paths);
-</code></pre></li>
+<li>Now include all these search paths inside your C# code:</li>
 </ol>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">ScriptEngine</span> <span class="n">Engine</span> <span class="p">=</span> <span class="n">Python</span><span class="p">.</span><span class="n">CreateEngine</span><span class="p">();</span>
+</span><span class='line'><span class="n">ICollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">Paths</span> <span class="p">=</span> <span class="n">Engine</span><span class="p">.</span><span class="n">GetSearchPaths</span><span class="p">();</span>
+</span><span class='line'><span class="n">Paths</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;&lt;Path&gt;&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="n">Engine</span><span class="p">.</span><span class="n">SetSearchPaths</span><span class="p">(</span><span class="n">Paths</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Replace <code>&lt;Path&gt;</code> with the path you saved earlier. Now IronPython will search all these pathsbefore failing with an ImportError.</p>
@@ -180,7 +201,7 @@ QXDM = CreateObject("QXDM.Application") # For accessing data directly from QXDM
     <link href="http://anand-iyer.github.com/blog/2010/05/30/ns3-in-eclipse/"/>
     <updated>2010-05-30T11:58:55-07:00</updated>
     <id>http://anand-iyer.github.com/blog/2010/05/30/ns3-in-eclipse</id>
-    <content type="html"><![CDATA[<p>I found <a href="http://www.nsnam.org/wiki/index.php/HOWTO_configure_eclipse_with_ns-3">this</a> wiki page on configuring NS3 with Eclipse and decided to give it a try.I had trouble compiling, and Eclipse kept giving the following error:</p>
+    <content type="html"><![CDATA[<p>I found <a href="http://www.nsnam.org/wiki/index.php/HOWTO_configure_eclipse_with_ns-3">this</a> wiki page on configuring NS3 with Eclipse and decided to give it a try. I had trouble compiling, and Eclipse kept giving the following error:</p>
 
 <pre><code>Cannot run program "waf": Unknown reason)
 </code></pre>
@@ -188,16 +209,13 @@ QXDM = CreateObject("QXDM.Application") # For accessing data directly from QXDM
 <p>After spending a little time with the configuration, the following additional tweaking seems to be working (in Ubuntu 10.04, Eclipse version 3.5.2 Galileo with ns-allinone-3.8):</p>
 
 <ol>
-<li><p>Create a new External tool configuration. The location should be the location to waf (${workspace_loc:/ns3/waf} in my case) and working directory should be the directory where waf is present (${workspace_loc:/ns3/} in my case). In arguments textbox, provide the following:</p>
+<li><p>Create a new External tool configuration. The location should be the location to waf (<code>${workspace_loc:/ns3/waf}</code> in my case) and working directory should be the directory where waf is present (<code>${workspace_loc:/ns3/}</code> in my case). In arguments textbox, provide the following:</p>
 
-<p> &#8211;run &#8220;${string_prompt}&#8221;</p></li>
-</ol>
+<pre><code> --run "${string_prompt}"
+</code></pre>
 
-
-<p>Now when you try to build the project (right click on the project -> Build Project), it should work.</p>
-
-<ol>
-<li>To run NS3 programs using waf, you need to create a new Run configuration. Make the new configuration to be a C/C++ application. Select the project you want this run configuration to be associated with, and give the complete path to waf as the C/C++ program. Click on the arguments tab, and provide the same argument as above. Now when you try to run a program, a dialog box should pop-up asking for the input arguments to waf and your program should run.</li>
+<p>Now when you try to build the project (right click on the <code>project -&gt; Build Project</code>), it should work.</p></li>
+<li><p>To run NS3 programs using waf, you need to create a new Run configuration. Make the new configuration to be a C/C++ application. Select the project you want this run configuration to be associated with, and give the complete path to waf as the C/C++ program. Click on the arguments tab, and provide the same argument as above. Now when you try to run a program, a dialog box should pop-up asking for the input arguments to waf and your program should run.</p></li>
 </ol>
 
 ]]></content>

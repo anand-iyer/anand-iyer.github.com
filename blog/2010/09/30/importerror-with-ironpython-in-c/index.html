@@ -98,25 +98,33 @@
 <p>It was really frustrating because if I try the same in IronPython console, it works fine. It turned out that this was a problem with search paths. When called via C# code, IronPython does not search for missing libraries unless you provide it a path to search for. Here&#8217;s how I solved this issue:</p>
 
 <ol>
-<li><p>First, find out the search paths that IronPython is using in console mode:</p>
-
-<pre><code> import sys
- print sys.path
-</code></pre></li>
+<li>First, find out the search paths that IronPython is using in console mode:</li>
 </ol>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">sys</span>
+</span><span class='line'><span class="k">print</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>This will print all the search paths. Save these paths somewhere.</p>
 
 <ol>
-<li><p>Now include all these search paths inside your C# code:</p>
-
-<pre><code> ScriptEngine Engine = Python.CreateEngine();
- ICollection&lt;string&gt; Paths = Engine.GetSearchPaths();
- Paths.Add("&lt;Path&gt;");
- Engine.SetSearchPaths(Paths);
-</code></pre></li>
+<li>Now include all these search paths inside your C# code:</li>
 </ol>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">ScriptEngine</span> <span class="n">Engine</span> <span class="p">=</span> <span class="n">Python</span><span class="p">.</span><span class="n">CreateEngine</span><span class="p">();</span>
+</span><span class='line'><span class="n">ICollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">Paths</span> <span class="p">=</span> <span class="n">Engine</span><span class="p">.</span><span class="n">GetSearchPaths</span><span class="p">();</span>
+</span><span class='line'><span class="n">Paths</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;&lt;Path&gt;&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="n">Engine</span><span class="p">.</span><span class="n">SetSearchPaths</span><span class="p">(</span><span class="n">Paths</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Replace <code>&lt;Path&gt;</code> with the path you saved earlier. Now IronPython will search all these pathsbefore failing with an ImportError.</p>

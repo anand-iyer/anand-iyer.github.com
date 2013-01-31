@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tips | Anand Iyer]]></title>
   <link href="http://anand-iyer.github.com/blog/categories/tips/atom.xml" rel="self"/>
   <link href="http://anand-iyer.github.com/"/>
-  <updated>2013-01-31T03:43:10-08:00</updated>
+  <updated>2013-01-31T03:59:12-08:00</updated>
   <id>http://anand-iyer.github.com/</id>
   <author>
     <name><![CDATA[Anand]]></name>
@@ -56,8 +56,8 @@
     <content type="html"><![CDATA[<p>I'm a big fan of <a href="http://www.doxygen.org/">Doxygen</a>. I use it all the time to generate and analyze call trees. Recently, I wanted to use it in my MacbookPro for analyzing an open source project. There is a binary for SnowLeopard <a href="http://www.stack.nl/~dimitri/doxygen/download.html">here</a> that works in Lion too, but it was throwing lots of errors regarding Graphviz. Here are two things that I had to do to make it finally work:</p>
 
 <ul>
-<li><p>For some reason, long file names do not work in OSX. By default, Doxygen uses long names. So you need to set the SHORT_NAMES to YES in your doxygen file. If you are using the Wizard (GUI), then save your settings file (File->Save), and then manually edit the file in a text editor. </p></li>
-<li><p>GraphViz is included in the dmg file. You need to set appropriate path to the dot file for graphviz to work. Try setting it to '/Applications/Doxygen.app/Contents/Resources'. If that fails, then use macports to install graphviz, and use that path.</p></li>
+<li><p>For some reason, long file names do not work in OSX. By default, Doxygen uses long names. So you need to set the <code>SHORT_NAMES</code> to <code>YES</code> in your doxygen file. If you are using the Wizard (GUI), then save your settings file (<code>File-&gt;Save</code>), and then manually edit the file in a text editor. </p></li>
+<li><p>GraphViz is included in the dmg file. You need to set appropriate path to the dot file for graphviz to work. Try setting it to <code>/Applications/Doxygen.app/Contents/Resources</code>. If that fails, then use macports to install graphviz, and use that path.</p></li>
 </ul>
 
 ]]></content>
@@ -72,19 +72,36 @@
 
 <p>The default installation of QXDM comes with a number of examples on how to use this object. Unfortunately, all the examples are in Perl. Although I like Perl, recently I have been using Python for all my scripting needs. It's actually very easy to convert all these scripts to Python. Here's how:</p>
 
-<pre><code>* First, you need Python to be able to access COM objects. For this purpose, I used the Python comtypes package. Download and install it from [SourceForge](http://sourceforge.net/projects/comtypes/files/).
-
-
-* Now, you can do the following in your script:
-
-
-
-
-
-from comtypes.client import CreateObject
-IISF = CreateObject("DMCoreAutomation.ItemStoreFiles") # For ISF file post-processing
-QXDM = CreateObject("QXDM.Application") # For accessing data directly from QXDM. Note that the script needs to be run as admin.
-</code></pre>
+<ul>
+<li><p>First, you need Python to be able to access COM objects. For this purpose, I used the Python comtypes package. Download and install it from <a href="http://sourceforge.net/projects/comtypes/files/">SourceForge</a>.</p></li>
+<li><p>Now, you can do the following in your script:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">comtypes.client</span> <span class="kn">import</span> <span class="n">CreateObject</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">For</span> <span class="n">ISF</span> <span class="nb">file</span> <span class="n">post</span><span class="o">-</span><span class="n">processing</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">IISF</span> <span class="o">=</span> <span class="n">CreateObject</span><span class="p">(</span><span class="s">&quot;DMCoreAutomation.ItemStoreFiles&quot;</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">For</span> <span class="n">accessing</span> <span class="n">data</span> <span class="n">directly</span> <span class="kn">from</span> <span class="nn">QXDM.</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Note</span> <span class="n">that</span> <span class="n">the</span> <span class="n">script</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">run</span> <span class="k">as</span> <span class="n">admin</span><span class="o">.&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">QXDM</span> <span class="o">=</span> <span class="n">CreateObject</span><span class="p">(</span><span class="s">&quot;QXDM.Application&quot;</span><span class="p">)</span><span class="err"> </span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
