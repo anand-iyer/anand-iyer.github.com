@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tips | Anand Iyer]]></title>
   <link href="http://anand-iyer.github.com/blog/categories/tips/atom.xml" rel="self"/>
   <link href="http://anand-iyer.github.com/"/>
-  <updated>2013-01-31T02:19:14-08:00</updated>
+  <updated>2013-01-31T03:43:10-08:00</updated>
   <id>http://anand-iyer.github.com/</id>
   <author>
     <name><![CDATA[Anand]]></name>
@@ -98,13 +98,12 @@ QXDM = CreateObject("QXDM.Application") # For accessing data directly from QXDM
 <ul>
 <li><p>This version of Qualnet is only compatible with Visual Studio 2005 (I have tried VS 2008 and VS 2010 - although I succeeded in compiling, the executable crashes all the time). Install VS 2005 if you can get hold of it, or install Visual C++ 2005 Express edition which is available for free.</p></li>
 <li><p>The second thing that is essential for building Qualnet is Windows 7 SDK. Download and install this from Microsoft.</p></li>
-<li><p>Once you have both these installed, run the vsvars32.bat file to set the right environment variables. vsvars32.bat is available in the following folder:</p>
+<li><p>Once you have both these installed, run the <code>vsvars32.bat</code> file to set the right environment variables. <code>vsvars32.bat</code> is available in the following folder: <code>C:\Program Files\Microsoft Visual Studio 8\Common7\Tools\</code></p></li>
+<li><p>Now try compiling qualnet. I used the following command inside <code>c:\qualnet\4.0\main folder</code>:</p>
 
-<p>C:\Program Files\Microsoft Visual Studio 8\Common7\Tools\</p></li>
-<li><p>Now try compiling qualnet. I used the following command inside c:\qualnet\4.0\main folder:</p>
-
-<p>nmake /f Makefile-windows-vc8</p></li>
-<li><p>For most, the compilation will fail giving errors in oslrv2_nigata.cpp. So go ahead and comment out this file in the makefile present in qualnet\libraries\wireless\src</p></li>
+<pre><code>nmake /f Makefile-windows-vc8
+</code></pre></li>
+<li><p>For most, the compilation will fail giving errors in <code>oslrv2_nigata.cpp</code>. So go ahead and comment out this file in the makefile present in <code>qualnet\libraries\wireless\src</code></p></li>
 <li><p>Try compiling again. Now the compiler would throw errors wherever routines from the file that we commented out. I had to comment out its usage wherever compilation broke.</p></li>
 <li><p>Once I did that, compilation went smooth, and I was able to get qualnet working.</p></li>
 </ul>

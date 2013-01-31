@@ -309,13 +309,12 @@ QXDM = CreateObject("QXDM.Application") # For accessing data directly from QXDM
 <ul>
 <li><p>This version of Qualnet is only compatible with Visual Studio 2005 (I have tried VS 2008 and VS 2010 - although I succeeded in compiling, the executable crashes all the time). Install VS 2005 if you can get hold of it, or install Visual C++ 2005 Express edition which is available for free.</p></li>
 <li><p>The second thing that is essential for building Qualnet is Windows 7 SDK. Download and install this from Microsoft.</p></li>
-<li><p>Once you have both these installed, run the vsvars32.bat file to set the right environment variables. vsvars32.bat is available in the following folder:</p>
+<li><p>Once you have both these installed, run the <code>vsvars32.bat</code> file to set the right environment variables. <code>vsvars32.bat</code> is available in the following folder: <code>C:\Program Files\Microsoft Visual Studio 8\Common7\Tools\</code></p></li>
+<li><p>Now try compiling qualnet. I used the following command inside <code>c:\qualnet\4.0\main folder</code>:</p>
 
-<p>C:\Program Files\Microsoft Visual Studio 8\Common7\Tools\</p></li>
-<li><p>Now try compiling qualnet. I used the following command inside c:\qualnet\4.0\main folder:</p>
-
-<p>nmake /f Makefile-windows-vc8</p></li>
-<li><p>For most, the compilation will fail giving errors in oslrv2_nigata.cpp. So go ahead and comment out this file in the makefile present in qualnet\libraries\wireless\src</p></li>
+<pre><code>nmake /f Makefile-windows-vc8
+</code></pre></li>
+<li><p>For most, the compilation will fail giving errors in <code>oslrv2_nigata.cpp</code>. So go ahead and comment out this file in the makefile present in <code>qualnet\libraries\wireless\src</code></p></li>
 <li><p>Try compiling again. Now the compiler would throw errors wherever routines from the file that we commented out. I had to comment out its usage wherever compilation broke.</p></li>
 <li><p>Once I did that, compilation went smooth, and I was able to get qualnet working.</p></li>
 </ul>
@@ -363,8 +362,9 @@ QXDM = CreateObject("QXDM.Application") # For accessing data directly from QXDM
 <ol>
 <li><p>First, find out the search paths that IronPython is using in console mode:</p>
 
-<p> import sys
- print sys.path</p></li>
+<pre><code> import sys
+ print sys.path
+</code></pre></li>
 </ol>
 
 
@@ -373,14 +373,15 @@ QXDM = CreateObject("QXDM.Application") # For accessing data directly from QXDM
 <ol>
 <li><p>Now include all these search paths inside your C# code:</p>
 
-<p> ScriptEngine Engine = Python.CreateEngine();
- ICollection<string> Paths = Engine.GetSearchPaths();
- Paths.Add(&#8221;<Path>&#8221;);
- Engine.SetSearchPaths(Paths);</p></li>
+<pre><code> ScriptEngine Engine = Python.CreateEngine();
+ ICollection&lt;string&gt; Paths = Engine.GetSearchPaths();
+ Paths.Add("&lt;Path&gt;");
+ Engine.SetSearchPaths(Paths);
+</code></pre></li>
 </ol>
 
 
-<p>Replace <Path> with the path you saved earlier. Now IronPython will search all these pathsbefore failing with an ImportError.</p>
+<p>Replace <code>&lt;Path&gt;</code> with the path you saved earlier. Now IronPython will search all these pathsbefore failing with an ImportError.</p>
 </div>
   
   
@@ -507,25 +508,22 @@ QXDM = CreateObject("QXDM.Application") # For accessing data directly from QXDM
 
   <div class="entry-content"><p>I spent a reasonably long time getting NS-2 (ns-allinone-2.34) to work in Ubuntu 10.04. Here&#8217;s how I finally did it:</p>
 
-<ol>
-<li><p>Install necessary tools for building:</p>
+<p>Install necessary tools for building:</p>
 
-<p> sudo apt-get install build-essential autoconf automake libxmu-dev gcc-4.3</p></li>
-<li><p>It turns out that otcl does not like the version of gcc installed by default in Lucid. So go ahead and change ns-allinone-2.34/otcl-1.13/Makefile.in. Find the line that says:</p>
+<pre><code>sudo apt-get install build-essential autoconf automake libxmu-dev gcc-4.3
+</code></pre>
 
-<p> CC=    @CC@</p></li>
-</ol>
+<p>It turns out that otcl does not like the version of gcc installed by default in Lucid. So go ahead and change <code>ns-allinone-2.34/otcl-1.13/Makefile.in</code>. Find the line that says:</p>
 
+<pre><code>CC=    @CC@
+</code></pre>
 
 <p>and change it to:</p>
 
 <pre><code>CC=    gcc-4.3
 </code></pre>
 
-<ol>
-<li>Now try doing &#8216;./install&#8217; from the ns-allinone-2.34 directory. It should work.</li>
-</ol>
-
+<p>Now try doing <code>./install</code> from the ns-allinone-2.34 directory. It should work.</p>
 </div>
   
   

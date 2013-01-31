@@ -92,25 +92,22 @@
 
 <div class="entry-content"><p>I spent a reasonably long time getting NS-2 (ns-allinone-2.34) to work in Ubuntu 10.04. Here&#8217;s how I finally did it:</p>
 
-<ol>
-<li><p>Install necessary tools for building:</p>
+<p>Install necessary tools for building:</p>
 
-<p> sudo apt-get install build-essential autoconf automake libxmu-dev gcc-4.3</p></li>
-<li><p>It turns out that otcl does not like the version of gcc installed by default in Lucid. So go ahead and change ns-allinone-2.34/otcl-1.13/Makefile.in. Find the line that says:</p>
+<pre><code>sudo apt-get install build-essential autoconf automake libxmu-dev gcc-4.3
+</code></pre>
 
-<p> CC=    @CC@</p></li>
-</ol>
+<p>It turns out that otcl does not like the version of gcc installed by default in Lucid. So go ahead and change <code>ns-allinone-2.34/otcl-1.13/Makefile.in</code>. Find the line that says:</p>
 
+<pre><code>CC=    @CC@
+</code></pre>
 
 <p>and change it to:</p>
 
 <pre><code>CC=    gcc-4.3
 </code></pre>
 
-<ol>
-<li>Now try doing &#8216;./install&#8217; from the ns-allinone-2.34 directory. It should work.</li>
-</ol>
-
+<p>Now try doing <code>./install</code> from the ns-allinone-2.34 directory. It should work.</p>
 </div>
 
 
