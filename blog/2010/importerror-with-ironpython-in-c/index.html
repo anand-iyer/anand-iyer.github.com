@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ImportError with IronPython in C# - Anand Iyer</title>
+  <meta name="author" content="Anand">
+
+  
+  <meta name="description" content="I was using IronPython to execute python code inside my C# implementation lately, and I encountered this error when trying to use xmlrpclib: &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://anand-iyer.com/blog/2010/importerror-with-ironpython-in-c">
+  <link href="/favicon.ico" rel="icon">
+  
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Anand Iyer" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-57678-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   class="no-sidebar"  >
+  <header role="banner"><hgroup>
+  <h1>Anand Iyer</h1>
+  
+    <h2><a href="/">ai</a></h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation">
+  
+<ul class="main-navigation">
+  <li><a href="/">Home</a></li>
+  <li><a href="/publications.html">Publications</a></li>
+  <li><a href="/blog/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">ImportError With IronPython in C#</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-30T15:48:44-07:00" pubdate data-updated="true">Sep 30<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I was using IronPython to execute python code inside my C# implementation lately, and I encountered this error when trying to use xmlrpclib:</p>
+
+<pre><code>ImportError: No module named xmlrpclib.
+</code></pre>
+
+<p>It was really frustrating because if I try the same in IronPython console, it works fine. It turned out that this was a problem with search paths. When called via C# code, IronPython does not search for missing libraries unless you provide it a path to search for. Here&#8217;s how I solved this issue:</p>
+
+<ol>
+<li>First, find out the search paths that IronPython is using in console mode:</li>
+</ol>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">sys</span>
+</span><span class='line'><span class="k">print</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will print all the search paths. Save these paths somewhere.</p>
+
+<ol>
+<li>Now include all these search paths inside your C# code:</li>
+</ol>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">ScriptEngine</span> <span class="n">Engine</span> <span class="p">=</span> <span class="n">Python</span><span class="p">.</span><span class="n">CreateEngine</span><span class="p">();</span>
+</span><span class='line'><span class="n">ICollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">Paths</span> <span class="p">=</span> <span class="n">Engine</span><span class="p">.</span><span class="n">GetSearchPaths</span><span class="p">();</span>
+</span><span class='line'><span class="n">Paths</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;&lt;Path&gt;&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="n">Engine</span><span class="p">.</span><span class="n">SetSearchPaths</span><span class="p">(</span><span class="n">Paths</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Replace <code>&lt;Path&gt;</code> with the path you saved earlier. Now IronPython will search all these pathsbefore failing with an ImportError.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn"><a href="/about" title="About the author (Anand)" rel="author">Anand</a></span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-30T15:48:44-07:00" pubdate data-updated="true">Sep 30<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tips/'>Tips</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/conky-like-system-monitor-for-windows/" title="Previous Post: Conky like system monitor for Windows">&laquo; Conky like system monitor for Windows</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/qualnet-4-0-1-woes/" title="next Post: Qualnet 4.0.1 woes!">Qualnet 4.0.1 woes! &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Anand
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(66366544); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/66366544ns.gif" /></p></noscript>
+
+</body>
+</html>

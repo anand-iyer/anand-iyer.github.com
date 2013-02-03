@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Anand Iyer]]></title>
-  <link href="http://anand-iyer.github.com/atom.xml" rel="self"/>
-  <link href="http://anand-iyer.github.com/"/>
-  <updated>2013-02-02T19:55:39-08:00</updated>
-  <id>http://anand-iyer.github.com/</id>
+  <link href="http://anand-iyer.com/atom.xml" rel="self"/>
+  <link href="http://anand-iyer.com/"/>
+  <updated>2013-02-02T23:02:41-08:00</updated>
+  <id>http://anand-iyer.com/</id>
   <author>
     <name><![CDATA[Anand]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Latex Tips Collection]]></title>
-    <link href="http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection/"/>
+    <link href="http://anand-iyer.com/blog/2013/latex-tips-collection/"/>
     <updated>2013-01-13T07:56:30-08:00</updated>
-    <id>http://anand-iyer.github.com/blog/2013/01/13/latex-tips-collection</id>
+    <id>http://anand-iyer.com/blog/2013/latex-tips-collection</id>
     <content type="html"><![CDATA[<p>Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those:</p>
 
 <ul>
@@ -32,9 +32,9 @@
   
   <entry>
     <title type="html"><![CDATA[Syncing folders outside Dropbox folder]]></title>
-    <link href="http://anand-iyer.github.com/blog/2012/10/15/syncing-folders-outside-dropbox-folder/"/>
+    <link href="http://anand-iyer.com/blog/2012/syncing-folders-outside-dropbox-folder/"/>
     <updated>2012-10-15T23:25:03-07:00</updated>
-    <id>http://anand-iyer.github.com/blog/2012/10/15/syncing-folders-outside-dropbox-folder</id>
+    <id>http://anand-iyer.com/blog/2012/syncing-folders-outside-dropbox-folder</id>
     <content type="html"><![CDATA[<p>A big complaint I have about <a href="http://db.tt/VZd1Zsgp">Dropbox</a> is that unlike <a href="https://www.sugarsync.com/referral?rf=fevam6f0oyxab&amp;utm_source=website&amp;utm_medium=web&amp;utm_campaign=referral&amp;shareEvent=2630716">SugarSync</a>, it does allow me to sync any folder in my computer (essentially, I need to place the folders I want to be synced inside the &#8220;Dropbox&#8221; folder).</p>
 
 <p>Recently, I found a workaround for this problem. Here&#8217;s the trick to syncing any folder in your computer: softlink the folder to your Dropbox folder!</p>
@@ -50,9 +50,9 @@
   
   <entry>
     <title type="html"><![CDATA[Doxygen and OSX: Graphviz and other errors]]></title>
-    <link href="http://anand-iyer.github.com/blog/2011/10/09/doxygen-and-osx/"/>
+    <link href="http://anand-iyer.com/blog/2011/doxygen-and-osx/"/>
     <updated>2011-10-09T16:16:05-07:00</updated>
-    <id>http://anand-iyer.github.com/blog/2011/10/09/doxygen-and-osx</id>
+    <id>http://anand-iyer.com/blog/2011/doxygen-and-osx</id>
     <content type="html"><![CDATA[<p>I&#8217;m a big fan of <a href="http://www.doxygen.org/">Doxygen</a>. I use it all the time to generate and analyze call trees. Recently, I wanted to use it in my MacbookPro for analyzing an open source project. There is a binary for SnowLeopard <a href="http://www.stack.nl/~dimitri/doxygen/download.html">here</a> that works in Lion too, but it was throwing lots of errors regarding Graphviz. Here are two things that I had to do to make it finally work:</p>
 
 <ul>
@@ -65,9 +65,9 @@
   
   <entry>
     <title type="html"><![CDATA[Making QXDM COM object work with Python]]></title>
-    <link href="http://anand-iyer.github.com/blog/2011/02/19/making-qxdm-com-object-work-with-python/"/>
+    <link href="http://anand-iyer.com/blog/2011/making-qxdm-com-object-work-with-python/"/>
     <updated>2011-02-19T08:21:17-08:00</updated>
-    <id>http://anand-iyer.github.com/blog/2011/02/19/making-qxdm-com-object-work-with-python</id>
+    <id>http://anand-iyer.com/blog/2011/making-qxdm-com-object-work-with-python</id>
     <content type="html"><![CDATA[<p>Qualcomm&#8217;s <a href="http://www.qualcomm.com/products_services/testing_diagnostics/qxdm_pro.html">QXDM</a> is an amazing tool for getting diagnostic information from mobile phones. It supports automation where you can write scripts to interface with the COM object exposed by QXDM.</p>
 
 <p>The default installation of QXDM comes with a number of examples on how to use this object. Unfortunately, all the examples are in Perl. Although I like Perl, recently I have been using Python for all my scripting needs. It&#8217;s actually very easy to convert all these scripts to Python. Here&#8217;s how:</p>
@@ -103,9 +103,9 @@
   
   <entry>
     <title type="html"><![CDATA[It's raining job offers at CET!]]></title>
-    <link href="http://anand-iyer.github.com/blog/2010/12/24/its-raining-job-offers-at-cet/"/>
+    <link href="http://anand-iyer.com/blog/2010/its-raining-job-offers-at-cet/"/>
     <updated>2010-12-24T03:38:31-08:00</updated>
-    <id>http://anand-iyer.github.com/blog/2010/12/24/its-raining-job-offers-at-cet</id>
+    <id>http://anand-iyer.com/blog/2010/its-raining-job-offers-at-cet</id>
     <content type="html"><![CDATA[<p>Seems like it has been a fantastic placement season for the 2011 batch at my alma mater, <a href="http://en.wikipedia.org/wiki/College_of_Engineering,_Trivandrum">College of Engineering, Trivandrum</a> (CET). According to <a href="http://www.hinduonnet.com/2010/12/21/stories/2010122165900300.htm">this</a> article from <strong>The Hindu</strong>, 1019 job offers were made to a total of 540 students. Here&#8217;s the breakdown (courtesy: The Hindu):</p>
 
 <p><img src="http://www.anand-iyer.com/blog/wp-content/uploads/2010/12/2010122165900301.jpg" alt="" /></p>
@@ -116,9 +116,9 @@
   
   <entry>
     <title type="html"><![CDATA[Qualnet 4.0.1 woes!]]></title>
-    <link href="http://anand-iyer.github.com/blog/2010/12/23/qualnet-4-0-1-woes/"/>
+    <link href="http://anand-iyer.com/blog/2010/qualnet-4-0-1-woes/"/>
     <updated>2010-12-23T01:06:15-08:00</updated>
-    <id>http://anand-iyer.github.com/blog/2010/12/23/qualnet-4-0-1-woes</id>
+    <id>http://anand-iyer.com/blog/2010/qualnet-4-0-1-woes</id>
     <content type="html"><![CDATA[<p>For my latest work, I am using the Qualnet simulator tool. Unfortunately, the version that I have access to is pretty old (version 4.0.1). Consequently, I had a lot of trouble getting it to compile in Windows 7. For those who are having the same trouble, see if what I did works for you:</p>
 
 <ul>
@@ -139,9 +139,9 @@
   
   <entry>
     <title type="html"><![CDATA[ImportError with IronPython in C#]]></title>
-    <link href="http://anand-iyer.github.com/blog/2010/09/30/importerror-with-ironpython-in-c/"/>
+    <link href="http://anand-iyer.com/blog/2010/importerror-with-ironpython-in-c/"/>
     <updated>2010-09-30T15:48:44-07:00</updated>
-    <id>http://anand-iyer.github.com/blog/2010/09/30/importerror-with-ironpython-in-c</id>
+    <id>http://anand-iyer.com/blog/2010/importerror-with-ironpython-in-c</id>
     <content type="html"><![CDATA[<p>I was using IronPython to execute python code inside my C# implementation lately, and I encountered this error when trying to use xmlrpclib:</p>
 
 <pre><code>ImportError: No module named xmlrpclib.
@@ -185,9 +185,9 @@
   
   <entry>
     <title type="html"><![CDATA[Conky like system monitor for Windows]]></title>
-    <link href="http://anand-iyer.github.com/blog/2010/06/23/conky-like-system-monitor-for-windows/"/>
+    <link href="http://anand-iyer.com/blog/2010/conky-like-system-monitor-for-windows/"/>
     <updated>2010-06-23T06:15:57-07:00</updated>
-    <id>http://anand-iyer.github.com/blog/2010/06/23/conky-like-system-monitor-for-windows</id>
+    <id>http://anand-iyer.com/blog/2010/conky-like-system-monitor-for-windows</id>
     <content type="html"><![CDATA[<p>Ever since I came across <a href="http://conky.sourceforge.net/">Conky</a>, I have been using it on all my machines running Ubuntu (for those who are interested, I use <a href="http://gnome-look.org/content/show.php/CONKY-colors?content=92328">Conky-Colors</a> for easy configuration). I also use Windows extensively and had always wanted to have something similar to Conky. It seems like my quest has finally ended. My good friend suggested that I try <a href="http://rainmeter.net/">RainMeter</a>, and I was impressed with the results! It&#8217;s extremely customizable, has tons of skins to choose from, and is not heavy on the system.</p>
 
 <p>Here&#8217;s a screenshot (the theme I&#8217;m using is <a href="http://jsmorley.deviantart.com/art/JSMeterII-161282085">JSMeterII</a>):</p>
@@ -198,9 +198,9 @@
   
   <entry>
     <title type="html"><![CDATA[NS3 in Eclipse]]></title>
-    <link href="http://anand-iyer.github.com/blog/2010/05/30/ns3-in-eclipse/"/>
+    <link href="http://anand-iyer.com/blog/2010/ns3-in-eclipse/"/>
     <updated>2010-05-30T11:58:55-07:00</updated>
-    <id>http://anand-iyer.github.com/blog/2010/05/30/ns3-in-eclipse</id>
+    <id>http://anand-iyer.com/blog/2010/ns3-in-eclipse</id>
     <content type="html"><![CDATA[<p>I found <a href="http://www.nsnam.org/wiki/index.php/HOWTO_configure_eclipse_with_ns-3">this</a> wiki page on configuring NS3 with Eclipse and decided to give it a try. I had trouble compiling, and Eclipse kept giving the following error:</p>
 
 <pre><code>Cannot run program "waf": Unknown reason)
@@ -223,9 +223,9 @@
   
   <entry>
     <title type="html"><![CDATA[NS2 in Ubuntu 10.04]]></title>
-    <link href="http://anand-iyer.github.com/blog/2010/05/19/ns2-in-ubuntu-10-04/"/>
+    <link href="http://anand-iyer.com/blog/2010/ns2-in-ubuntu-10-04/"/>
     <updated>2010-05-19T04:13:49-07:00</updated>
-    <id>http://anand-iyer.github.com/blog/2010/05/19/ns2-in-ubuntu-10-04</id>
+    <id>http://anand-iyer.com/blog/2010/ns2-in-ubuntu-10-04</id>
     <content type="html"><![CDATA[<p>I spent a reasonably long time getting NS-2 (ns-allinone-2.34) to work in Ubuntu 10.04. Here&#8217;s how I finally did it:</p>
 
 <p>Install necessary tools for building:</p>
@@ -249,9 +249,9 @@
   
   <entry>
     <title type="html"><![CDATA[ath5k “Master” mode]]></title>
-    <link href="http://anand-iyer.github.com/blog/2010/05/06/ath5k-master-mode/"/>
+    <link href="http://anand-iyer.com/blog/2010/ath5k-master-mode/"/>
     <updated>2010-05-06T09:11:34-07:00</updated>
-    <id>http://anand-iyer.github.com/blog/2010/05/06/ath5k-master-mode</id>
+    <id>http://anand-iyer.com/blog/2010/ath5k-master-mode</id>
     <content type="html"><![CDATA[<p>To enable Master mode in ath5k, do the following:</p>
 
 <ol>
@@ -275,9 +275,9 @@
   
   <entry>
     <title type="html"><![CDATA[Royaltek RBT-2300 and Karmic Koala]]></title>
-    <link href="http://anand-iyer.github.com/blog/2010/03/31/royaltek-rbt-2300-and-karmic-koala/"/>
+    <link href="http://anand-iyer.com/blog/2010/royaltek-rbt-2300-and-karmic-koala/"/>
     <updated>2010-03-31T15:48:46-07:00</updated>
-    <id>http://anand-iyer.github.com/blog/2010/03/31/royaltek-rbt-2300-and-karmic-koala</id>
+    <id>http://anand-iyer.com/blog/2010/royaltek-rbt-2300-and-karmic-koala</id>
     <content type="html"><![CDATA[<p>I recently had to make use of a GPS logger in Linux. Here&#8217;s how I made it work in Karmic, incase any one is interested:</p>
 
 <ul>

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Anand Iyer</title>
+  <title>Syncing folders outside Dropbox folder - Anand Iyer</title>
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="2013 Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory 2012 Included file &#8216;archive-article-titles.html &hellip;">
+  <meta name="description" content="A big complaint I have about Dropbox is that unlike SugarSync, it does allow me to sync any folder in my computer (essentially, I need to place the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anand-iyer.com/archive">
+  <link rel="canonical" href="http://anand-iyer.com/blog/2012/syncing-folders-outside-dropbox-folder">
   <link href="/favicon.ico" rel="icon">
   
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -68,73 +68,93 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
-  <div class="archive">
+  <header>
+    
+      <h1 class="entry-title">Syncing Folders Outside Dropbox Folder</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
-  
-  <h2>2013</h2>
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
 
 
-
-  
-  <h2>2012</h2>
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
 
 
 
   
-  <h2>2011</h2>
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
 
 
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  
-  <h2>2010</h2>
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
+<time datetime="2012-10-15T23:25:03-07:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
 
 
+<div class="entry-content"><p>A big complaint I have about <a href="http://db.tt/VZd1Zsgp">Dropbox</a> is that unlike <a href="https://www.sugarsync.com/referral?rf=fevam6f0oyxab&amp;utm_source=website&amp;utm_medium=web&amp;utm_campaign=referral&amp;shareEvent=2630716">SugarSync</a>, it does allow me to sync any folder in my computer (essentially, I need to place the folders I want to be synced inside the &#8220;Dropbox&#8221; folder).</p>
 
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
+<p>Recently, I found a workaround for this problem. Here&#8217;s the trick to syncing any folder in your computer: softlink the folder to your Dropbox folder!</p>
 
+<p>If you&#8217;re using a Mac (or Linux), just use the following command:</p>
 
+<pre><code>ln -s /full-path-to-folder/file-to-sync ~/Dropbox/desired-folder-name
+</code></pre>
 
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
+<p>That&#8217;s it, from now on, all file(s) in the actual path would now sync with Dropbox.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn"><a href="/about" title="About the author (Anand)" rel="author">Anand</a></span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-15T23:25:03-07:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tips/'>Tips</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/doxygen-and-osx/" title="Previous Post: Doxygen and OSX: Graphviz and other errors">&laquo; Doxygen and OSX: Graphviz and other errors</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/latex-tips-collection/" title="next Post: Latex Tips Collection">Latex Tips Collection &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Anand Iyer</title>
+  <title>NS2 in Ubuntu 10.04 - Anand Iyer</title>
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="2013 Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory 2012 Included file &#8216;archive-article-titles.html &hellip;">
+  <meta name="description" content="I spent a reasonably long time getting NS-2 (ns-allinone-2.34) to work in Ubuntu 10.04. Here&#8217;s how I finally did it: Install necessary tools &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anand-iyer.com/archive">
+  <link rel="canonical" href="http://anand-iyer.com/blog/2010/ns2-in-ubuntu-10-04">
   <link href="/favicon.ico" rel="icon">
   
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -68,73 +68,101 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
-  <div class="archive">
+  <header>
+    
+      <h1 class="entry-title">NS2 in Ubuntu 10.04</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
-  
-  <h2>2013</h2>
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
 
 
-
-  
-  <h2>2012</h2>
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
 
 
 
   
-  <h2>2011</h2>
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
 
 
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  
-  <h2>2010</h2>
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
+<time datetime="2010-05-19T04:13:49-07:00" pubdate data-updated="true">May 19<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
 
 
+<div class="entry-content"><p>I spent a reasonably long time getting NS-2 (ns-allinone-2.34) to work in Ubuntu 10.04. Here&#8217;s how I finally did it:</p>
 
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
+<p>Install necessary tools for building:</p>
 
+<pre><code>sudo apt-get install build-essential autoconf automake libxmu-dev gcc-4.3
+</code></pre>
 
+<p>It turns out that otcl does not like the version of gcc installed by default in Lucid. So go ahead and change <code>ns-allinone-2.34/otcl-1.13/Makefile.in</code>. Find the line that says:</p>
 
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
+<pre><code>CC=    @CC@
+</code></pre>
 
+<p>and change it to:</p>
 
+<pre><code>CC=    gcc-4.3
+</code></pre>
 
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
+<p>Now try doing <code>./install</code> from the ns-allinone-2.34 directory. It should work.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn"><a href="/about" title="About the author (Anand)" rel="author">Anand</a></span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-19T04:13:49-07:00" pubdate data-updated="true">May 19<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tips/'>Tips</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/ath5k-master-mode/" title="Previous Post: ath5k “Master” mode">&laquo; ath5k “Master” mode</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/ns3-in-eclipse/" title="next Post: NS3 in Eclipse">NS3 in Eclipse &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>

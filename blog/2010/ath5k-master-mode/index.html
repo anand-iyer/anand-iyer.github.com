@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Anand Iyer</title>
+  <title>ath5k “Master” mode - Anand Iyer</title>
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="2013 Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory 2012 Included file &#8216;archive-article-titles.html &hellip;">
+  <meta name="description" content="To enable Master mode in ath5k, do the following: Make sure you are running kernel 2.6.29 or higher. If not, you need to get the latest patches for &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anand-iyer.com/archive">
+  <link rel="canonical" href="http://anand-iyer.com/blog/2010/ath5k-master-mode">
   <link href="/favicon.ico" rel="icon">
   
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -68,73 +68,101 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
-  <div class="archive">
+  <header>
+    
+      <h1 class="entry-title">Ath5k “Master” Mode</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
-  
-  <h2>2013</h2>
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
 
 
-
-  
-  <h2>2012</h2>
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
 
 
 
   
-  <h2>2011</h2>
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
 
 
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  
-  <h2>2010</h2>
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
+<time datetime="2010-05-06T09:11:34-07:00" pubdate data-updated="true">May 6<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
 
 
+<div class="entry-content"><p>To enable Master mode in ath5k, do the following:</p>
 
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
+<ol>
+<li><p>Make sure you are running kernel 2.6.29 or higher. If not, you need to get the latest patches for ath5k.</p></li>
+<li><p>Install hostapd. It is available in Ubuntu repositories.</p></li>
+<li><p>Create a config file for hostapd. A simple one is:</p>
 
+<pre><code> interface=wlan0
+ driver=nl80211
+ ssid=test
+ channel=1
+</code></pre></li>
+<li><p>Now you can start hostapd to put the card in master mode:</p>
 
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
-
-
-
-  Included file &#8216;archive-article-titles.html&#8217; not found in _includes directory
+<pre><code> sudo hostapd &lt;config_file&gt;
+</code></pre></li>
+</ol>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn"><a href="/about" title="About the author (Anand)" rel="author">Anand</a></span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-06T09:11:34-07:00" pubdate data-updated="true">May 6<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tips/'>Tips</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/royaltek-rbt-2300-and-karmic-koala/" title="Previous Post: Royaltek RBT-2300 and Karmic Koala">&laquo; Royaltek RBT-2300 and Karmic Koala</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/ns2-in-ubuntu-10-04/" title="next Post: NS2 in Ubuntu 10.04">NS2 in Ubuntu 10.04 &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>

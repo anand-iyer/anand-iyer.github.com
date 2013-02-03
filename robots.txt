@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://anand-iyer.github.com/sitemap.xml 
+Sitemap: http://anand-iyer.com/sitemap.xml 
