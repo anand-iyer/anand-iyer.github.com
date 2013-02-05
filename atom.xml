@@ -4,7 +4,7 @@
   <title><![CDATA[Anand Iyer]]></title>
   <link href="http://anand-iyer.com/atom.xml" rel="self"/>
   <link href="http://anand-iyer.com/"/>
-  <updated>2013-02-03T16:23:40-08:00</updated>
+  <updated>2013-02-04T19:55:05-08:00</updated>
   <id>http://anand-iyer.com/</id>
   <author>
     <name><![CDATA[Anand]]></name>
@@ -21,10 +21,12 @@
     <content type="html"><![CDATA[<p>Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those:</p>
 
 <ul>
-<li><p><strong><a href="http://gurmeet.net/computer-science/latex-tips-n-tricks-for-conference-papers/">Tips for Conference Papers</a> by Gurmeet Singh
-</strong>A nice set of tricks that saves your life at the last minute during deadlines.</p></li>
-<li><p><strong><a href="http://www.read.seas.harvard.edu/~kohler/latex.html">Latex Usage Notes</a> by Eddie Kohler
-</strong>Solutions for common Latex problems, tips on proper formatting, etc.</p></li>
+<li><p><strong><a href="http://gurmeet.net/computer-science/latex-tips-n-tricks-for-conference-papers/">Tips for Conference Papers</a> by Gurmeet Singh</strong></p>
+
+<p>A nice set of tricks that saves your life at the last minute during deadlines.</p></li>
+<li><p><strong><a href="http://www.read.seas.harvard.edu/~kohler/latex.html">Latex Usage Notes</a> by Eddie Kohler</strong></p>
+
+<p>Solutions for common Latex problems, tips on proper formatting, etc.</p></li>
 </ul>
 
 ]]></content>
@@ -125,7 +127,7 @@
 <li><p>This version of Qualnet is only compatible with Visual Studio 2005 (I have tried VS 2008 and VS 2010 - although I succeeded in compiling, the executable crashes all the time). Install VS 2005 if you can get hold of it, or install Visual C++ 2005 Express edition which is available for free.</p></li>
 <li><p>The second thing that is essential for building Qualnet is Windows 7 SDK. Download and install this from Microsoft.</p></li>
 <li><p>Once you have both these installed, run the <code>vsvars32.bat</code> file to set the right environment variables. <code>vsvars32.bat</code> is available in the following folder: <code>C:\Program Files\Microsoft Visual Studio 8\Common7\Tools\</code></p></li>
-<li><p>Now try compiling qualnet. I used the following command inside <code>c:\qualnet\4.0\main folder</code>:</p>
+<li><p>Now try compiling qualnet. I used the following command inside <code>c:\qualnet\4.0\main</code> folder:</p>
 
 <pre><code>nmake /f Makefile-windows-vc8
 </code></pre></li>
