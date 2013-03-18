@@ -4,7 +4,7 @@
   <title><![CDATA[Anand Iyer]]></title>
   <link href="http://anand-iyer.com/atom.xml" rel="self"/>
   <link href="http://anand-iyer.com/"/>
-  <updated>2013-03-17T20:28:08-07:00</updated>
+  <updated>2013-03-17T20:47:30-07:00</updated>
   <id>http://anand-iyer.com/</id>
   <author>
     <name><![CDATA[Anand]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Gnuplot cairo terminal errors in Mountain Lion]]></title>
+    <link href="http://anand-iyer.com/blog/2013/gnuplot-cairo-terminal-errors-in-mountain-lion/"/>
+    <updated>2013-03-17T20:31:00-07:00</updated>
+    <id>http://anand-iyer.com/blog/2013/gnuplot-cairo-terminal-errors-in-mountain-lion</id>
+    <content type="html"><![CDATA[<p>I love the cairo terminal in gnuplot, it creates amazing plots. My recent upgrade to Mountain Lion broke my homebrew based gnuplot installation, throwing a bunch of glib errors when I set the terminal to pdfcairo or pngcairo (normal terminals work fine):</p>
+
+<pre><code>Error: GLib-GObject-CRITICAL **: gtype.c:2720: You forgot to call g_type_init() 
+</code></pre>
+
+<p>This is essentially an issue with the latest version of Pango package. There are two ways to fix this:</p>
+
+<ul>
+<li>Force homebrew to go back to a lower version of Pango; this error seems to appear in versions 1.32.6 or later.</li>
+<li>Patch the gnuplot installation&#8217;s Cairo terminal as suggested <a href='https://github.com/mxcl/homebrew/pull/18528' target='_blank'>here</a>.</li>
+</ul>
+
+
+<p><strong>Note:</strong> If you are not getting cairo terminals in your gnuplot installation, reinstall it with cairo option enabled: <code>brew install gnuplot --cairo</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Latex Tips Collection]]></title>

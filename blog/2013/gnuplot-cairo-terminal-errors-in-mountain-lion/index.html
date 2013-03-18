@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Latex Tips Collection - Anand Iyer</title>
+  <title>Gnuplot cairo terminal errors in Mountain Lion - Anand Iyer</title>
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those: &hellip;">
+  <meta name="description" content="I love the cairo terminal in gnuplot, it creates amazing plots. My recent upgrade to Mountain Lion broke my homebrew based gnuplot installation, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anand-iyer.com/blog/2013/latex-tips-collection">
+  <link rel="canonical" href="http://anand-iyer.com/blog/2013/gnuplot-cairo-terminal-errors-in-mountain-lion">
   <link href="/favicon.ico" rel="icon">
   
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -58,7 +58,7 @@
   
   <header>
     
-      <h1 class="entry-title">Latex Tips Collection</h1>
+      <h1 class="entry-title">Gnuplot Cairo Terminal Errors in Mountain Lion</h1>
     
     
       <p class="meta">
@@ -74,24 +74,27 @@
   
 
 
-<time datetime="2013-01-13T07:56:30-08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
+<time datetime="2013-03-17T20:31:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those:</p>
+<div class="entry-content"><p>I love the cairo terminal in gnuplot, it creates amazing plots. My recent upgrade to Mountain Lion broke my homebrew based gnuplot installation, throwing a bunch of glib errors when I set the terminal to pdfcairo or pngcairo (normal terminals work fine):</p>
+
+<pre><code>Error: GLib-GObject-CRITICAL **: gtype.c:2720: You forgot to call g_type_init() 
+</code></pre>
+
+<p>This is essentially an issue with the latest version of Pango package. There are two ways to fix this:</p>
 
 <ul>
-<li><p><strong><a href="http://gurmeet.net/computer-science/latex-tips-n-tricks-for-conference-papers/">Tips for Conference Papers</a> by Gurmeet Singh</strong></p>
-
-<p>A nice set of tricks that saves your life at the last minute during deadlines.</p></li>
-<li><p><strong><a href="http://www.read.seas.harvard.edu/~kohler/latex.html">Latex Usage Notes</a> by Eddie Kohler</strong></p>
-
-<p>Solutions for common Latex problems, tips on proper formatting, etc.</p></li>
+<li>Force homebrew to go back to a lower version of Pango; this error seems to appear in versions 1.32.6 or later.</li>
+<li>Patch the gnuplot installation&#8217;s Cairo terminal as suggested <a href='https://github.com/mxcl/homebrew/pull/18528' target='_blank'>here</a>.</li>
 </ul>
 
+
+<p><strong>Note:</strong> If you are not getting cairo terminals in your gnuplot installation, reinstall it with cairo option enabled: <code>brew install gnuplot --cairo</code></p>
 </div>
 
 
@@ -114,14 +117,8 @@
   
 
 
-<time datetime="2013-01-13T07:56:30-08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
+<time datetime="2013-03-17T20:31:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/tips/'>Tips</a>
-  
-</span>
 
 
     </p>
@@ -135,10 +132,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/syncing-folders-outside-dropbox-folder/" title="Previous Post: Syncing folders outside Dropbox folder">&laquo; Syncing folders outside Dropbox folder</a>
+        <a class="basic-alignment left" href="/blog/2013/latex-tips-collection/" title="Previous Post: Latex Tips Collection">&laquo; Latex Tips Collection</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/gnuplot-cairo-terminal-errors-in-mountain-lion/" title="next Post: Gnuplot cairo terminal errors in Mountain Lion">Gnuplot cairo terminal errors in Mountain Lion &raquo;</a>
       
     </p>
   </footer>

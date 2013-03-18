@@ -9,7 +9,7 @@
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="Over time, I&#8217;ve come across many useful Latex tips and tricks scattered across the internet. Here&#8217;s an attempt to collect some of those: &hellip;">
+  <meta name="description" content="I love the cairo terminal in gnuplot, it creates amazing plots. My recent upgrade to Mountain Lion broke my homebrew based gnuplot installation, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -54,6 +54,53 @@
   <div id="main">
     <div id="content">
       
+
+
+    <article class="post">
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/gnuplot-cairo-terminal-errors-in-mountain-lion/">Gnuplot Cairo Terminal Errors in Mountain Lion</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-17T20:31:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I love the cairo terminal in gnuplot, it creates amazing plots. My recent upgrade to Mountain Lion broke my homebrew based gnuplot installation, throwing a bunch of glib errors when I set the terminal to pdfcairo or pngcairo (normal terminals work fine):</p>
+
+<pre><code>Error: GLib-GObject-CRITICAL **: gtype.c:2720: You forgot to call g_type_init() 
+</code></pre>
+
+<p>This is essentially an issue with the latest version of Pango package. There are two ways to fix this:</p>
+
+<ul>
+<li>Force homebrew to go back to a lower version of Pango; this error seems to appear in versions 1.32.6 or later.</li>
+<li>Patch the gnuplot installation&#8217;s Cairo terminal as suggested <a href='https://github.com/mxcl/homebrew/pull/18528' target='_blank'>here</a>.</li>
+</ul>
+
+
+<p><strong>Note:</strong> If you are not getting cairo terminals in your gnuplot installation, reinstall it with cairo option enabled: <code>brew install gnuplot --cairo</code></p>
+</div>
+  
+  
+
+</article>
 
 
     <article class="post">
@@ -484,57 +531,6 @@
 <li><p>To run NS3 programs using waf, you need to create a new Run configuration. Make the new configuration to be a C/C++ application. Select the project you want this run configuration to be associated with, and give the complete path to waf as the C/C++ program. Click on the arguments tab, and provide the same argument as above. Now when you try to run a program, a dialog box should pop-up asking for the input arguments to waf and your program should run.</p></li>
 </ol>
 
-</div>
-  
-  
-
-</article>
-
-
-    <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/ns2-in-ubuntu-10-04/">NS2 in Ubuntu 10.04</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-05-19T04:13:49-07:00" pubdate data-updated="true">May 19<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I spent a reasonably long time getting NS-2 (ns-allinone-2.34) to work in Ubuntu 10.04. Here&#8217;s how I finally did it:</p>
-
-<p>Install necessary tools for building:</p>
-
-<pre><code>sudo apt-get install build-essential autoconf automake libxmu-dev gcc-4.3
-</code></pre>
-
-<p>It turns out that otcl does not like the version of gcc installed by default in Lucid. So go ahead and change <code>ns-allinone-2.34/otcl-1.13/Makefile.in</code>. Find the line that says:</p>
-
-<pre><code>CC=    @CC@
-</code></pre>
-
-<p>and change it to:</p>
-
-<pre><code>CC=    gcc-4.3
-</code></pre>
-
-<p>Now try doing <code>./install</code> from the ns-allinone-2.34 directory. It should work.</p>
 </div>
   
   
