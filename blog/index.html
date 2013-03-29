@@ -9,7 +9,7 @@
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="I love the cairo terminal in gnuplot, it creates amazing plots. My recent upgrade to Mountain Lion broke my homebrew based gnuplot installation, &hellip;">
+  <meta name="description" content="Scenario: You have an IPA that you want to test on a device, but the IPA was generated using a provisioning profile that does not include the device &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -54,6 +54,64 @@
   <div id="main">
     <div id="content">
       
+
+
+    <article class="post">
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/re-signing-ipa-files/">Re-signing IPA Files</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-28T23:49:00-07:00" pubdate data-updated="true">Mar 28<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Scenario: You have an IPA that you want to test on a device, but the IPA was generated using a provisioning profile that does not include the device, and was signed with a certificate that is not yours. You drag this IPA to XCode&#8217;s organizer window hoping it would be installed on the connected device, but this results in an <code>Unknown error</code>.</p>
+
+<p>Turns out that this is easy to fix. Here&#8217;s how to make it work.</p>
+
+<p>First, unpack the IPA (<code>unzip -q &lt;IPA&gt;</code>). This would create a directory named <code>Payload</code> and a few other files. Delete the existing signature in the extracted package:</p>
+
+<pre><code>rm -rf "Payload/*.app/_CodeSignature" "Payload/*.app/CodeResources"
+</code></pre>
+
+<p>For the next step, you need two things: a valid provisioning profile and a valid certificate. Both can be obtained via the iOS developer portal.</p>
+
+<p>Replace the provisioning profile first</p>
+
+<pre><code>cp &lt;PROVISIONING_PROFILE&gt; "Payload/*.app/embedded.mobileprovision"
+</code></pre>
+
+<p>Then resign using your certificate (the certificate must be present in your keychain)</p>
+
+<pre><code>/usr/bin/codesign -f -s "&lt;CERTIFICATE&gt;" --resource-rules "Payload/*.app/ResourceRules.plist" "Payload/*.app"
+</code></pre>
+
+<p>Now you can recreate the IPA and then drag &amp; drop it in the XCode organizer to install it on the device!</p>
+
+<pre><code>zip -qr &lt;IPA_resigned&gt; Payload     
+</code></pre>
+</div>
+  
+  
+
+</article>
 
 
     <article class="post">
@@ -481,56 +539,6 @@
 <p>Here&#8217;s a screenshot (the theme I&#8217;m using is <a href="http://jsmorley.deviantart.com/art/JSMeterII-161282085">JSMeterII</a>):</p>
 
 <p><img src="/images/Desktop-300x187.png" alt="" /></p>
-</div>
-  
-  
-
-</article>
-
-
-    <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/ns3-in-eclipse/">NS3 in Eclipse</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-05-30T11:58:55-07:00" pubdate data-updated="true">May 30<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I found <a href="http://www.nsnam.org/wiki/index.php/HOWTO_configure_eclipse_with_ns-3">this</a> wiki page on configuring NS3 with Eclipse and decided to give it a try. I had trouble compiling, and Eclipse kept giving the following error:</p>
-
-<pre><code>Cannot run program "waf": Unknown reason)
-</code></pre>
-
-<p>After spending a little time with the configuration, the following additional tweaking seems to be working (in Ubuntu 10.04, Eclipse version 3.5.2 Galileo with ns-allinone-3.8):</p>
-
-<ol>
-<li><p>Create a new External tool configuration. The location should be the location to waf (<code>${workspace_loc:/ns3/waf}</code> in my case) and working directory should be the directory where waf is present (<code>${workspace_loc:/ns3/}</code> in my case). In arguments textbox, provide the following:</p>
-
-<pre><code> --run "${string_prompt}"
-</code></pre>
-
-<p>Now when you try to build the project (right click on the <code>project -&gt; Build Project</code>), it should work.</p></li>
-<li><p>To run NS3 programs using waf, you need to create a new Run configuration. Make the new configuration to be a C/C++ application. Select the project you want this run configuration to be associated with, and give the complete path to waf as the C/C++ program. Click on the arguments tab, and provide the same argument as above. Now when you try to run a program, a dialog box should pop-up asking for the input arguments to waf and your program should run.</p></li>
-</ol>
-
 </div>
   
   

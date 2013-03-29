@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Gnuplot cairo terminal errors in Mountain Lion - Anand Iyer</title>
+  <title>Re-signing IPA files - Anand Iyer</title>
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="I love the cairo terminal in gnuplot, it creates amazing plots. My recent upgrade to Mountain Lion broke my homebrew based gnuplot installation, &hellip;">
+  <meta name="description" content="Scenario: You have an IPA that you want to test on a device, but the IPA was generated using a provisioning profile that does not include the device &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://anand-iyer.com/blog/2013/gnuplot-cairo-terminal-errors-in-mountain-lion">
+  <link rel="canonical" href="http://anand-iyer.com/blog/2013/re-signing-ipa-files">
   <link href="/favicon.ico" rel="icon">
   
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -58,7 +58,7 @@
   
   <header>
     
-      <h1 class="entry-title">Gnuplot Cairo Terminal Errors in Mountain Lion</h1>
+      <h1 class="entry-title">Re-signing IPA Files</h1>
     
     
       <p class="meta">
@@ -74,27 +74,38 @@
   
 
 
-<time datetime="2013-03-17T20:31:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+<time datetime="2013-03-28T23:49:00-07:00" pubdate data-updated="true">Mar 28<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I love the cairo terminal in gnuplot, it creates amazing plots. My recent upgrade to Mountain Lion broke my homebrew based gnuplot installation, throwing a bunch of glib errors when I set the terminal to pdfcairo or pngcairo (normal terminals work fine):</p>
+<div class="entry-content"><p>Scenario: You have an IPA that you want to test on a device, but the IPA was generated using a provisioning profile that does not include the device, and was signed with a certificate that is not yours. You drag this IPA to XCode&#8217;s organizer window hoping it would be installed on the connected device, but this results in an <code>Unknown error</code>.</p>
 
-<pre><code>Error: GLib-GObject-CRITICAL **: gtype.c:2720: You forgot to call g_type_init() 
+<p>Turns out that this is easy to fix. Here&#8217;s how to make it work.</p>
+
+<p>First, unpack the IPA (<code>unzip -q &lt;IPA&gt;</code>). This would create a directory named <code>Payload</code> and a few other files. Delete the existing signature in the extracted package:</p>
+
+<pre><code>rm -rf "Payload/*.app/_CodeSignature" "Payload/*.app/CodeResources"
 </code></pre>
 
-<p>This is essentially an issue with the latest version of Pango package. There are two ways to fix this:</p>
+<p>For the next step, you need two things: a valid provisioning profile and a valid certificate. Both can be obtained via the iOS developer portal.</p>
 
-<ul>
-<li>Force homebrew to go back to a lower version of Pango; this error seems to appear in versions 1.32.6 or later.</li>
-<li>Patch the gnuplot installation&#8217;s Cairo terminal as suggested <a href='https://github.com/mxcl/homebrew/pull/18528' target='_blank'>here</a>.</li>
-</ul>
+<p>Replace the provisioning profile first</p>
 
+<pre><code>cp &lt;PROVISIONING_PROFILE&gt; "Payload/*.app/embedded.mobileprovision"
+</code></pre>
 
-<p><strong>Note:</strong> If you are not getting cairo terminals in your gnuplot installation, reinstall it with cairo option enabled: <code>brew install gnuplot --cairo</code></p>
+<p>Then resign using your certificate (the certificate must be present in your keychain)</p>
+
+<pre><code>/usr/bin/codesign -f -s "&lt;CERTIFICATE&gt;" --resource-rules "Payload/*.app/ResourceRules.plist" "Payload/*.app"
+</code></pre>
+
+<p>Now you can recreate the IPA and then drag &amp; drop it in the XCode organizer to install it on the device!</p>
+
+<pre><code>zip -qr &lt;IPA_resigned&gt; Payload     
+</code></pre>
 </div>
 
 
@@ -117,7 +128,7 @@
   
 
 
-<time datetime="2013-03-17T20:31:00-07:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+<time datetime="2013-03-28T23:49:00-07:00" pubdate data-updated="true">Mar 28<span>th</span>, 2013</time>
       
 
 
@@ -132,10 +143,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/latex-tips-collection/" title="Previous Post: Latex Tips Collection">&laquo; Latex Tips Collection</a>
+        <a class="basic-alignment left" href="/blog/2013/gnuplot-cairo-terminal-errors-in-mountain-lion/" title="Previous Post: Gnuplot cairo terminal errors in Mountain Lion">&laquo; Gnuplot cairo terminal errors in Mountain Lion</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/re-signing-ipa-files/" title="next Post: Re-signing IPA files">Re-signing IPA files &raquo;</a>
       
     </p>
   </footer>

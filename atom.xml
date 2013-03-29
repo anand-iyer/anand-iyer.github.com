@@ -4,7 +4,7 @@
   <title><![CDATA[Anand Iyer]]></title>
   <link href="http://anand-iyer.com/atom.xml" rel="self"/>
   <link href="http://anand-iyer.com/"/>
-  <updated>2013-03-17T20:47:30-07:00</updated>
+  <updated>2013-03-29T00:19:16-07:00</updated>
   <id>http://anand-iyer.com/</id>
   <author>
     <name><![CDATA[Anand]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Re-signing IPA files]]></title>
+    <link href="http://anand-iyer.com/blog/2013/re-signing-ipa-files/"/>
+    <updated>2013-03-28T23:49:00-07:00</updated>
+    <id>http://anand-iyer.com/blog/2013/re-signing-ipa-files</id>
+    <content type="html"><![CDATA[<p>Scenario: You have an IPA that you want to test on a device, but the IPA was generated using a provisioning profile that does not include the device, and was signed with a certificate that is not yours. You drag this IPA to XCode&#8217;s organizer window hoping it would be installed on the connected device, but this results in an <code>Unknown error</code>.</p>
+
+<p>Turns out that this is easy to fix. Here&#8217;s how to make it work.</p>
+
+<p>First, unpack the IPA (<code>unzip -q &lt;IPA&gt;</code>). This would create a directory named <code>Payload</code> and a few other files. Delete the existing signature in the extracted package:</p>
+
+<pre><code>rm -rf "Payload/*.app/_CodeSignature" "Payload/*.app/CodeResources"
+</code></pre>
+
+<p>For the next step, you need two things: a valid provisioning profile and a valid certificate. Both can be obtained via the iOS developer portal.</p>
+
+<p>Replace the provisioning profile first</p>
+
+<pre><code>cp &lt;PROVISIONING_PROFILE&gt; "Payload/*.app/embedded.mobileprovision"
+</code></pre>
+
+<p>Then resign using your certificate (the certificate must be present in your keychain)</p>
+
+<pre><code>/usr/bin/codesign -f -s "&lt;CERTIFICATE&gt;" --resource-rules "Payload/*.app/ResourceRules.plist" "Payload/*.app"
+</code></pre>
+
+<p>Now you can recreate the IPA and then drag &amp; drop it in the XCode organizer to install it on the device!</p>
+
+<pre><code>zip -qr &lt;IPA_resigned&gt; Payload     
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Gnuplot cairo terminal errors in Mountain Lion]]></title>
