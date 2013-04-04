@@ -4,7 +4,7 @@
   <title><![CDATA[Anand Iyer]]></title>
   <link href="http://anand-iyer.com/atom.xml" rel="self"/>
   <link href="http://anand-iyer.com/"/>
-  <updated>2013-03-29T00:19:16-07:00</updated>
+  <updated>2013-04-03T21:32:48-07:00</updated>
   <id>http://anand-iyer.com/</id>
   <author>
     <name><![CDATA[Anand]]></name>
@@ -43,6 +43,8 @@
 
 <pre><code>zip -qr &lt;IPA_resigned&gt; Payload     
 </code></pre>
+
+<p><strong>Edit:</strong> If you are looking for user friendly options, check out the <a href=""http://floatlearning.com/2011/11/re-signing-an-ios-app-without-xcode/" target="_blank">script by Daniel</a> or the <a href="http://www.gorbster.net/blog/archives/273" target="_blank">app by Brian</a>.</p>
 ]]></content>
   </entry>
   
