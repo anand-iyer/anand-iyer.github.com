@@ -81,9 +81,9 @@
   </header>
 
 
-<div class="entry-content"><p>Scenario: You have an IPA that you want to test on a device, but the IPA was generated using a provisioning profile that does not include the device, and was signed with a certificate that is not yours. You drag this IPA to XCode&#8217;s organizer window hoping it would be installed on the connected device, but this results in an <code>Unknown error</code>.</p>
+<div class="entry-content"><p>Scenario: You have an IPA that you want to test on a device, but the IPA was generated using a provisioning profile that does not include the device, and was signed with a certificate that is not yours. You drag this IPA to XCode&rsquo;s organizer window hoping it would be installed on the connected device, but this results in an <code>Unknown error</code>.</p>
 
-<p>Turns out that this is easy to fix. Here&#8217;s how to make it work.</p>
+<p>Turns out that this is easy to fix. Here&rsquo;s how to make it work.</p>
 
 <p>First, unpack the IPA (<code>unzip -q &lt;IPA&gt;</code>). This would create a directory named <code>Payload</code> and a few other files. Delete the existing signature in the extracted package:</p>
 

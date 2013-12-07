@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Miscellaneous | ]]></title>
   <link href="http://anand-iyer.com/blog/categories/miscellaneous/atom.xml" rel="self"/>
   <link href="http://anand-iyer.com/"/>
-  <updated>2013-09-19T20:27:39-07:00</updated>
+  <updated>2013-12-06T21:42:51-08:00</updated>
   <id>http://anand-iyer.com/</id>
   <author>
     <name><![CDATA[Anand]]></name>
@@ -18,7 +18,7 @@
     <link href="http://anand-iyer.com/blog/2010/its-raining-job-offers-at-cet/"/>
     <updated>2010-12-24T03:38:31-08:00</updated>
     <id>http://anand-iyer.com/blog/2010/its-raining-job-offers-at-cet</id>
-    <content type="html"><![CDATA[<p>Seems like it has been a fantastic placement season for the 2011 batch at my alma mater, <a href="http://en.wikipedia.org/wiki/College_of_Engineering,_Trivandrum">College of Engineering, Trivandrum</a> (CET). According to <a href="http://www.hinduonnet.com/2010/12/21/stories/2010122165900300.htm">this</a> article from <strong>The Hindu</strong>, 1019 job offers were made to a total of 540 students. Here's the breakdown (courtesy: The Hindu):</p>
+    <content type="html"><![CDATA[<p>Seems like it has been a fantastic placement season for the 2011 batch at my alma mater, <a href="http://en.wikipedia.org/wiki/College_of_Engineering,_Trivandrum">College of Engineering, Trivandrum</a> (CET). According to <a href="http://www.hinduonnet.com/2010/12/21/stories/2010122165900300.htm">this</a> article from <strong>The Hindu</strong>, 1019 job offers were made to a total of 540 students. Here&rsquo;s the breakdown (courtesy: The Hindu):</p>
 
 <p><img src="http://www.anand-iyer.com/blog/wp-content/uploads/2010/12/2010122165900301.jpg" alt="" /></p>
 
@@ -31,9 +31,9 @@
     <link href="http://anand-iyer.com/blog/2010/conky-like-system-monitor-for-windows/"/>
     <updated>2010-06-23T06:15:57-07:00</updated>
     <id>http://anand-iyer.com/blog/2010/conky-like-system-monitor-for-windows</id>
-    <content type="html"><![CDATA[<p>Ever since I came across <a href="http://conky.sourceforge.net/">Conky</a>, I have been using it on all my machines running Ubuntu (for those who are interested, I use <a href="http://gnome-look.org/content/show.php/CONKY-colors?content=92328">Conky-Colors</a> for easy configuration). I also use Windows extensively and had always wanted to have something similar to Conky. It seems like my quest has finally ended. My good friend suggested that I try <a href="http://rainmeter.net/">RainMeter</a>, and I was impressed with the results! It's extremely customizable, has tons of skins to choose from, and is not heavy on the system.</p>
+    <content type="html"><![CDATA[<p>Ever since I came across <a href="http://conky.sourceforge.net/">Conky</a>, I have been using it on all my machines running Ubuntu (for those who are interested, I use <a href="http://gnome-look.org/content/show.php/CONKY-colors?content=92328">Conky-Colors</a> for easy configuration). I also use Windows extensively and had always wanted to have something similar to Conky. It seems like my quest has finally ended. My good friend suggested that I try <a href="http://rainmeter.net/">RainMeter</a>, and I was impressed with the results! It&rsquo;s extremely customizable, has tons of skins to choose from, and is not heavy on the system.</p>
 
-<p>Here's a screenshot (the theme I'm using is <a href="http://jsmorley.deviantart.com/art/JSMeterII-161282085">JSMeterII</a>):</p>
+<p>Here&rsquo;s a screenshot (the theme I&rsquo;m using is <a href="http://jsmorley.deviantart.com/art/JSMeterII-161282085">JSMeterII</a>):</p>
 
 <p><img src="/images/Desktop-300x187.png" alt="" /></p>
 ]]></content>
