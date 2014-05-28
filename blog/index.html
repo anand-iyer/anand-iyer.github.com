@@ -9,7 +9,7 @@
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="Scenario: You have an IPA that you want to test on a device, but the IPA was generated using a provisioning profile that does not include the device &hellip;">
+  <meta name="description" content="Symptom: You used Bootcamp to dual-boot OSX and Windows, but after installing Windows, you are not able to see the BOOTCAMP partition in OSX. If you &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -54,6 +54,74 @@
   <div id="main">
     <div id="content">
       
+
+
+    <article class="post">
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/fixing-missing-bootcamp-partition-in-osx/">Fixing Missing Bootcamp Partition in OSX</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-28T01:25:00-07:00" pubdate data-updated="true">May 28<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>Symptom:</strong> You used Bootcamp to dual-boot OSX and Windows, but after installing Windows, you are not able to see the <code>BOOTCAMP</code> partition in OSX. If you try viewing the disk using disk utility, the <code>BOOTCAMP</code> partition is greyed out, and shows up as FAT formatted although it is NTFS formatted.</p>
+
+<p>Turns out the issue occurs because of a modification during Windows installation. Once Bootcamp Assistant (BCA) created the <code>BOOTCAMP</code> partition and restarted, I noticed that there was an additional small-sized partition created (~600MB) just before the <code>BOOTCAMP</code> partition. Instead of ignoring it, I deleted and recreated the bootcamp partition from Windows setup hoping the wasted space would be reclaimed.</p>
+
+<p>When you do this, it confuses the hybrid GPT/MBR partitioning scheme used by BCA. Essentially, when you remove/resize/add partitions via Windows setup, that information gets updated in the MBR record, but is not synced to the GPT record. Thus, Windows will see the OSX partition, but not vice-versa.</p>
+
+<p>The easy way to fix this without going through the pain of removing and reinstalling Windows from scratch is to sync the MBR info back to the GPT record. Here&rsquo;s how to do it:</p>
+
+<p>First, we need detailed information on the MBR record&mdash;-where the partition starts, where it ends etc. For this purpose, use the <code>gptsync</code> tool. Homebrew has the gptsync package, but if you try to use it, you&rsquo;ll end up with the following error:</p>
+
+<pre><code>Warning: Unknown GPT spec revision 0x00010000 
+</code></pre>
+
+<p>This is because of 64-bit incompatability. A fixed version of gptsync aimed at OSX, extracted from rEFIt is available <a href="https://github.com/JrCs/gptsync">here</a>. Just compile it using Xcode, and you&rsquo;re good to go.</p>
+
+<p>Running <code>gptsync</code> on my machine resulted in the following:</p>
+
+<pre><code>&gt; ./gptsync /dev/disk0
+
+Current GPT partition table:
+ #      Start LBA      End LBA  Type
+ 1             40       409639  EFI System (FAT)
+ 2         409640    250801735  Mac OS X HFS+
+ 3      250801736    252071271  Mac OS X Boot
+ 4      252071936    500117503  Basic Data
+
+Current MBR partition table:
+ # A    Start LBA      End LBA  Type
+ 1              1       409639  ee  EFI Protective
+ 2         409640    250801735  af  Mac OS X HFS+
+ 3 *    250802176    251518975  07  NTFS/HPFS
+ 4      251518976    500115455  07  NTFS/HPFS   
+</code></pre>
+
+<p>In the scenario above, the solution was to modify the GPT table to match the MBR table. Essentially, delete partitions 3 and 4, and then recreate it as per MBR. For this purpose, I used the gdisk tool available <a href="http://www.rodsbooks.com/gdisk/">here</a>. Once installed, run the tool (usage instructions are similar to fdisk, tutorial is available on the tool&rsquo;s website). I used <code>d</code> command to delete partitions 3 and 4, <code>n</code> command to recreate them with first sector and last sector noted from MBR and type 0700. Once done, check the changes using command <code>p</code>, and verify for errors using <code>v</code>. If there are no errors, confirm the changes by writing them with command <code>w</code>, reboot and enjoy!</p>
+</div>
+  
+  
+
+</article>
 
 
     <article class="post">
@@ -509,44 +577,6 @@
 
 </article>
 
-
-    <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/conky-like-system-monitor-for-windows/">Conky Like System Monitor for Windows</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-23T06:15:57-07:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Ever since I came across <a href="http://conky.sourceforge.net/">Conky</a>, I have been using it on all my machines running Ubuntu (for those who are interested, I use <a href="http://gnome-look.org/content/show.php/CONKY-colors?content=92328">Conky-Colors</a> for easy configuration). I also use Windows extensively and had always wanted to have something similar to Conky. It seems like my quest has finally ended. My good friend suggested that I try <a href="http://rainmeter.net/">RainMeter</a>, and I was impressed with the results! It&rsquo;s extremely customizable, has tons of skins to choose from, and is not heavy on the system.</p>
-
-<p>Here&rsquo;s a screenshot (the theme I&rsquo;m using is <a href="http://jsmorley.deviantart.com/art/JSMeterII-161282085">JSMeterII</a>):</p>
-
-<p><img src="/images/Desktop-300x187.png" alt="" /></p>
-</div>
-  
-  
-
-</article>
-
 <nav id="pagenavi">
     
     
@@ -557,7 +587,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-Copyright &copy; 2013 - Anand
+Copyright &copy; 2014 - Anand
 </p>
 
 </footer>
