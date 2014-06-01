@@ -9,7 +9,7 @@
   <meta name="author" content="Anand">
 
   
-  <meta name="description" content="Symptom: You used Bootcamp to dual-boot OSX and Windows, but after installing Windows, you are not able to see the BOOTCAMP partition in OSX. If you &hellip;">
+  <meta name="description" content="Symptom: You use Bootcamp to dual-boot OSX and Windows. After installing Windows, you are not able to see the BOOTCAMP partition in OSX. If you try &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,16 +74,16 @@
   
 
 
-<time datetime="2014-05-28T01:25:00-07:00" pubdate data-updated="true">May 28<span>th</span>, 2014</time>
+<time datetime="2014-05-28T04:25:00-04:00" pubdate data-updated="true">May 28<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><strong>Symptom:</strong> You used Bootcamp to dual-boot OSX and Windows, but after installing Windows, you are not able to see the <code>BOOTCAMP</code> partition in OSX. If you try viewing the disk using disk utility, the <code>BOOTCAMP</code> partition is greyed out, and shows up as FAT formatted although it is NTFS formatted.</p>
+<div class="entry-content"><p><strong>Symptom:</strong> You use Bootcamp to dual-boot OSX and Windows. After installing Windows, you are not able to see the BOOTCAMP partition in OSX. If you try viewing the disk using disk utility, the BOOTCAMP partition is greyed out, and shows up as FAT formatted although it is NTFS formatted.</p>
 
-<p>Turns out the issue occurs because of a modification during Windows installation. Once Bootcamp Assistant (BCA) created the <code>BOOTCAMP</code> partition and restarted, I noticed that there was an additional small-sized partition created (~600MB) just before the <code>BOOTCAMP</code> partition. Instead of ignoring it, I deleted and recreated the bootcamp partition from Windows setup hoping the wasted space would be reclaimed.</p>
+<p>Turns out the issue occurs because of a modification during Windows installation. Once Bootcamp Assistant (BCA) created the BOOTCAMP partition and restarted the system, I noticed that there was an additional small-sized partition created (~600MB) just before the BOOTCAMP partition. Instead of ignoring it, I deleted and recreated the bootcamp partition from Windows setup hoping the wasted space would be reclaimed. That was a bad idea.</p>
 
 <p>When you do this, it confuses the hybrid GPT/MBR partitioning scheme used by BCA. Essentially, when you remove/resize/add partitions via Windows setup, that information gets updated in the MBR record, but is not synced to the GPT record. Thus, Windows will see the OSX partition, but not vice-versa.</p>
 
@@ -138,7 +138,7 @@ Current MBR partition table:
   
 
 
-<time datetime="2014-05-28T01:25:00-07:00" pubdate data-updated="true">May 28<span>th</span>, 2014</time>
+<time datetime="2014-05-28T04:25:00-04:00" pubdate data-updated="true">May 28<span>th</span>, 2014</time>
       
 
 

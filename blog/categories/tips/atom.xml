@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tips | ]]></title>
   <link href="http://anand-iyer.com/blog/categories/tips/atom.xml" rel="self"/>
   <link href="http://anand-iyer.com/"/>
-  <updated>2014-05-28T02:15:53-07:00</updated>
+  <updated>2014-06-01T01:28:45-04:00</updated>
   <id>http://anand-iyer.com/</id>
   <author>
     <name><![CDATA[Anand]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Latex Tips Collection]]></title>
     <link href="http://anand-iyer.com/blog/2013/latex-tips-collection/"/>
-    <updated>2013-01-13T07:56:30-08:00</updated>
+    <updated>2013-01-13T10:56:30-05:00</updated>
     <id>http://anand-iyer.com/blog/2013/latex-tips-collection</id>
     <content type="html"><![CDATA[<p>Over time, I&rsquo;ve come across many useful Latex tips and tricks scattered across the internet. Here&rsquo;s an attempt to collect some of those:</p>
 
@@ -35,7 +35,7 @@
   <entry>
     <title type="html"><![CDATA[Syncing folders outside Dropbox folder]]></title>
     <link href="http://anand-iyer.com/blog/2012/syncing-folders-outside-dropbox-folder/"/>
-    <updated>2012-10-15T23:25:03-07:00</updated>
+    <updated>2012-10-16T02:25:03-04:00</updated>
     <id>http://anand-iyer.com/blog/2012/syncing-folders-outside-dropbox-folder</id>
     <content type="html"><![CDATA[<p>A big complaint I have about <a href="http://db.tt/VZd1Zsgp">Dropbox</a> is that unlike <a href="https://www.sugarsync.com/referral?rf=fevam6f0oyxab&amp;utm_source=website&amp;utm_medium=web&amp;utm_campaign=referral&amp;shareEvent=2630716">SugarSync</a>, it does allow me to sync any folder in my computer (essentially, I need to place the folders I want to be synced inside the &ldquo;Dropbox&rdquo; folder).</p>
 
@@ -53,7 +53,7 @@
   <entry>
     <title type="html"><![CDATA[Doxygen and OSX: Graphviz and other errors]]></title>
     <link href="http://anand-iyer.com/blog/2011/doxygen-and-osx/"/>
-    <updated>2011-10-09T16:16:05-07:00</updated>
+    <updated>2011-10-09T19:16:05-04:00</updated>
     <id>http://anand-iyer.com/blog/2011/doxygen-and-osx</id>
     <content type="html"><![CDATA[<p>I&rsquo;m a big fan of <a href="http://www.doxygen.org/">Doxygen</a>. I use it all the time to generate and analyze call trees. Recently, I wanted to use it in my MacbookPro for analyzing an open source project. There is a binary for SnowLeopard <a href="http://www.stack.nl/~dimitri/doxygen/download.html">here</a> that works in Lion too, but it was throwing lots of errors regarding Graphviz. Here are two things that I had to do to make it finally work:</p>
 
@@ -68,7 +68,7 @@
   <entry>
     <title type="html"><![CDATA[Making QXDM COM object work with Python]]></title>
     <link href="http://anand-iyer.com/blog/2011/making-qxdm-com-object-work-with-python/"/>
-    <updated>2011-02-19T08:21:17-08:00</updated>
+    <updated>2011-02-19T11:21:17-05:00</updated>
     <id>http://anand-iyer.com/blog/2011/making-qxdm-com-object-work-with-python</id>
     <content type="html"><![CDATA[<p>Qualcomm&rsquo;s <a href="http://www.qualcomm.com/products_services/testing_diagnostics/qxdm_pro.html">QXDM</a> is an amazing tool for getting diagnostic information from mobile phones. It supports automation where you can write scripts to interface with the COM object exposed by QXDM.</p>
 
@@ -110,7 +110,7 @@
   <entry>
     <title type="html"><![CDATA[Qualnet 4.0.1 woes!]]></title>
     <link href="http://anand-iyer.com/blog/2010/qualnet-4-0-1-woes/"/>
-    <updated>2010-12-23T01:06:15-08:00</updated>
+    <updated>2010-12-23T04:06:15-05:00</updated>
     <id>http://anand-iyer.com/blog/2010/qualnet-4-0-1-woes</id>
     <content type="html"><![CDATA[<p>For my latest work, I am using the Qualnet simulator tool. Unfortunately, the version that I have access to is pretty old (version 4.0.1). Consequently, I had a lot of trouble getting it to compile in Windows 7. For those who are having the same trouble, see if what I did works for you:</p>
 
