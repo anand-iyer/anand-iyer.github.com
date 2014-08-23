@@ -405,15 +405,11 @@ nav li {
   padding: 8px 2px; }
 
 .name a {
-  font-size: 30px;
-  #font-family: 'open_sanslight';
-  font-weight: normal;
+  font-size: 27px;
   font-weight: 100;
   text-transform: uppercase; }
 
 .name b {
-  #font-family: 'open_sansextrabold';
-  font-weight: normal;
   font-weight: 900; }
 
 @media (max-width: 768px) {
