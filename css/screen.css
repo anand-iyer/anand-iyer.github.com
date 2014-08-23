@@ -405,13 +405,13 @@ nav li {
   padding: 8px 2px; }
 
 .name a {
-  font-size: 30px;
-  font-family: 'Avenir Next W01 Thin';
+  font-size: 27px;
+  font-family: 'open_sanslight';
   font-weight: normal;
   text-transform: uppercase; }
 
 .name b {
-  font-family: 'Avenir Next LT W01 Bold';
+  font-family: 'open_sansextrabold';
   font-weight: normal; }
 
 @media (max-width: 768px) {
