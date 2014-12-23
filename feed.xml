@@ -11,8 +11,8 @@
     <title xml:lang="en">Anand Iyer • CS PhD Student @ UC Berkeley</title>
     <atom:link type="application/atom+xml" href="http://anand-iyer.com/feed.xml" rel="self"/>
     <link>http://anand-iyer.com</link>
-    <pubDate>Mon, 10 Nov 2014 23:19:57 -0800</pubDate>
-    <lastBuildDate>Mon, 10 Nov 2014 23:19:57 -0800</lastBuildDate>
+    <pubDate>Mon, 22 Dec 2014 23:28:14 -0800</pubDate>
+    <lastBuildDate>Mon, 22 Dec 2014 23:28:14 -0800</lastBuildDate>
     <language>en-US</language>
     <generator>Jekyll v2.5.1</generator>
     <description>Anand's personal website</description>
@@ -24,6 +24,45 @@
       <width>144</width>
       <height>73</height>
     </image>
+    
+    <item>
+      <title>Managing Finances in Grad School</title>
+      <link>http://anand-iyer.com/blog/2014/managing-finances-in-gradschool.html</link>
+      <pubDate>Sat, 20 Dec 2014 00:25:00 -0800</pubDate>
+      <dc:creator>anand-iyer</dc:creator>
+      
+      
+      <category>finance</category>
+      
+      <guid isPermaLink="true">http://anand-iyer.com/blog/2014/managing-finances-in-gradschool.html</guid>
+      <description>&lt;p&gt;Managing finances is one of the biggest challenges for a graduate student. This is especially true in the case of students with a family. This post is an attempt to summarize a few things that worked for me in getting my finances under control. Although this post is written with married graduate students in mind, I believe it is as useful, if not more, for others as well. &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Track your cash flow&lt;/strong&gt;. You should know where your money is going. I use &lt;a href=&quot;https://www.mint.com&quot; target=&quot;_blank&quot;&gt;Mint&lt;/a&gt; and &lt;a href=&quot;https://www.personalcapital.com&quot; target=&quot;_blank&quot;&gt;Personal Capital&lt;/a&gt; for this purpose. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Once you understand your spending patterns, &lt;strong&gt;create a budget&lt;/strong&gt;. Have a goal in mind when creating the budget. For instance, my goal is to save a particular amount of money from every pay check. The good folks at YNAB is giving away their highly acclaimed software, You Need A Budget (YNAB), for &lt;a href=&quot;http://www.youneedabudget.com/blog/2014/ynab-is-now-free-for-college-students/&quot; target=&quot;_blank&quot;&gt;free for students&lt;/a&gt;. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It is hard, but make efforts to &lt;strong&gt;stick with your budget&lt;/strong&gt;. &lt;a href=&quot;https://levelmoney.com&quot; target=&quot;_blank&quot;&gt;Level&lt;/a&gt; app helps me with this, it shows me how much I can spend without going over my budget. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Bank with an institution that does not ridicule you with miniscule rates and outrageous maintenance fee. I use &lt;a href=&quot;http://www.ally.com/bank/online-savings-account/&quot; target=&quot;_blank&quot;&gt;Ally&lt;/a&gt; bank. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If you manage to save money, &lt;strong&gt;invest your savings&lt;/strong&gt;. With long-term inflation rate &lt;a href=&quot;https://ycharts.com/indicators/us_inflation_rate&quot; target=&quot;_blank&quot;&gt;above 3%&lt;/a&gt;, a savings account is a bad investment choice. &lt;a href=&quot;https://www.wisebanyan.com/referral/yPHVSiMvT&quot; target=&quot;_blank&quot;&gt;WiseBanyan&lt;/a&gt; lets you invest as low as $10 a month in a combination of stock and bond ETFs for free. The stock market has returned an average of &lt;a href=&quot;http://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html&quot; target=&quot;_blank&quot;&gt;over 7%&lt;/a&gt; historically. Assuming this holds in the future, investing $500 every month will make your net worth exceed the &lt;a href=&quot;http://money.cnn.com/2014/06/11/news/economy/middle-class-wealth/&quot; target=&quot;_blank&quot;&gt;median American middle class&lt;/a&gt; by the time you graduate!   &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sign up for good cashback credit cards such as the Chase Freedom card. If you have more than one credit card, an interesting app to use is &lt;a href=&quot;https://www.walla.by&quot; target=&quot;_blank&quot;&gt;Wallaby&lt;/a&gt;, which tells you the best card to use when you shop.        &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;While it is convenient to order things from Amazon and have it delivered to your home, many everyday essentials such as toothpaste, mouthwash, soap, body wash etc can be obtained absolutely &lt;em&gt;free&lt;/em&gt; if you are willing to &lt;strong&gt;do a little bit of couponing&lt;/strong&gt; along with some help from store specific blogs such as &lt;a href=&quot;http://www.iheartcvs.com&quot; target=&quot;_blank&quot;&gt;IHeartCVS&lt;/a&gt; and &lt;a href=&quot;http://www.iheartwags.com&quot; target=&quot;_blank&quot;&gt;IHeartWags&lt;/a&gt;. However, I must warn you that couponing is very additctive. &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+    </item>
     
     <item>
       <title>Fixing missing bootcamp partition in OSX</title>
