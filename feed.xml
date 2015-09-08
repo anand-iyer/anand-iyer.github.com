@@ -11,8 +11,8 @@
     <title xml:lang="en">Anand Iyer • CS PhD Student @ UC Berkeley</title>
     <atom:link type="application/atom+xml" href="http://anand-iyer.com/feed.xml" rel="self"/>
     <link>http://anand-iyer.com</link>
-    <pubDate>Thu, 03 Sep 2015 10:53:30 -0700</pubDate>
-    <lastBuildDate>Thu, 03 Sep 2015 10:53:30 -0700</lastBuildDate>
+    <pubDate>Tue, 08 Sep 2015 12:00:27 -0700</pubDate>
+    <lastBuildDate>Tue, 08 Sep 2015 12:00:27 -0700</lastBuildDate>
     <language>en-US</language>
     <generator>Jekyll v2.5.1</generator>
     <description>Anand's personal website</description>
@@ -196,6 +196,16 @@
     &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.read.seas.harvard.edu/~kohler/latex.html&quot;&gt;Latex Usage Notes&lt;/a&gt; by Eddie Kohler&lt;/strong&gt;&lt;/p&gt;
 
     &lt;p&gt;Solutions for common Latex problems, tips on proper formatting, etc.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.tablesgenerator.com&quot;&gt;Table Generator&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;Easy way to generate latex source code for tables, supports booktabs style too!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://detexify.kirelabs.org/classify.html&quot;&gt;Detexify&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;Find latex symbols by simply drawing them. Huge time saver when you are working on a deadline.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
