@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>ImportError with IronPython in C#</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="generator" content="Jekyll v2.5.1">
+  <meta name="generator" content="Jekyll v3.0.0">
   <link rel="alternate" type="application/rss+xml" title="Anand Iyer • PhD Student @ UC Berkeley - Feed" href="/feed.xml">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:100,300,300italic,400,400italic,700,700italic,900">
   <link rel="stylesheet" href="/css/screen.css">
@@ -66,7 +66,7 @@
   </h2>
   <span class="post-category">
     <span class="label">
-      tips
+      Tips
     </span>
   </span>
   <div class="post-meta">
@@ -82,7 +82,8 @@
   <div class="post-content">
     <p>I was using IronPython to execute python code inside my C# implementation lately, and I encountered this error when trying to use xmlrpclib:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ImportError: No module named xmlrpclib.</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  
+    ImportError: No module named xmlrpclib.</code></pre></figure>
 
 <p>It was really frustrating because if I try the same in IronPython console, it works fine. It turned out that this was a problem with search paths. When called via C# code, IronPython does not search for missing libraries unless you provide it a path to search for. Here’s how I solved this issue:</p>
 
@@ -90,8 +91,8 @@
   <li>First, find out the search paths that IronPython is using in console mode:</li>
 </ol>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
-<span class="k">print</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">print</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span></code></pre></figure>
 
 <p>This will print all the search paths. Save these paths somewhere.</p>
 
@@ -99,10 +100,10 @@
   <li>Now include all these search paths inside your C# code:</li>
 </ol>
 
-<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">ScriptEngine</span> <span class="n">Engine</span> <span class="p">=</span> <span class="n">Python</span><span class="p">.</span><span class="n">CreateEngine</span><span class="p">();</span>
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">ScriptEngine</span> <span class="n">Engine</span> <span class="p">=</span> <span class="n">Python</span><span class="p">.</span><span class="n">CreateEngine</span><span class="p">();</span>
 <span class="n">ICollection</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">Paths</span> <span class="p">=</span> <span class="n">Engine</span><span class="p">.</span><span class="n">GetSearchPaths</span><span class="p">();</span>
 <span class="n">Paths</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;&lt;Path&gt;&quot;</span><span class="p">);</span>
-<span class="n">Engine</span><span class="p">.</span><span class="n">SetSearchPaths</span><span class="p">(</span><span class="n">Paths</span><span class="p">);</span></code></pre></div>
+<span class="n">Engine</span><span class="p">.</span><span class="n">SetSearchPaths</span><span class="p">(</span><span class="n">Paths</span><span class="p">);</span></code></pre></figure>
 
 <p>Replace <code>&lt;Path&gt;</code> with the path you saved earlier. Now IronPython will search all these pathsbefore failing with an ImportError.</p>
     
@@ -156,11 +157,12 @@
             <p>
                 <a href="https://twitter.com/anandpiyer" title="Follow me on Twitter!" target="_blank"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;
                 <a href="http://www.linkedin.com/in/anandpiyer" title="LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i></a>&nbsp;&nbsp;
-                <a href="https://github.com/anand-iyer" title="GitHub" target="_blank"><i class="fa fa-github"></i></a>
+                <a href="https://github.com/anandpiyer" title="GitHub" target="_blank"><i class="fa fa-github"></i></a>
             </p>
         </div>
     </div>
 </footer>
+
         
     <script src="//static.getclicky.com/js" type="text/javascript"></script>
     <script type="text/javascript">try{ clicky.init(66366544); }catch(e){}</script>

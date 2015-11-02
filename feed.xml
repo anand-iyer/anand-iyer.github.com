@@ -11,10 +11,10 @@
     <title xml:lang="en">Anand Iyer • CS PhD Student @ UC Berkeley</title>
     <atom:link type="application/atom+xml" href="http://anand-iyer.com/feed.xml" rel="self"/>
     <link>http://anand-iyer.com</link>
-    <pubDate>Tue, 08 Sep 2015 12:00:27 -0700</pubDate>
-    <lastBuildDate>Tue, 08 Sep 2015 12:00:27 -0700</lastBuildDate>
+    <pubDate>Sun, 01 Nov 2015 20:56:38 -0800</pubDate>
+    <lastBuildDate>Sun, 01 Nov 2015 20:56:38 -0800</lastBuildDate>
     <language>en-US</language>
-    <generator>Jekyll v2.5.1</generator>
+    <generator>Jekyll v3.0.0</generator>
     <description>Anand's personal website</description>
     <image>
       <description>Anand's personal website</description>
@@ -32,7 +32,7 @@
       <dc:creator>anand-iyer</dc:creator>
       
       
-      <category>finance</category>
+      <category>Finance</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2014/managing-finances-in-gradschool.html</guid>
       <description>&lt;p&gt;Managing finances is one of the biggest challenges for a graduate student. This is especially true in the case of students with a family. This post is an attempt to summarize a few things that worked for me in getting my finances under control. Although this post is written with married graduate students in mind, I believe it is as useful, if not more, for others as well. &lt;/p&gt;
@@ -71,7 +71,7 @@
       <dc:creator>anand-iyer</dc:creator>
       
       
-      <category>tips</category>
+      <category>Tips</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2014/fixing-missing-bootcamp-partition-in-osx.html</guid>
       <description>&lt;p&gt;&lt;strong&gt;Symptom:&lt;/strong&gt; You use Bootcamp to dual-boot OSX and Windows. After installing Windows, you are not able to see the BOOTCAMP partition in OSX. If you try viewing the disk using disk utility, the BOOTCAMP partition is greyed out, and shows up as FAT formatted although it is NTFS formatted.&lt;/p&gt;
@@ -84,13 +84,13 @@
 
 &lt;p&gt;First, we need detailed information on the MBR record—where the partition starts, where it ends etc. For this purpose, use the &lt;code&gt;gptsync&lt;/code&gt; tool. Homebrew has the gptsync package, but if you try to use it, you’ll end up with the following error:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Warning: Unknown GPT spec revision 0x00010000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    Warning: Unknown GPT spec revision 0x00010000 &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;This is because of 64-bit incompatability. A fixed version of gptsync aimed at OSX, extracted from rEFIt is available &lt;a href=&quot;https://github.com/JrCs/gptsync&quot;&gt;here&lt;/a&gt;. Just compile it using Xcode, and you’re good to go.&lt;/p&gt;
 
 &lt;p&gt;Running &lt;code&gt;gptsync&lt;/code&gt; on my machine resulted in the following:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&amp;gt; ./gptsync /dev/disk0
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    &amp;gt; ./gptsync /dev/disk0
     
     Current GPT partition table:
      &lt;span class=&quot;c&quot;&gt;#      Start LBA      End LBA  Type&lt;/span&gt;
@@ -104,7 +104,7 @@
      &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;              &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;       &lt;span class=&quot;m&quot;&gt;409639&lt;/span&gt;  ee  EFI Protective
      &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;         &lt;span class=&quot;m&quot;&gt;409640&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;250801735&lt;/span&gt;  af  Mac OS X HFS+
      &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt; *    &lt;span class=&quot;m&quot;&gt;250802176&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;251518975&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;07&lt;/span&gt;  NTFS/HPFS
-     &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;251518976&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;500115455&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;07&lt;/span&gt;  NTFS/HPFS&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+     &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;      &lt;span class=&quot;m&quot;&gt;251518976&lt;/span&gt;    &lt;span class=&quot;m&quot;&gt;500115455&lt;/span&gt;  &lt;span class=&quot;m&quot;&gt;07&lt;/span&gt;  NTFS/HPFS   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;In the scenario above, the solution was to modify the GPT table to match the MBR table. Essentially, delete partitions 3 and 4, and then recreate it as per MBR. For this purpose, I used the gdisk tool available &lt;a href=&quot;http://www.rodsbooks.com/gdisk/&quot;&gt;here&lt;/a&gt;. Once installed, run the tool (usage instructions are similar to fdisk, tutorial is available on the tool’s website). I used &lt;code&gt;d&lt;/code&gt; command to delete partitions 3 and 4, &lt;code&gt;n&lt;/code&gt; command to recreate them with first sector and last sector noted from MBR and type 0700. Once done, check the changes using command &lt;code&gt;p&lt;/code&gt;, and verify for errors using &lt;code&gt;v&lt;/code&gt;. If there are no errors, confirm the changes by writing them with command &lt;code&gt;w&lt;/code&gt;, reboot and enjoy! &lt;/p&gt;
 </description>
@@ -117,7 +117,7 @@
       <dc:creator>anand-iyer</dc:creator>
       
       
-      <category>tips</category>
+      <category>Tips</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2013/re-signing-ipa-files.html</guid>
       <description>&lt;p&gt;Scenario: You have an IPA that you want to test on a device, but the IPA was generated using a provisioning profile that does not include the device, and was signed with a certificate that is not yours. You drag this IPA to XCode’s organizer window hoping it would be installed on the connected device, but this results in an &lt;code&gt;Unknown error&lt;/code&gt;.&lt;/p&gt;
@@ -126,21 +126,22 @@
 
 &lt;p&gt;First, unpack the IPA (&lt;code&gt;unzip -q &amp;lt;IPA&amp;gt;&lt;/code&gt;). This would create a directory named &lt;code&gt;Payload&lt;/code&gt; and a few other files. Delete the existing signature in the extracted package:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;rm -rf &lt;span class=&quot;s2&quot;&gt;&amp;quot;Payload/*.app/_CodeSignature&amp;quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Payload/*.app/CodeResources&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    rm -rf &lt;span class=&quot;s2&quot;&gt;&amp;quot;Payload/*.app/_CodeSignature&amp;quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Payload/*.app/CodeResources&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;For the next step, you need two things: a valid provisioning profile and a valid certificate. Both can be obtained via the iOS developer portal. &lt;/p&gt;
 
 &lt;p&gt;Replace the provisioning profile first&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;cp &amp;lt;PROVISIONING_PROFILE&amp;gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Payload/*.app/embedded.mobileprovision&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    cp &amp;lt;PROVISIONING_PROFILE&amp;gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Payload/*.app/embedded.mobileprovision&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Then resign using your certificate (the certificate must be present in your keychain)&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/usr/bin/codesign -f -s &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;CERTIFICATE&amp;gt;&amp;quot;&lt;/span&gt; --resource-rules &lt;span class=&quot;s2&quot;&gt;&amp;quot;Payload/*.app/ResourceRules.plist&amp;quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Payload/*.app&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    
+    /usr/bin/codesign -f -s &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;CERTIFICATE&amp;gt;&amp;quot;&lt;/span&gt; --resource-rules &lt;span class=&quot;s2&quot;&gt;&amp;quot;Payload/*.app/ResourceRules.plist&amp;quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Payload/*.app&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Now you can recreate the IPA and then drag &amp;amp; drop it in the XCode organizer to install it on the device!&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;zip -qr &amp;lt;IPA_resigned&amp;gt; Payload&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    zip -qr &amp;lt;IPA_resigned&amp;gt; Payload     &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; If you are looking for user friendly options, check out the &lt;a href=&quot;http://floatlearning.com/2011/11/re-signing-an-ios-app-without-xcode/&quot; target=&quot;_blank&quot;&gt;script by Daniel&lt;/a&gt; or the &lt;a href=&quot;http://www.gorbster.net/blog/archives/273&quot; target=&quot;_blank&quot;&gt;app by Brian&lt;/a&gt;. &lt;/p&gt;
 </description>
@@ -153,12 +154,12 @@
       <dc:creator>anand-iyer</dc:creator>
       
       
-      <category>tips</category>
+      <category>Tips</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2013/gnuplot-cairo-terminal-errors-in-mountain-lion.html</guid>
       <description>&lt;p&gt;I love the cairo terminal in gnuplot, it creates amazing plots. My recent upgrade to Mountain Lion broke my homebrew based gnuplot installation, throwing a bunch of glib errors when I set the terminal to pdfcairo or pngcairo (normal terminals work fine): &lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Error: GLib-GObject-CRITICAL **: gtype.c:2720: You forgot to call g_type_init&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    Error: GLib-GObject-CRITICAL **: gtype.c:2720: You forgot to call g_type_init&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;This is essentially an issue with the latest version of Pango package. There are two ways to fix this: &lt;/p&gt;
 
@@ -181,7 +182,7 @@
       <category>latex</category>
       
       
-      <category>tips</category>
+      <category>Tips</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2013/latex-tips-collection.html</guid>
       <description>&lt;p&gt;Over time, I’ve come across many useful Latex tips and tricks scattered across the internet. Here’s an attempt to collect some of those:&lt;/p&gt;
@@ -225,7 +226,7 @@
       <category>sugarsync</category>
       
       
-      <category>tips</category>
+      <category>Tips</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2012/syncing-folders-outside-dropbox-folder.html</guid>
       <description>&lt;p&gt;A big complaint I have about &lt;a href=&quot;http://db.tt/VZd1Zsgp&quot;&gt;Dropbox&lt;/a&gt; is that unlike &lt;a href=&quot;https://www.sugarsync.com/referral?rf=fevam6f0oyxab&amp;amp;utm_source=website&amp;amp;utm_medium=web&amp;amp;utm_campaign=referral&amp;amp;shareEvent=2630716&quot;&gt;SugarSync&lt;/a&gt;, it does allow me to sync any folder in my computer (essentially, I need to place the folders I want to be synced inside the “Dropbox” folder).&lt;/p&gt;
@@ -234,7 +235,7 @@
 
 &lt;p&gt;If you’re using a Mac (or Linux), just use the following command:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ln -s /full-path-to-folder/file-to-sync ~/Dropbox/desired-folder-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    ln -s /full-path-to-folder/file-to-sync ~/Dropbox/desired-folder-name&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;That’s it, from now on, all file(s) in the actual path would now sync with Dropbox.&lt;/p&gt;
 
@@ -256,7 +257,7 @@
       <category>osx</category>
       
       
-      <category>tips</category>
+      <category>Tips</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2011/doxygen-and-osx.html</guid>
       <description>&lt;p&gt;I’m a big fan of &lt;a href=&quot;http://www.doxygen.org/&quot;&gt;Doxygen&lt;/a&gt;. I use it all the time to generate and analyze call trees. Recently, I wanted to use it in my MacbookPro for analyzing an open source project. There is a binary for SnowLeopard &lt;a href=&quot;http://www.stack.nl/~dimitri/doxygen/download.html&quot;&gt;here&lt;/a&gt; that works in Lion too, but it was throwing lots of errors regarding Graphviz. Here are two things that I had to do to make it finally work:&lt;/p&gt;
@@ -286,7 +287,7 @@
       <category>qxdm</category>
       
       
-      <category>tips</category>
+      <category>Tips</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2011/making-qxdm-com-object-work-with-python.html</guid>
       <description>&lt;p&gt;Qualcomm’s &lt;a href=&quot;http://www.qualcomm.com/products_services/testing_diagnostics/qxdm_pro.html&quot;&gt;QXDM&lt;/a&gt; is an amazing tool for getting diagnostic information from mobile phones. It supports automation where you can write scripts to interface with the COM object exposed by QXDM.&lt;/p&gt;
@@ -302,14 +303,14 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;comtypes.client&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CreateObject&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;comtypes.client&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CreateObject&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;# For ISF file post-processing&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;IISF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CreateObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;DMCoreAutomation.ItemStoreFiles&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
 
 &lt;span class=&quot;c&quot;&gt;# For accessing data directly from QXDM. &lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# Note that the script needs to be run as admin.&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;QXDM&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CreateObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;QXDM.Application&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;n&quot;&gt;QXDM&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CreateObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;QXDM.Application&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
     </item>
@@ -327,7 +328,7 @@
       <category>placements</category>
       
       
-      <category>miscellaneous</category>
+      <category>Miscellaneous</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2010/its-raining-job-offers-at-cet.html</guid>
       <description>&lt;p&gt;Seems like it has been a fantastic placement season for the 2011 batch at my alma mater, &lt;a href=&quot;http://en.wikipedia.org/wiki/College_of_Engineering,_Trivandrum&quot;&gt;College of Engineering, Trivandrum&lt;/a&gt; (CET). According to &lt;a href=&quot;http://www.hinduonnet.com/2010/12/21/stories/2010122165900300.htm&quot;&gt;this&lt;/a&gt; article from &lt;strong&gt;The Hindu&lt;/strong&gt;, 1019 job offers were made to a total of 540 students. Here’s the breakdown (courtesy: The Hindu):&lt;/p&gt;
@@ -353,7 +354,7 @@
       <category>windows 7</category>
       
       
-      <category>tips</category>
+      <category>Tips</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2010/qualnet-4-0-1-woes.html</guid>
       <description>&lt;p&gt;For my latest work, I am using the Qualnet simulator tool. Unfortunately, the version that I have access to is pretty old (version 4.0.1). Consequently, I had a lot of trouble getting it to compile in Windows 7. For those who are having the same trouble, see if what I did works for you:&lt;/p&gt;
@@ -373,7 +374,9 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;nmake /f Makefile-windows-vc8&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    
+        nmake /f Makefile-windows-vc8
+        &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -405,12 +408,13 @@
       <category>xmlrpclib</category>
       
       
-      <category>tips</category>
+      <category>Tips</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2010/importerror-with-ironpython-in-c.html</guid>
       <description>&lt;p&gt;I was using IronPython to execute python code inside my C# implementation lately, and I encountered this error when trying to use xmlrpclib:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ImportError: No module named xmlrpclib.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  
+    ImportError: No module named xmlrpclib.&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;It was really frustrating because if I try the same in IronPython console, it works fine. It turned out that this was a problem with search paths. When called via C# code, IronPython does not search for missing libraries unless you provide it a path to search for. Here’s how I solved this issue:&lt;/p&gt;
 
@@ -418,8 +422,8 @@
   &lt;li&gt;First, find out the search paths that IronPython is using in console mode:&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;This will print all the search paths. Save these paths somewhere.&lt;/p&gt;
 
@@ -427,10 +431,10 @@
   &lt;li&gt;Now include all these search paths inside your C# code:&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;n&quot;&gt;ScriptEngine&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Engine&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Python&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CreateEngine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;n&quot;&gt;ScriptEngine&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Engine&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Python&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CreateEngine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;ICollection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Paths&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Engine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetSearchPaths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;Paths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;lt;Path&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Engine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SetSearchPaths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Paths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;n&quot;&gt;Engine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SetSearchPaths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Paths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Replace &lt;code&gt;&amp;lt;Path&amp;gt;&lt;/code&gt; with the path you saved earlier. Now IronPython will search all these pathsbefore failing with an ImportError.&lt;/p&gt;
 </description>
@@ -451,7 +455,7 @@
       <category>windows</category>
       
       
-      <category>miscellaneous</category>
+      <category>Miscellaneous</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2010/conky-like-system-monitor-for-windows.html</guid>
       <description>&lt;p&gt;Ever since I came across &lt;a href=&quot;http://conky.sourceforge.net/&quot;&gt;Conky&lt;/a&gt;, I have been using it on all my machines running Ubuntu (for those who are interested, I use &lt;a href=&quot;http://gnome-look.org/content/show.php/CONKY-colors?content=92328&quot;&gt;Conky-Colors&lt;/a&gt; for easy configuration). I also use Windows extensively and had always wanted to have something similar to Conky. It seems like my quest has finally ended. My good friend suggested that I try &lt;a href=&quot;http://rainmeter.net/&quot;&gt;RainMeter&lt;/a&gt;, and I was impressed with the results! It’s extremely customizable, has tons of skins to choose from, and is not heavy on the system.&lt;/p&gt;
@@ -481,12 +485,13 @@
       <category>ubuntu</category>
       
       
-      <category>tips</category>
+      <category>Tips</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2010/ns3-in-eclipse.html</guid>
       <description>&lt;p&gt;I found &lt;a href=&quot;http://www.nsnam.org/wiki/index.php/HOWTO_configure_eclipse_with_ns-3&quot;&gt;this&lt;/a&gt; wiki page on configuring NS3 with Eclipse and decided to give it a try. I had trouble compiling, and Eclipse kept giving the following error:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Cannot run program &lt;span class=&quot;s2&quot;&gt;&amp;quot;waf&amp;quot;&lt;/span&gt;: Unknown reason&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    
+    Cannot run program &lt;span class=&quot;s2&quot;&gt;&amp;quot;waf&amp;quot;&lt;/span&gt;: Unknown reason&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;After spending a little time with the configuration, the following additional tweaking seems to be working (in Ubuntu 10.04, Eclipse version 3.5.2 Galileo with ns-allinone-3.8):&lt;/p&gt;
 
@@ -516,22 +521,22 @@
       <category>ubuntu</category>
       
       
-      <category>tips</category>
+      <category>Tips</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2010/ns2-in-ubuntu-10-04.html</guid>
       <description>&lt;p&gt;I spent a reasonably long time getting NS-2 (ns-allinone-2.34) to work in Ubuntu 10.04. Here’s how I finally did it:&lt;/p&gt;
 
 &lt;p&gt;Install necessary tools for building:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install build-essential autoconf automake libxmu-dev gcc-4.3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    sudo apt-get install build-essential autoconf automake libxmu-dev gcc-4.3&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;It turns out that otcl does not like the version of gcc installed by default in Lucid. So go ahead and change &lt;code&gt;ns-allinone-2.34/otcl-1.13/Makefile.in&lt;/code&gt;. Find the line that says:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;CC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;    @CC@&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;CC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;    @CC@&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;and change it to:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;CC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;    gcc-4.3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;CC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;    gcc-4.3&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Now try doing &lt;code&gt;./install&lt;/code&gt; from the ns-allinone-2.34 directory. It should work.&lt;/p&gt;
 </description>
@@ -554,7 +559,7 @@
       <category>ubuntu</category>
       
       
-      <category>tips</category>
+      <category>Tips</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2010/ath5k-master-mode.html</guid>
       <description>&lt;p&gt;To enable Master mode in ath5k, do the following:&lt;/p&gt;
@@ -571,16 +576,17 @@
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;interface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;wlan0
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;interface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;wlan0
 &lt;span class=&quot;nv&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;nl80211
 &lt;span class=&quot;nv&quot;&gt;ssid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;channel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;nv&quot;&gt;channel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Now you can start hostapd to put the card in master mode:&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo hostapd &amp;lt;config_file&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;   
+        sudo hostapd &amp;lt;config_file&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
     </item>
     
@@ -599,7 +605,7 @@
       <category>ubuntu</category>
       
       
-      <category>tips</category>
+      <category>Tips</category>
       
       <guid isPermaLink="true">http://anand-iyer.com/blog/2010/royaltek-rbt-2300-and-karmic-koala.html</guid>
       <description>&lt;p&gt;I recently had to make use of a GPS logger in Linux. Here’s how I made it work in Karmic, incase any one is interested:&lt;/p&gt;
@@ -608,27 +614,32 @@
   &lt;li&gt;First, make sure you have necessary bluetooth packages. If not, install it using:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install bluetooth
-        sudo apt-get install libbluetooth-dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;   
+        sudo apt-get install bluetooth
+        sudo apt-get install libbluetooth-dev&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Switch on the GPS, scan and check if you can find the device:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo hcitool scan&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  
+        sudo hcitool scan&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The output would be something like the following:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Scanning ...
-     00:aa:bb:cc:dd:ee    BlueGPS CCDDEE&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    
+    Scanning ...
+     00:aa:bb:cc:dd:ee    BlueGPS CCDDEE&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;We are interested in the channel in which the device operates. Let’s find that out:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo sdptool records 00:aa:bb:cc:dd:ee&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    
+    sudo sdptool records 00:aa:bb:cc:dd:ee&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;This will give you lots of information about the device. Pay attention to the channel. For instance, my device says:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Service Name: Dev B
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    
+    Service Name: Dev B
     Service RecHandle: 0x10000
     Service Class ID List:
      &lt;span class=&quot;s2&quot;&gt;&amp;quot;Serial Port&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0x1101&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
@@ -639,35 +650,38 @@
     Language Base Attr List:
      code_ISO639: 0x656e
      encoding:    0x6a
-     base_offset: 0x100&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+     base_offset: 0x100&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Use this channel to create an entry in the &lt;code&gt;rfcomm.conf&lt;/code&gt; file:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo gedit /etc/bluetooth/rfcomm.conf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  
+        sudo gedit /etc/bluetooth/rfcomm.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;enter the following at the end of the file:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Bluetooth GPS&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  
+    &lt;span class=&quot;c&quot;&gt;# Bluetooth GPS&lt;/span&gt;
     rfcomm2 &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;nb&quot;&gt;bind &lt;/span&gt;yes,
         device 00:aa:bb:cc:dd:ee,
         channel 1,
         comment &lt;span class=&quot;s2&quot;&gt;&amp;quot;Serial Port&amp;quot;&lt;/span&gt;,
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Once you have done this, you can connect to the device:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo rfcomm connect 2
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo rfcomm connect 2
     Connected /dev/rfcomm2 to 00:aa:bb:cc:dd:ee on channel 1
-    Press CTRL-C &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; hangup&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    Press CTRL-C &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; hangup&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;ul&gt;
   &lt;li&gt;I found rtkgps (&lt;a href=&quot;http://wohlberg.net/public/software/misc/rtkgps/&quot;&gt;http://wohlberg.net/public/software/misc/rtkgps/&lt;/a&gt;) to be a good utility to access GPS logs.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;rtkgps -d /dev/rfcomm2 &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    
+        rtkgps -d /dev/rfcomm2 &lt;span class=&quot;nb&quot;&gt;read&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
     </item>
     

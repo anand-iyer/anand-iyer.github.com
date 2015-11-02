@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Fixing missing bootcamp partition in OSX</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="generator" content="Jekyll v2.5.1">
+  <meta name="generator" content="Jekyll v3.0.0">
   <link rel="alternate" type="application/rss+xml" title="Anand Iyer • PhD Student @ UC Berkeley - Feed" href="/feed.xml">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:100,300,300italic,400,400italic,700,700italic,900">
   <link rel="stylesheet" href="/css/screen.css">
@@ -66,7 +66,7 @@
   </h2>
   <span class="post-category">
     <span class="label">
-      tips
+      Tips
     </span>
   </span>
   <div class="post-meta">
@@ -90,13 +90,13 @@
 
 <p>First, we need detailed information on the MBR record—where the partition starts, where it ends etc. For this purpose, use the <code>gptsync</code> tool. Homebrew has the gptsync package, but if you try to use it, you’ll end up with the following error:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Warning: Unknown GPT spec revision 0x00010000</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    Warning: Unknown GPT spec revision 0x00010000 </code></pre></figure>
 
 <p>This is because of 64-bit incompatability. A fixed version of gptsync aimed at OSX, extracted from rEFIt is available <a href="https://github.com/JrCs/gptsync">here</a>. Just compile it using Xcode, and you’re good to go.</p>
 
 <p>Running <code>gptsync</code> on my machine resulted in the following:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; ./gptsync /dev/disk0
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    &gt; ./gptsync /dev/disk0
     
     Current GPT partition table:
      <span class="c">#      Start LBA      End LBA  Type</span>
@@ -110,7 +110,7 @@
      <span class="m">1</span>              <span class="m">1</span>       <span class="m">409639</span>  ee  EFI Protective
      <span class="m">2</span>         <span class="m">409640</span>    <span class="m">250801735</span>  af  Mac OS X HFS+
      <span class="m">3</span> *    <span class="m">250802176</span>    <span class="m">251518975</span>  <span class="m">07</span>  NTFS/HPFS
-     <span class="m">4</span>      <span class="m">251518976</span>    <span class="m">500115455</span>  <span class="m">07</span>  NTFS/HPFS</code></pre></div>
+     <span class="m">4</span>      <span class="m">251518976</span>    <span class="m">500115455</span>  <span class="m">07</span>  NTFS/HPFS   </code></pre></figure>
 
 <p>In the scenario above, the solution was to modify the GPT table to match the MBR table. Essentially, delete partitions 3 and 4, and then recreate it as per MBR. For this purpose, I used the gdisk tool available <a href="http://www.rodsbooks.com/gdisk/">here</a>. Once installed, run the tool (usage instructions are similar to fdisk, tutorial is available on the tool’s website). I used <code>d</code> command to delete partitions 3 and 4, <code>n</code> command to recreate them with first sector and last sector noted from MBR and type 0700. Once done, check the changes using command <code>p</code>, and verify for errors using <code>v</code>. If there are no errors, confirm the changes by writing them with command <code>w</code>, reboot and enjoy! </p>
     
@@ -164,11 +164,12 @@
             <p>
                 <a href="https://twitter.com/anandpiyer" title="Follow me on Twitter!" target="_blank"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;
                 <a href="http://www.linkedin.com/in/anandpiyer" title="LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i></a>&nbsp;&nbsp;
-                <a href="https://github.com/anand-iyer" title="GitHub" target="_blank"><i class="fa fa-github"></i></a>
+                <a href="https://github.com/anandpiyer" title="GitHub" target="_blank"><i class="fa fa-github"></i></a>
             </p>
         </div>
     </div>
 </footer>
+
         
     <script src="//static.getclicky.com/js" type="text/javascript"></script>
     <script type="text/javascript">try{ clicky.init(66366544); }catch(e){}</script>
