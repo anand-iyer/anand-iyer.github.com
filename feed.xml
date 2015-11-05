@@ -11,8 +11,8 @@
     <title xml:lang="en">Anand Iyer • CS PhD Student @ UC Berkeley</title>
     <atom:link type="application/atom+xml" href="http://anand-iyer.com/feed.xml" rel="self"/>
     <link>http://anand-iyer.com</link>
-    <pubDate>Sun, 01 Nov 2015 20:56:38 -0800</pubDate>
-    <lastBuildDate>Sun, 01 Nov 2015 20:56:38 -0800</lastBuildDate>
+    <pubDate>Thu, 05 Nov 2015 15:13:14 -0800</pubDate>
+    <lastBuildDate>Thu, 05 Nov 2015 15:13:14 -0800</lastBuildDate>
     <language>en-US</language>
     <generator>Jekyll v3.0.0</generator>
     <description>Anand's personal website</description>
@@ -29,7 +29,7 @@
       <title>Managing Finances in Grad School</title>
       <link>http://anand-iyer.com/blog/2014/managing-finances-in-gradschool.html</link>
       <pubDate>Sat, 20 Dec 2014 00:25:00 -0800</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       
       <category>Finance</category>
@@ -68,7 +68,7 @@
       <title>Fixing missing bootcamp partition in OSX</title>
       <link>http://anand-iyer.com/blog/2014/fixing-missing-bootcamp-partition-in-osx.html</link>
       <pubDate>Wed, 28 May 2014 01:25:00 -0700</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       
       <category>Tips</category>
@@ -114,7 +114,7 @@
       <title>Re-signing IPA files</title>
       <link>http://anand-iyer.com/blog/2013/re-signing-ipa-files.html</link>
       <pubDate>Thu, 28 Mar 2013 23:49:00 -0700</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       
       <category>Tips</category>
@@ -151,7 +151,7 @@
       <title>Gnuplot cairo terminal errors in Mountain Lion</title>
       <link>http://anand-iyer.com/blog/2013/gnuplot-cairo-terminal-errors-in-mountain-lion.html</link>
       <pubDate>Sun, 17 Mar 2013 20:31:00 -0700</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       
       <category>Tips</category>
@@ -177,7 +177,7 @@
       <title>Latex Tips Collection</title>
       <link>http://anand-iyer.com/blog/2013/latex-tips-collection.html</link>
       <pubDate>Sun, 13 Jan 2013 07:56:30 -0800</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       <category>latex</category>
       
@@ -217,7 +217,7 @@
       <title>Syncing folders outside Dropbox folder</title>
       <link>http://anand-iyer.com/blog/2012/syncing-folders-outside-dropbox-folder.html</link>
       <pubDate>Mon, 15 Oct 2012 23:25:03 -0700</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       <category>any folder</category>
       
@@ -246,7 +246,7 @@
       <title>Doxygen and OSX: Graphviz and other errors</title>
       <link>http://anand-iyer.com/blog/2011/doxygen-and-osx.html</link>
       <pubDate>Sun, 09 Oct 2011 16:16:05 -0700</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       <category>doxygen</category>
       
@@ -278,7 +278,7 @@
       <title>Making QXDM COM object work with Python</title>
       <link>http://anand-iyer.com/blog/2011/making-qxdm-com-object-work-with-python.html</link>
       <pubDate>Sat, 19 Feb 2011 08:21:17 -0800</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       <category>COM</category>
       
@@ -319,7 +319,7 @@
       <title>It&#39;s raining job offers at CET!</title>
       <link>http://anand-iyer.com/blog/2010/its-raining-job-offers-at-cet.html</link>
       <pubDate>Fri, 24 Dec 2010 03:38:31 -0800</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       <category>cet</category>
       
@@ -343,7 +343,7 @@
       <title>Qualnet 4.0.1 woes!</title>
       <link>http://anand-iyer.com/blog/2010/qualnet-4-0-1-woes.html</link>
       <pubDate>Thu, 23 Dec 2010 01:06:15 -0800</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       <category>qualnet 4.0</category>
       
@@ -397,7 +397,7 @@
       <title>ImportError with IronPython in C#</title>
       <link>http://anand-iyer.com/blog/2010/importerror-with-ironpython-in-c.html</link>
       <pubDate>Thu, 30 Sep 2010 15:48:44 -0700</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       <category>C#</category>
       
@@ -444,7 +444,7 @@
       <title>Conky like system monitor for Windows</title>
       <link>http://anand-iyer.com/blog/2010/conky-like-system-monitor-for-windows.html</link>
       <pubDate>Wed, 23 Jun 2010 06:15:57 -0700</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       <category>conky</category>
       
@@ -470,7 +470,7 @@
       <title>NS3 in Eclipse</title>
       <link>http://anand-iyer.com/blog/2010/ns3-in-eclipse.html</link>
       <pubDate>Sun, 30 May 2010 11:58:55 -0700</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       <category>10.04</category>
       
@@ -510,7 +510,7 @@
       <title>NS2 in Ubuntu 10.04</title>
       <link>http://anand-iyer.com/blog/2010/ns2-in-ubuntu-10-04.html</link>
       <pubDate>Wed, 19 May 2010 04:13:49 -0700</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       <category>10.04</category>
       
@@ -546,7 +546,7 @@
       <title>ath5k “Master” mode</title>
       <link>http://anand-iyer.com/blog/2010/ath5k-master-mode.html</link>
       <pubDate>Thu, 06 May 2010 09:11:34 -0700</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       <category>10.04</category>
       
@@ -594,7 +594,7 @@
       <title>Royaltek RBT-2300 and Karmic Koala</title>
       <link>http://anand-iyer.com/blog/2010/royaltek-rbt-2300-and-karmic-koala.html</link>
       <pubDate>Wed, 31 Mar 2010 15:48:46 -0700</pubDate>
-      <dc:creator>anand-iyer</dc:creator>
+      <dc:creator>anandpiyer</dc:creator>
       
       <category>9.10</category>
       
