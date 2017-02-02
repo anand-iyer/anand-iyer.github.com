@@ -9,32 +9,32 @@
   >
   <channel>
     <title xml:lang="en">Anand Iyer • CS PhD Student @ UC Berkeley</title>
-    <atom:link type="application/atom+xml" href="http://anand-iyer.com/feed.xml" rel="self"/>
-    <link>http://anand-iyer.com</link>
-    <pubDate>Thu, 29 Sep 2016 00:02:11 -0700</pubDate>
-    <lastBuildDate>Thu, 29 Sep 2016 00:02:11 -0700</lastBuildDate>
+    <atom:link type="application/atom+xml" href="http://localhost:4000/feed.xml" rel="self"/>
+    <link>http://localhost:4000</link>
+    <pubDate>Thu, 02 Feb 2017 11:50:13 -0800</pubDate>
+    <lastBuildDate>Thu, 02 Feb 2017 11:50:13 -0800</lastBuildDate>
     <language>en-US</language>
-    <generator>Jekyll v3.2.1</generator>
+    <generator>Jekyll v3.4.0</generator>
     <description>Anand's personal website</description>
     <image>
       <description>Anand's personal website</description>
-      <url>http://anand-iyer.com/img/logo-rss.png</url>
+      <url>http://localhost:4000/img/logo-rss.png</url>
       <title>Anand Iyer • CS PhD Student @ UC Berkeley</title>
-      <link>http://anand-iyer.com</link>
+      <link>http://localhost:4000</link>
       <width>144</width>
       <height>73</height>
     </image>
     
     <item>
       <title>Managing Finances in Grad School</title>
-      <link>http://anand-iyer.com/blog/2014/managing-finances-in-gradschool.html</link>
+      <link>http://localhost:4000/blog/2014/managing-finances-in-gradschool.html</link>
       <pubDate>Sat, 20 Dec 2014 00:25:00 -0800</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
       
       <category>Finance</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2014/managing-finances-in-gradschool.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2014/managing-finances-in-gradschool.html</guid>
       <description>&lt;p&gt;Managing finances is one of the biggest challenges for a graduate student. This is especially true in the case of students with a family. This post is an attempt to summarize a few things that worked for me in getting my finances under control. Although this post is written with married graduate students in mind, I believe it is as useful, if not more, for others as well. &lt;/p&gt;
 
 &lt;ul&gt;
@@ -69,14 +69,14 @@
     
     <item>
       <title>Fixing missing bootcamp partition in OSX</title>
-      <link>http://anand-iyer.com/blog/2014/fixing-missing-bootcamp-partition-in-osx.html</link>
+      <link>http://localhost:4000/blog/2014/fixing-missing-bootcamp-partition-in-osx.html</link>
       <pubDate>Wed, 28 May 2014 01:25:00 -0700</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
       
       <category>Tips</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2014/fixing-missing-bootcamp-partition-in-osx.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2014/fixing-missing-bootcamp-partition-in-osx.html</guid>
       <description>&lt;p&gt;&lt;strong&gt;Symptom:&lt;/strong&gt; You use Bootcamp to dual-boot OSX and Windows. After installing Windows, you are not able to see the BOOTCAMP partition in OSX. If you try viewing the disk using disk utility, the BOOTCAMP partition is greyed out, and shows up as FAT formatted although it is NTFS formatted.&lt;/p&gt;
 
 &lt;p&gt;Turns out the issue occurs because of a modification during Windows installation. Once Bootcamp Assistant (BCA) created the BOOTCAMP partition and restarted the system, I noticed that there was an additional small-sized partition created (~600MB) just before the BOOTCAMP partition. Instead of ignoring it, I deleted and recreated the bootcamp partition from Windows setup hoping the wasted space would be reclaimed. That was a bad idea.&lt;/p&gt;
@@ -115,14 +115,14 @@
     
     <item>
       <title>Re-signing IPA files</title>
-      <link>http://anand-iyer.com/blog/2013/re-signing-ipa-files.html</link>
+      <link>http://localhost:4000/blog/2013/re-signing-ipa-files.html</link>
       <pubDate>Thu, 28 Mar 2013 23:49:00 -0700</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
       
       <category>Tips</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2013/re-signing-ipa-files.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2013/re-signing-ipa-files.html</guid>
       <description>&lt;p&gt;Scenario: You have an IPA that you want to test on a device, but the IPA was generated using a provisioning profile that does not include the device, and was signed with a certificate that is not yours. You drag this IPA to XCode’s organizer window hoping it would be installed on the connected device, but this results in an &lt;code&gt;Unknown error&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Turns out that this is easy to fix. Here’s how to make it work. &lt;/p&gt;
@@ -152,14 +152,14 @@
     
     <item>
       <title>Gnuplot cairo terminal errors in Mountain Lion</title>
-      <link>http://anand-iyer.com/blog/2013/gnuplot-cairo-terminal-errors-in-mountain-lion.html</link>
+      <link>http://localhost:4000/blog/2013/gnuplot-cairo-terminal-errors-in-mountain-lion.html</link>
       <pubDate>Sun, 17 Mar 2013 20:31:00 -0700</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
       
       <category>Tips</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2013/gnuplot-cairo-terminal-errors-in-mountain-lion.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2013/gnuplot-cairo-terminal-errors-in-mountain-lion.html</guid>
       <description>&lt;p&gt;I love the cairo terminal in gnuplot, it creates amazing plots. My recent upgrade to Mountain Lion broke my homebrew based gnuplot installation, throwing a bunch of glib errors when I set the terminal to pdfcairo or pngcairo (normal terminals work fine): &lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    Error: GLib-GObject-CRITICAL **: gtype.c:2720: You forgot to call g_type_init&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -178,7 +178,7 @@
     
     <item>
       <title>Latex Tips Collection</title>
-      <link>http://anand-iyer.com/blog/2013/latex-tips-collection.html</link>
+      <link>http://localhost:4000/blog/2013/latex-tips-collection.html</link>
       <pubDate>Sun, 13 Jan 2013 07:56:30 -0800</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
@@ -187,7 +187,7 @@
       
       <category>Tips</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2013/latex-tips-collection.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2013/latex-tips-collection.html</guid>
       <description>&lt;p&gt;Over time, I’ve come across many useful Latex tips and tricks scattered across the internet. Here’s an attempt to collect some of those:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -218,7 +218,7 @@
     
     <item>
       <title>Syncing folders outside Dropbox folder</title>
-      <link>http://anand-iyer.com/blog/2012/syncing-folders-outside-dropbox-folder.html</link>
+      <link>http://localhost:4000/blog/2012/syncing-folders-outside-dropbox-folder.html</link>
       <pubDate>Mon, 15 Oct 2012 23:25:03 -0700</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
@@ -231,7 +231,7 @@
       
       <category>Tips</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2012/syncing-folders-outside-dropbox-folder.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2012/syncing-folders-outside-dropbox-folder.html</guid>
       <description>&lt;p&gt;A big complaint I have about &lt;a href=&quot;http://db.tt/VZd1Zsgp&quot;&gt;Dropbox&lt;/a&gt; is that unlike &lt;a href=&quot;https://www.sugarsync.com/referral?rf=fevam6f0oyxab&amp;amp;utm_source=website&amp;amp;utm_medium=web&amp;amp;utm_campaign=referral&amp;amp;shareEvent=2630716&quot;&gt;SugarSync&lt;/a&gt;, it doesn’t allow me to sync any folder in my computer (essentially, I need to place the folders I want to be synced inside the “Dropbox” folder).&lt;/p&gt;
 
 &lt;p&gt;Recently, I found a workaround for this problem. Here’s the trick to syncing any folder in your computer: softlink the folder to your Dropbox folder!&lt;/p&gt;
@@ -247,7 +247,7 @@
     
     <item>
       <title>Doxygen and OSX: Graphviz and other errors</title>
-      <link>http://anand-iyer.com/blog/2011/doxygen-and-osx.html</link>
+      <link>http://localhost:4000/blog/2011/doxygen-and-osx.html</link>
       <pubDate>Sun, 09 Oct 2011 16:16:05 -0700</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
@@ -262,7 +262,7 @@
       
       <category>Tips</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2011/doxygen-and-osx.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2011/doxygen-and-osx.html</guid>
       <description>&lt;p&gt;I’m a big fan of &lt;a href=&quot;http://www.doxygen.org/&quot;&gt;Doxygen&lt;/a&gt;. I use it all the time to generate and analyze call trees. Recently, I wanted to use it in my MacbookPro for analyzing an open source project. There is a binary for SnowLeopard &lt;a href=&quot;http://www.stack.nl/~dimitri/doxygen/download.html&quot;&gt;here&lt;/a&gt; that works in Lion too, but it was throwing lots of errors regarding Graphviz. Here are two things that I had to do to make it finally work:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -279,7 +279,7 @@
     
     <item>
       <title>Making QXDM COM object work with Python</title>
-      <link>http://anand-iyer.com/blog/2011/making-qxdm-com-object-work-with-python.html</link>
+      <link>http://localhost:4000/blog/2011/making-qxdm-com-object-work-with-python.html</link>
       <pubDate>Sat, 19 Feb 2011 08:21:17 -0800</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
@@ -292,7 +292,7 @@
       
       <category>Tips</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2011/making-qxdm-com-object-work-with-python.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2011/making-qxdm-com-object-work-with-python.html</guid>
       <description>&lt;p&gt;Qualcomm’s &lt;a href=&quot;http://www.qualcomm.com/products_services/testing_diagnostics/qxdm_pro.html&quot;&gt;QXDM&lt;/a&gt; is an amazing tool for getting diagnostic information from mobile phones. It supports automation where you can write scripts to interface with the COM object exposed by QXDM.&lt;/p&gt;
 
 &lt;p&gt;The default installation of QXDM comes with a number of examples on how to use this object. Unfortunately, all the examples are in Perl. Although I like Perl, recently I have been using Python for all my scripting needs. It’s actually very easy to convert all these scripts to Python. Here’s how:&lt;/p&gt;
@@ -320,7 +320,7 @@
     
     <item>
       <title>It's raining job offers at CET!</title>
-      <link>http://anand-iyer.com/blog/2010/its-raining-job-offers-at-cet.html</link>
+      <link>http://localhost:4000/blog/2010/its-raining-job-offers-at-cet.html</link>
       <pubDate>Fri, 24 Dec 2010 03:38:31 -0800</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
@@ -333,7 +333,7 @@
       
       <category>Miscellaneous</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2010/its-raining-job-offers-at-cet.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2010/its-raining-job-offers-at-cet.html</guid>
       <description>&lt;p&gt;Seems like it has been a fantastic placement season for the 2011 batch at my alma mater, &lt;a href=&quot;http://en.wikipedia.org/wiki/College_of_Engineering,_Trivandrum&quot;&gt;College of Engineering, Trivandrum&lt;/a&gt; (CET). According to &lt;a href=&quot;http://www.hinduonnet.com/2010/12/21/stories/2010122165900300.htm&quot;&gt;this&lt;/a&gt; article from &lt;strong&gt;The Hindu&lt;/strong&gt;, 1019 job offers were made to a total of 540 students. Here’s the breakdown (courtesy: The Hindu):&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://www.anand-iyer.com/blog/wp-content/uploads/2010/12/2010122165900301.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
@@ -344,7 +344,7 @@
     
     <item>
       <title>Qualnet 4.0.1 woes!</title>
-      <link>http://anand-iyer.com/blog/2010/qualnet-4-0-1-woes.html</link>
+      <link>http://localhost:4000/blog/2010/qualnet-4-0-1-woes.html</link>
       <pubDate>Thu, 23 Dec 2010 01:06:15 -0800</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
@@ -359,7 +359,7 @@
       
       <category>Tips</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2010/qualnet-4-0-1-woes.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2010/qualnet-4-0-1-woes.html</guid>
       <description>&lt;p&gt;For my latest work, I am using the Qualnet simulator tool. Unfortunately, the version that I have access to is pretty old (version 4.0.1). Consequently, I had a lot of trouble getting it to compile in Windows 7. For those who are having the same trouble, see if what I did works for you:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -398,7 +398,7 @@
     
     <item>
       <title>ImportError with IronPython in C#</title>
-      <link>http://anand-iyer.com/blog/2010/importerror-with-ironpython-in-c.html</link>
+      <link>http://localhost:4000/blog/2010/importerror-with-ironpython-in-c.html</link>
       <pubDate>Thu, 30 Sep 2010 15:48:44 -0700</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
@@ -413,7 +413,7 @@
       
       <category>Tips</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2010/importerror-with-ironpython-in-c.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2010/importerror-with-ironpython-in-c.html</guid>
       <description>&lt;p&gt;I was using IronPython to execute python code inside my C# implementation lately, and I encountered this error when trying to use xmlrpclib:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  
@@ -445,7 +445,7 @@
     
     <item>
       <title>Conky like system monitor for Windows</title>
-      <link>http://anand-iyer.com/blog/2010/conky-like-system-monitor-for-windows.html</link>
+      <link>http://localhost:4000/blog/2010/conky-like-system-monitor-for-windows.html</link>
       <pubDate>Wed, 23 Jun 2010 06:15:57 -0700</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
@@ -460,7 +460,7 @@
       
       <category>Miscellaneous</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2010/conky-like-system-monitor-for-windows.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2010/conky-like-system-monitor-for-windows.html</guid>
       <description>&lt;p&gt;Ever since I came across &lt;a href=&quot;http://conky.sourceforge.net/&quot;&gt;Conky&lt;/a&gt;, I have been using it on all my machines running Ubuntu (for those who are interested, I use &lt;a href=&quot;http://gnome-look.org/content/show.php/CONKY-colors?content=92328&quot;&gt;Conky-Colors&lt;/a&gt; for easy configuration). I also use Windows extensively and had always wanted to have something similar to Conky. It seems like my quest has finally ended. My good friend suggested that I try &lt;a href=&quot;http://rainmeter.net/&quot;&gt;RainMeter&lt;/a&gt;, and I was impressed with the results! It’s extremely customizable, has tons of skins to choose from, and is not heavy on the system.&lt;/p&gt;
 
 &lt;p&gt;Here’s a screenshot (the theme I’m using is &lt;a href=&quot;http://jsmorley.deviantart.com/art/JSMeterII-161282085&quot;&gt;JSMeterII&lt;/a&gt;):&lt;/p&gt;
@@ -471,7 +471,7 @@
     
     <item>
       <title>NS3 in Eclipse</title>
-      <link>http://anand-iyer.com/blog/2010/ns3-in-eclipse.html</link>
+      <link>http://localhost:4000/blog/2010/ns3-in-eclipse.html</link>
       <pubDate>Sun, 30 May 2010 11:58:55 -0700</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
@@ -490,7 +490,7 @@
       
       <category>Tips</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2010/ns3-in-eclipse.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2010/ns3-in-eclipse.html</guid>
       <description>&lt;p&gt;I found &lt;a href=&quot;http://www.nsnam.org/wiki/index.php/HOWTO_configure_eclipse_with_ns-3&quot;&gt;this&lt;/a&gt; wiki page on configuring NS3 with Eclipse and decided to give it a try. I had trouble compiling, and Eclipse kept giving the following error:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    
@@ -511,7 +511,7 @@
     
     <item>
       <title>NS2 in Ubuntu 10.04</title>
-      <link>http://anand-iyer.com/blog/2010/ns2-in-ubuntu-10-04.html</link>
+      <link>http://localhost:4000/blog/2010/ns2-in-ubuntu-10-04.html</link>
       <pubDate>Wed, 19 May 2010 04:13:49 -0700</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
@@ -526,7 +526,7 @@
       
       <category>Tips</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2010/ns2-in-ubuntu-10-04.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2010/ns2-in-ubuntu-10-04.html</guid>
       <description>&lt;p&gt;I spent a reasonably long time getting NS-2 (ns-allinone-2.34) to work in Ubuntu 10.04. Here’s how I finally did it:&lt;/p&gt;
 
 &lt;p&gt;Install necessary tools for building:&lt;/p&gt;
@@ -547,7 +547,7 @@
     
     <item>
       <title>ath5k “Master” mode</title>
-      <link>http://anand-iyer.com/blog/2010/ath5k-master-mode.html</link>
+      <link>http://localhost:4000/blog/2010/ath5k-master-mode.html</link>
       <pubDate>Thu, 06 May 2010 09:11:34 -0700</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
@@ -564,7 +564,7 @@
       
       <category>Tips</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2010/ath5k-master-mode.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2010/ath5k-master-mode.html</guid>
       <description>&lt;p&gt;To enable Master mode in ath5k, do the following:&lt;/p&gt;
 
 &lt;ol&gt;
@@ -595,7 +595,7 @@
     
     <item>
       <title>Royaltek RBT-2300 and Karmic Koala</title>
-      <link>http://anand-iyer.com/blog/2010/royaltek-rbt-2300-and-karmic-koala.html</link>
+      <link>http://localhost:4000/blog/2010/royaltek-rbt-2300-and-karmic-koala.html</link>
       <pubDate>Wed, 31 Mar 2010 15:48:46 -0700</pubDate>
       <dc:creator>anandpiyer</dc:creator>
       
@@ -610,7 +610,7 @@
       
       <category>Tips</category>
       
-      <guid isPermaLink="true">http://anand-iyer.com/blog/2010/royaltek-rbt-2300-and-karmic-koala.html</guid>
+      <guid isPermaLink="true">http://localhost:4000/blog/2010/royaltek-rbt-2300-and-karmic-koala.html</guid>
       <description>&lt;p&gt;I recently had to make use of a GPS logger in Linux. Here’s how I made it work in Karmic, incase any one is interested:&lt;/p&gt;
 
 &lt;ul&gt;
