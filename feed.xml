@@ -11,10 +11,10 @@
     <title xml:lang="en">Anand Iyer • CS PhD Student @ UC Berkeley</title>
     <atom:link type="application/atom+xml" href="http://localhost:4000/feed.xml" rel="self"/>
     <link>http://localhost:4000</link>
-    <pubDate>Thu, 02 Feb 2017 11:50:13 -0800</pubDate>
-    <lastBuildDate>Thu, 02 Feb 2017 11:50:13 -0800</lastBuildDate>
+    <pubDate>Wed, 14 Jun 2017 11:20:54 -0700</pubDate>
+    <lastBuildDate>Wed, 14 Jun 2017 11:20:54 -0700</lastBuildDate>
     <language>en-US</language>
-    <generator>Jekyll v3.4.0</generator>
+    <generator>Jekyll v3.4.3</generator>
     <description>Anand's personal website</description>
     <image>
       <description>Anand's personal website</description>
